@@ -1,0 +1,2504 @@
+﻿[
+    {
+        "id":  1,
+        "question":  "What services does your web design agency offer?",
+        "answer":  "We design and build custom websites, including responsive design, e-commerce, CMS integrations, SEO basics, and ongoing maintenance packages."
+    },
+    {
+        "id":  2,
+        "question":  "How much does a new website cost?",
+        "answer":  "Prices depend on scope; simple brochure sites start affordably, while custom e-commerce or platform integrations cost more. Contact us for a tailored quote after a brief discovery call."
+    },
+    {
+        "id":  3,
+        "question":  "How long does it take to build a website?",
+        "answer":  "A basic website typically takes 2â€“4 weeks; medium projects about 4â€“8 weeks; complex platforms or e-commerce may take 2â€“3 months. Timelines depend on content readiness and revision cycles."
+    },
+    {
+        "id":  4,
+        "question":  "Do you provide website hosting?",
+        "answer":  "Yes â€” we offer managed hosting packages with backups, SSL, and performance optimization. You can also host with your preferred provider and weâ€™ll handle deployment."
+    },
+    {
+        "id":  5,
+        "question":  "Can you redesign my existing website?",
+        "answer":  "Absolutely. We perform a site audit, propose a redesign plan, and can migrate your content and SEO settings to the updated design."
+    },
+    {
+        "id":  6,
+        "question":  "Do you build mobile-friendly websites?",
+        "answer":  "Yes. All our sites are responsive and optimized for desktop, tablet, and mobile devices to provide a strong user experience across screen sizes."
+    },
+    {
+        "id":  7,
+        "question":  "Will my website be SEO-friendly?",
+        "answer":  "We implement SEO best practices such as semantic HTML, fast load times, mobile friendliness, meta tags, and structured data. We also offer ongoing SEO services for sustained growth."
+    },
+    {
+        "id":  8,
+        "question":  "Can you integrate an online store?",
+        "answer":  "Yes. We build e-commerce sites using platforms like Shopify, WooCommerce, or custom solutions depending on requirements and scale."
+    },
+    {
+        "id":  9,
+        "question":  "Do you offer content writing or copywriting?",
+        "answer":  "We provide professional copywriting services and can craft homepage text, product descriptions, and blog posts to match your brand voice (available as an add-on)."
+    },
+    {
+        "id":  10,
+        "question":  "What payment methods do you accept?",
+        "answer":  "We accept bank transfers, major credit/debit cards, and payment through popular processors like Stripe or PayPal for invoices. Specific options can be discussed during onboarding."
+    },
+    {
+        "id":  11,
+        "question":  "Can you help with logo or brand identity?",
+        "answer":  "Yes, we offer logo and branding packages including color palettes, typography recommendations, and basic brand guidelines to ensure visual consistency."
+    },
+    {
+        "id":  12,
+        "question":  "Do you provide website maintenance?",
+        "answer":  "Yes. Maintenance plans cover security updates, backups, uptime monitoring, minor edits, and performance improvements. We can create a plan that fits your needs."
+    },
+    {
+        "id":  13,
+        "question":  "Will I be able to edit the site after launch?",
+        "answer":  "Yes. We build sites on user-friendly CMS platforms (like WordPress) or provide an admin UI so you can update content yourself. We also offer training and documentation."
+    },
+    {
+        "id":  14,
+        "question":  "Do you migrate content from my old site?",
+        "answer":  "We can migrate content, images, and blog posts from most common platforms. Complex migrations are scoped during discovery and may incur extra time or cost."
+    },
+    {
+        "id":  15,
+        "question":  "Can you help me improve website speed?",
+        "answer":  "Yes. We optimize images, leverage modern build tools, implement caching, minimize code, and set up CDNs to improve load times and performance scores."
+    },
+    {
+        "id":  16,
+        "question":  "What is your revision policy?",
+        "answer":  "We include a specified number of revision rounds in each package (detailed in the proposal). Additional revisions are available at an hourly rate or via a maintenance plan."
+    },
+    {
+        "id":  17,
+        "question":  "Do you offer accessibility (WCAG) compliance?",
+        "answer":  "We follow accessibility best practices and can target WCAG AA compliance. Full audits and remediation are available as a project or add-on service."
+    },
+    {
+        "id":  18,
+        "question":  "Can you integrate payment gateways?",
+        "answer":  "Yes. We integrate secure payment gateways such as Stripe, PayPal, and other region-specific processors and help set up subscriptions or recurring billing if needed."
+    },
+    {
+        "id":  19,
+        "question":  "How do we start a project with you?",
+        "answer":  "Start with a free discovery call where we discuss goals, scope, and budget. After that we provide a proposal and timeline to move forward."
+    },
+    {
+        "id":  20,
+        "question":  "Do you sign NDAs?",
+        "answer":  "Yes. We can sign a Non-Disclosure Agreement before starting work to protect your confidential information and ideas."
+    },
+    {
+        "id":  21,
+        "question":  "What information do you need to get started?",
+        "answer":  "We typically need your existing website (if any), brand assets (logo, colours), desired content structure, example sites you like, and any technical requirements or integrations."
+    },
+    {
+        "id":  22,
+        "question":  "Can you handle multilingual websites?",
+        "answer":  "Yes. We implement multilingual support using translation plugins or custom solutions, and we can advise on SEO and content strategy for multiple languages."
+    },
+    {
+        "id":  23,
+        "question":  "Do you offer photography or stock image sourcing?",
+        "answer":  "We can source high-quality stock photography for you, and coordinate professional photography if you prefer â€” weâ€™ll include image optimization for the web."
+    },
+    {
+        "id":  24,
+        "question":  "What platform do you recommend for blogs?",
+        "answer":  "For content-driven sites we commonly recommend WordPress for its flexibility and editorial tools, but we also implement headless CMS setups depending on your needs."
+    },
+    {
+        "id":  25,
+        "question":  "Can you connect my site to mailing list services?",
+        "answer":  "Yes. We integrate with popular email platforms like Mailchimp, SendGrid, and ConvertKit so you can capture leads and run email campaigns."
+    },
+    {
+        "id":  26,
+        "question":  "Do you build landing pages for marketing campaigns?",
+        "answer":  "Yes. We design fast, conversion-focused landing pages optimized for ad campaigns and lead capture, including A/B testing setups if needed."
+    },
+    {
+        "id":  27,
+        "question":  "How do you price e-commerce sites?",
+        "answer":  "E-commerce pricing depends on catalog size, payment and shipping requirements, integrations, and custom features. We provide a detailed quote after a discovery session."
+    },
+    {
+        "id":  28,
+        "question":  "Can you set up SSL/TLS for my site?",
+        "answer":  "Yes. Weâ€™ll provision and configure SSL certificates (Letâ€™s Encrypt or paid certificates) to ensure secure HTTPS connections for your site."
+    },
+    {
+        "id":  29,
+        "question":  "What are your contract terms?",
+        "answer":  "Contract terms vary by project. We outline deliverables, timelines, payment schedule, and intellectual property ownership in the proposal for your review."
+    },
+    {
+        "id":  30,
+        "question":  "Will I own the website after itâ€™s built?",
+        "answer":  "Yes. Once the project is complete and invoices are settled, you retain ownership of the website design and content. We can host or transfer files as agreed."
+    },
+    {
+        "id":  31,
+        "question":  "Do you provide analytics setup?",
+        "answer":  "We set up analytics (Google Analytics, GA4) and can configure goal tracking, events, and dashboards to measure traffic and conversions."
+    },
+    {
+        "id":  32,
+        "question":  "Can you improve my website\u0027s conversion rate?",
+        "answer":  "Yes. We analyze user flows, optimize CTAs, simplify forms, and perform A/B testing to improve conversions and UX based on data-driven insights."
+    },
+    {
+        "id":  33,
+        "question":  "How do you handle backups?",
+        "answer":  "We configure automated backups (site files and databases) with retention policies. Backups can be stored offsite or in cloud storage for quick restores."
+    },
+    {
+        "id":  34,
+        "question":  "Do you support custom integrations or APIs?",
+        "answer":  "Yes. We can integrate third-party APIs, CRMs, payment providers, or custom backend services as part of the project scope."
+    },
+    {
+        "id":  35,
+        "question":  "Can you add a blog to my site?",
+        "answer":  "Yes. Weâ€™ll create a blog structure optimized for SEO with categories, tags, and an editor-friendly CMS so you can publish posts easily."
+    },
+    {
+        "id":  36,
+        "question":  "What maintenance options do you offer after launch?",
+        "answer":  "Options include monthly updates, security patches, content changes, feature requests, and performance monitoring. We tailor maintenance plans to your needs."
+    },
+    {
+        "id":  37,
+        "question":  "Do you provide training for my team?",
+        "answer":  "Yes. We provide documentation and training sessions (remote or on-site) to show you how to use the CMS, update content, and manage common tasks."
+    },
+    {
+        "id":  38,
+        "question":  "Can you help with domain registration?",
+        "answer":  "We can advise on domain providers and handle registration for you, or guide you through the process if you prefer to manage it yourself."
+    },
+    {
+        "id":  39,
+        "question":  "Do you build websites for small businesses?",
+        "answer":  "Yes â€” small businesses are a core client type. We design cost-effective, professional sites tailored to local SEO and conversion goals."
+    },
+    {
+        "id":  40,
+        "question":  "How do you handle large-scale websites?",
+        "answer":  "For large projects we use a phased approach with architecture planning, performance scaling, CDN setup, and thorough testing to ensure reliability and maintainability."
+    },
+    {
+        "id":  41,
+        "question":  "Can you integrate live chat or chatbots?",
+        "answer":  "Yes. We can integrate chat widgets, chatbot platforms, or custom conversational interfaces and connect them to support systems or CRMs."
+    },
+    {
+        "id":  42,
+        "question":  "Do you offer a guarantee?",
+        "answer":  "We guarantee workmanship and that deliverables meet the agreed specifications. Warranty periods for bug fixes are included; long-term guarantees are covered in maintenance agreements."
+    },
+    {
+        "id":  43,
+        "question":  "Can you optimize images for the web?",
+        "answer":  "Yes. We compress and serve images in modern formats (WebP where supported), and implement responsive image techniques for better performance."
+    },
+    {
+        "id":  44,
+        "question":  "What payment schedule do you require?",
+        "answer":  "Typical projects use a deposit up front (e.g., 30â€“50%), progress payments during milestones, and a final payment on delivery. Exact terms are in the proposal."
+    },
+    {
+        "id":  45,
+        "question":  "Can you add forms and lead capture?",
+        "answer":  "Yes. We design accessible, validated forms and integrate them with email or CRM systems for reliable lead capture and follow-up workflows."
+    },
+    {
+        "id":  46,
+        "question":  "Do you provide GDPR or privacy compliance help?",
+        "answer":  "We implement cookie notices, privacy pages, and data-handling best practices. For legal compliance specifics, we recommend consulting a privacy attorney."
+    },
+    {
+        "id":  47,
+        "question":  "Can you create custom landing pages for ads?",
+        "answer":  "Yes. We create targeted landing pages optimized for ad campaigns, conversion tracking, and fast load times to maximize ROI."
+    },
+    {
+        "id":  48,
+        "question":  "Do you perform user testing?",
+        "answer":  "Yes. We offer usability testing services like moderated tests, unmoderated tests, and session recordings to validate designs with real users."
+    },
+    {
+        "id":  49,
+        "question":  "Can you integrate booking or appointment tools?",
+        "answer":  "Yes. We integrate scheduling systems like Calendly, Acuity, or custom booking solutions and sync them with calendars and notification systems."
+    },
+    {
+        "id":  50,
+        "question":  "What happens if I need more features after launch?",
+        "answer":  "We can scope additional features as follow-up work and include them in maintenance or new project phases with clear estimates and timelines."
+    },
+    {
+        "id":  51,
+        "question":  "Can you set up social media integration?",
+        "answer":  "Yes. We can add social sharing, feed integrations, and social login options to help amplify your content and user engagement."
+    },
+    {
+        "id":  52,
+        "question":  "Do you support headless CMS architectures?",
+        "answer":  "Yes. We build headless CMS solutions (e.g., Strapi, Contentful) when you need multi-channel content delivery and decoupled frontends."
+    },
+    {
+        "id":  53,
+        "question":  "Can you migrate from Wix, Squarespace, or Shopify?",
+        "answer":  "Yes. We can migrate content and data from popular platforms; complexity and automation depend on source platform and custom content types."
+    },
+    {
+        "id":  54,
+        "question":  "Do you build PWAs (Progressive Web Apps)?",
+        "answer":  "Yes. We can build PWAs with offline support, fast caching, and installable behavior to improve mobile engagement and performance."
+    },
+    {
+        "id":  55,
+        "question":  "How do you handle SEO for local businesses?",
+        "answer":  "We optimize for local keywords, create location pages, set up Google Business Profile, and implement schema markup to improve local search visibility."
+    },
+    {
+        "id":  56,
+        "question":  "Can you add multilingual SEO?",
+        "answer":  "Yes. We implement hreflang tags, structured URLs, and content strategies to preserve SEO when supporting multiple languages."
+    },
+    {
+        "id":  57,
+        "question":  "Do you test across browsers and devices?",
+        "answer":  "Yes. We test sites across major browsers and device sizes and perform QA to ensure consistent behaviour and appearance."
+    },
+    {
+        "id":  58,
+        "question":  "Can you set up automated deployments?",
+        "answer":  "Yes. We use CI/CD pipelines to automate builds and deploy to hosting providers for reliable, repeatable releases."
+    },
+    {
+        "id":  59,
+        "question":  "Will you provide source files and assets?",
+        "answer":  "Yes. We deliver source code, asset files, and any design files agreed upon. We can also keep a version-controlled repository for ongoing development."
+    },
+    {
+        "id":  60,
+        "question":  "Can you add membership or subscription features?",
+        "answer":  "Yes. We build membership systems with gated content, paid subscriptions, and user accounts, integrated with payment processors and authentication."
+    },
+    {
+        "id":  61,
+        "question":  "Do you optimize sites for mobile speed?",
+        "answer":  "Yes. We optimize assets, reduce render-blocking resources, and use mobile-first techniques to deliver fast mobile experiences."
+    },
+    {
+        "id":  62,
+        "question":  "Can you help with product photography for e-commerce?",
+        "answer":  "We can coordinate product photography services and optimize photos for e-commerce including background removal and multiple image sizes per product."
+    },
+    {
+        "id":  63,
+        "question":  "Do you handle tax and shipping setup for stores?",
+        "answer":  "We integrate tax and shipping configurations with e-commerce platforms and payment providers, and can connect to fulfillment or shipping APIs when necessary."
+    },
+    {
+        "id":  64,
+        "question":  "Can you add search functionality to my site?",
+        "answer":  "Yes. We implement search using platform-native search, Algolia, or custom search solutions depending on speed and relevance needs."
+    },
+    {
+        "id":  65,
+        "question":  "What CMS do you recommend for non-technical clients?",
+        "answer":  "WordPress is often recommended for non-technical clients due to its user-friendly editor and ecosystem, though we tailor recommendations to each clientâ€™s needs."
+    },
+    {
+        "id":  66,
+        "question":  "Can you add analytics dashboards?",
+        "answer":  "Yes. We can build custom dashboards or integrate tools like Google Data Studio or Looker Studio to visualize traffic and conversion data."
+    },
+    {
+        "id":  67,
+        "question":  "Do you provide a staging site for review?",
+        "answer":  "Yes. We provide a password-protected staging environment so you can preview and approve changes before production deployment."
+    },
+    {
+        "id":  68,
+        "question":  "Can you implement customer reviews or testimonials?",
+        "answer":  "Yes. We create testimonial sections, schema markup for reviews, and options for customers to submit feedback."
+    },
+    {
+        "id":  69,
+        "question":  "Do you handle large catalogs and inventory?",
+        "answer":  "Yes. For large catalogs we plan for performance, inventory sync, pagination, and search optimization, often recommending headless or dedicated e-commerce platforms."
+    },
+    {
+        "id":  70,
+        "question":  "Can you implement subscription billing?",
+        "answer":  "Yes. We can implement recurring billing and subscription management using Stripe Billing or other subscription platforms."
+    },
+    {
+        "id":  71,
+        "question":  "How do you secure websites?",
+        "answer":  "We use secure coding practices, HTTPS, strong authentication, regular updates, security headers, and monitoring to reduce vulnerabilities and protect user data."
+    },
+    {
+        "id":  72,
+        "question":  "Do you help with content strategy?",
+        "answer":  "Yes. We advise on information architecture, user journeys, content types, and editorial calendars to support marketing and SEO goals."
+    },
+    {
+        "id":  73,
+        "question":  "What technologies do you use?",
+        "answer":  "We use modern web technologies like HTML5, CSS3 (including frameworks), JavaScript, React/Vue when needed, WordPress, and headless CMS options depending on the project."
+    },
+    {
+        "id":  74,
+        "question":  "Can you integrate CRM systems?",
+        "answer":  "Yes. We integrate CRMs like Salesforce, HubSpot, or Zoho to capture leads and connect them with your sales workflows."
+    },
+    {
+        "id":  75,
+        "question":  "Do you provide documentation for the site?",
+        "answer":  "Yes. We deliver documentation including admin instructions, style guides, and deployment notes so your team can manage the site post-launch."
+    },
+    {
+        "id":  76,
+        "question":  "Can you build multilingual checkout experiences?",
+        "answer":  "Yes. For e-commerce we implement localized checkout flows with translated product data and region-specific shipping and payment methods."
+    },
+    {
+        "id":  77,
+        "question":  "Will you help with web accessibility testing?",
+        "answer":  "Yes. We perform accessibility assessments and fix common issues; for full compliance testing we can coordinate with accessibility specialists."
+    },
+    {
+        "id":  78,
+        "question":  "How do you handle user authentication?",
+        "answer":  "We implement secure authentication using standard practices, including hashed passwords, session management, OAuth social login, or SSO when required."
+    },
+    {
+        "id":  79,
+        "question":  "Can you create design mockups before development?",
+        "answer":  "Yes. We create wireframes and high-fidelity mockups to align on layout and visual direction before development begins."
+    },
+    {
+        "id":  80,
+        "question":  "Do you support custom fonts?",
+        "answer":  "Yes. We integrate web-safe or licensed custom fonts and ensure they are loaded efficiently to avoid layout shifts and performance issues."
+    },
+    {
+        "id":  81,
+        "question":  "How do you price hourly work?",
+        "answer":  "Hourly work is billed at our standard hourly rate (specified in the proposal). We provide time estimates and regular reporting for hourly engagements."
+    },
+    {
+        "id":  82,
+        "question":  "Can you create interactive prototypes?",
+        "answer":  "Yes. We build clickable prototypes and animations to demonstrate user flows and gather feedback before development."
+    },
+    {
+        "id":  83,
+        "question":  "Do you offer conversion rate optimization (CRO) services?",
+        "answer":  "Yes. Our CRO services include funnel analysis, A/B testing, heatmaps, and iterative improvements to increase conversions."
+    },
+    {
+        "id":  84,
+        "question":  "How do you measure project success?",
+        "answer":  "We set KPIs like traffic, conversion rate, lead volume, page speed, and business-specific goals, and measure success against those targets post-launch."
+    },
+    {
+        "id":  85,
+        "question":  "Can you add video backgrounds or hero videos?",
+        "answer":  "Yes. We implement optimized video backgrounds that degrade gracefully on slower connections and provide poster images for accessibility."
+    },
+    {
+        "id":  86,
+        "question":  "Do you offer seasonal campaigns or microsites?",
+        "answer":  "Yes. We build temporary campaign pages or microsites for promotions, events, and product launches with fast turnaround options."
+    },
+    {
+        "id":  87,
+        "question":  "Can you integrate chatbots with support systems?",
+        "answer":  "Yes. We integrate chatbots with helpdesk systems like Zendesk or intercom and can configure workflows for routing and ticket creation."
+    },
+    {
+        "id":  88,
+        "question":  "What happens if my site is hacked?",
+        "answer":  "We offer incident response and recovery services to restore backups, patch vulnerabilities, and secure the site. Preventative maintenance reduces this risk."
+    },
+    {
+        "id":  89,
+        "question":  "Do you help set up payment fraud protection?",
+        "answer":  "Yes. We configure fraud detection tools, payment processor settings, and best practices to reduce fraudulent transactions."
+    },
+    {
+        "id":  90,
+        "question":  "Can you optimize for Core Web Vitals?",
+        "answer":  "Yes. We optimize for metrics like LCP, FID/INP, and CLS through performance improvements, critical CSS, image optimization, and resource prioritization."
+    },
+    {
+        "id":  91,
+        "question":  "Do you offer a-la-carte services?",
+        "answer":  "Yes. We offer individual services such as SEO audits, landing page design, site audits, and performance optimization independently of full redesigns."
+    },
+    {
+        "id":  92,
+        "question":  "Can you create progressive enhancement for older browsers?",
+        "answer":  "Yes. We implement progressive enhancement to ensure basic functionality on older browsers while delivering modern experiences for capable browsers."
+    },
+    {
+        "id":  93,
+        "question":  "Do you provide support for ecommerce refunds and returns flows?",
+        "answer":  "We configure admin flows for refunds, returns, and order management and integrate with payment processors and fulfillment systems."
+    },
+    {
+        "id":  94,
+        "question":  "Can you help with influencer or affiliate landing pages?",
+        "answer":  "Yes. We build affiliate-friendly landing pages with tracking parameters, sub-affiliate flows, and conversion tracking for campaigns."
+    },
+    {
+        "id":  95,
+        "question":  "How do you handle image licensing?",
+        "answer":  "We use licensed stock images or client-provided photography. We document licensing and recommend appropriate usage rights to avoid infringements."
+    },
+    {
+        "id":  96,
+        "question":  "Can you implement single sign-on (SSO)?",
+        "answer":  "Yes. We integrate SSO solutions using SAML, OAuth, or OpenID Connect for enterprise-level authentication when required."
+    },
+    {
+        "id":  97,
+        "question":  "Do you create design systems or component libraries?",
+        "answer":  "Yes. We build reusable component libraries and style guides to ensure consistency and speed up future development."
+    },
+    {
+        "id":  98,
+        "question":  "Can you help with product launches?",
+        "answer":  "Yes. We support product launches with landing pages, email capture, performance testing, and campaign-specific tracking and analytics."
+    },
+    {
+        "id":  99,
+        "question":  "Do you offer copy editing and proofreading?",
+        "answer":  "Yes. We provide editing and proofreading services to ensure clarity, tone, and grammar across your website content."
+    },
+    {
+        "id":  100,
+        "question":  "Can you implement schema markup for rich results?",
+        "answer":  "Yes. We implement structured data like product, article, and local business schema to improve search result appearance and CTR."
+    },
+    {
+        "id":  101,
+        "question":  "How do I request a quote?",
+        "answer":  "Use our contact form or email us with project details; weâ€™ll schedule a discovery call and provide a tailored quote after assessing requirements."
+    },
+    {
+        "id":  102,
+        "question":  "Can you help with brand messaging?",
+        "answer":  "Yes. We help define brand messaging, positioning, and key value propositions so your website communicates clearly to your target audience."
+    },
+    {
+        "id":  103,
+        "question":  "Do you offer discounts for nonprofits or startups?",
+        "answer":  "We offer special pricing and packages for nonprofits and early-stage startups â€” please contact us to discuss eligibility and discounts."
+    },
+    {
+        "id":  104,
+        "question":  "Can you integrate live inventory for stores?",
+        "answer":  "Yes. We integrate real-time inventory systems and sync with back-office tools to maintain accurate stock levels and avoid overselling."
+    },
+    {
+        "id":  105,
+        "question":  "Do you offer performance SLAs for hosting?",
+        "answer":  "Yes. Our managed hosting plans include SLAs for uptime and response times. Details depend on the chosen hosting tier."
+    },
+    {
+        "id":  106,
+        "question":  "Can you help optimize product pages for conversions?",
+        "answer":  "Yes. We optimize product pages with persuasive copy, clear CTAs, image galleries, reviews, and fast checkout flows to increase conversions."
+    },
+    {
+        "id":  107,
+        "question":  "Do you support A/B testing tools?",
+        "answer":  "Yes. We set up A/B testing with tools like Google Optimize, VWO, or native platform testing to iterate on design and content decisions."
+    },
+    {
+        "id":  108,
+        "question":  "Can you build a multilingual blog?",
+        "answer":  "Yes. We architect blogs that support multiple languages with separate language paths, translated content, and SEO-friendly structure."
+    },
+    {
+        "id":  109,
+        "question":  "Do you assist with influencer landing pages?",
+        "answer":  "Yes. We create conversion-focused pages tailored for influencer traffic with tracking, CTAs, and tailored messaging."
+    },
+    {
+        "id":  110,
+        "question":  "How do you handle large media assets?",
+        "answer":  "We recommend CDNs, lazy loading, and media optimization workflows for large assets, and provide storage options for high-volume media requirements."
+    },
+    {
+        "id":  111,
+        "question":  "Can you integrate analytics events for funnels?",
+        "answer":  "Yes. We set up tracking events for funnel steps, form submissions, and key interactions to measure and optimize user journeys."
+    },
+    {
+        "id":  112,
+        "question":  "Do you offer partnerships with marketing agencies?",
+        "answer":  "Yes. We partner with marketing and creative agencies to deliver combined services including web, advertising, and content production."
+    },
+    {
+        "id":  113,
+        "question":  "Can you implement role-based access on my site?",
+        "answer":  "Yes. We build role-based access control for admins, editors, and customers with tailored permissions and secure flows."
+    },
+    {
+        "id":  114,
+        "question":  "Do you provide a service-level agreement (SLA)?",
+        "answer":  "Yes. For managed services, we provide SLAs outlining uptime, support response times, and maintenance windows."
+    },
+    {
+        "id":  115,
+        "question":  "Can you create interactive product configurators?",
+        "answer":  "Yes. We build product configurators with real-time previews and pricing calculators to help customers customize products before purchase."
+    },
+    {
+        "id":  116,
+        "question":  "Do you support image galleries and lightboxes?",
+        "answer":  "Yes. We implement responsive image galleries, lazy loading, and lightboxes that are accessible and perform well across devices."
+    },
+    {
+        "id":  117,
+        "question":  "Can you implement location-based content?",
+        "answer":  "Yes. We can show localized content or currency based on user location and provide geotargeting strategies to improve relevance."
+    },
+    {
+        "id":  118,
+        "question":  "Do you provide a content migration checklist?",
+        "answer":  "Yes. We provide a migration checklist to collect assets, URLs, redirects, and priorities to ensure a smooth content transfer."
+    },
+    {
+        "id":  119,
+        "question":  "How do you handle redirects to preserve SEO?",
+        "answer":  "We implement a redirect map and permanent (301) redirects for moved pages and ensure canonical tags and sitemap updates to preserve search rankings."
+    },
+    {
+        "id":  120,
+        "question":  "Can you build headless e-commerce?",
+        "answer":  "Yes. We build headless e-commerce solutions that separate the frontend from the commerce backend for performance and flexibility."
+    },
+    {
+        "id":  121,
+        "question":  "Do you offer CRO audits?",
+        "answer":  "Yes. Our CRO audits review funnels, UX, analytics, and provide prioritized recommendations and test plans to improve metrics."
+    },
+    {
+        "id":  122,
+        "question":  "Can you help with pay-per-click (PPC) landing pages?",
+        "answer":  "Yes. We design landing pages optimized for ad campaigns, fast load times, and high relevancy to improve Quality Score and conversions."
+    },
+    {
+        "id":  123,
+        "question":  "Do you offer on-call or emergency support?",
+        "answer":  "Yes. Emergency support options are available for critical incidents with priority response based on your support plan."
+    },
+    {
+        "id":  124,
+        "question":  "Can you add product variants and options?",
+        "answer":  "Yes. We implement variant management with SKU handling, price differences, and inventory tracking for product options."
+    },
+    {
+        "id":  125,
+        "question":  "How do you approach mobile-first design?",
+        "answer":  "We prioritize mobile layouts, simplify navigation, and optimize performance and touch interactions to deliver effective mobile experiences."
+    },
+    {
+        "id":  126,
+        "question":  "Can you integrate with fulfillment services?",
+        "answer":  "Yes. We integrate with fulfillment and shipping providers to automate order routing and tracking for efficient operations."
+    },
+    {
+        "id":  127,
+        "question":  "Do you provide SEO copywriting?",
+        "answer":  "Yes. We craft SEO-optimized copy that balances keyword strategy with readability and user intent for better search performance."
+    },
+    {
+        "id":  128,
+        "question":  "Can you implement user-generated content features?",
+        "answer":  "Yes. We implement reviews, comments, and user content submission systems with moderation and anti-spam measures."
+    },
+    {
+        "id":  129,
+        "question":  "Do you help with influencer tracking and attribution?",
+        "answer":  "Yes. We implement tracking parameters, unique landing pages, and analytics to measure influencer campaign effectiveness."
+    },
+    {
+        "id":  130,
+        "question":  "Can you add social proof elements?",
+        "answer":  "Yes. We add testimonials, trust badges, client logos, and case studies to build credibility and trust with site visitors."
+    },
+    {
+        "id":  131,
+        "question":  "Do you support multiple currencies?",
+        "answer":  "Yes. We implement multi-currency displays and payment flows to support international customers and localized pricing."
+    },
+    {
+        "id":  132,
+        "question":  "Can you build a wholesale portal?",
+        "answer":  "Yes. We build B2B portals with negotiated pricing, user verification, and order management tailored to wholesale clients."
+    },
+    {
+        "id":  133,
+        "question":  "How do you test for performance regressions?",
+        "answer":  "We use automated performance tests and monitoring to detect regressions after deployments and prioritize fixes to maintain speed standards."
+    },
+    {
+        "id":  134,
+        "question":  "Can you implement structured content for headless setups?",
+        "answer":  "Yes. We design structured content models that work well with headless CMSs and multi-channel publishing workflows."
+    },
+    {
+        "id":  135,
+        "question":  "Do you provide UX writing?",
+        "answer":  "Yes. We provide UX-focused copywriting for microcopy, CTA text, and onboarding flows to improve clarity and conversions."
+    },
+    {
+        "id":  136,
+        "question":  "Can you integrate customer loyalty programs?",
+        "answer":  "Yes. We implement loyalty and rewards systems that tie into e-commerce platforms and CRM systems to encourage repeat purchases."
+    },
+    {
+        "id":  137,
+        "question":  "Do you offer demo sites for review?",
+        "answer":  "Yes. We provide demo or staging sites for client review and iterative feedback during the project lifecycle."
+    },
+    {
+        "id":  138,
+        "question":  "Can you handle GDPR data subject requests?",
+        "answer":  "We build data export and deletion workflows and can advise on processes to respond to GDPR data subject requests as part of compliance services."
+    },
+    {
+        "id":  139,
+        "question":  "Do you integrate funnels with marketing automation?",
+        "answer":  "Yes. We connect lead capture forms to marketing automation tools to create nurturing sequences and improve conversion follow-ups."
+    },
+    {
+        "id":  140,
+        "question":  "Can you build donation pages for nonprofits?",
+        "answer":  "Yes. We build secure, mobile-optimized donation pages with suggested amounts, recurring options, and integrations with payment processors."
+    },
+    {
+        "id":  141,
+        "question":  "Do you support headless search implementations?",
+        "answer":  "Yes. We implement headless search solutions like Algolia or Elasticsearch for fast, relevant search experiences across headless frontends."
+    },
+    {
+        "id":  142,
+        "question":  "Can you add product recommendations?",
+        "answer":  "Yes. We add personalized recommendations using rule-based or ML-driven systems to increase average order value and cross-sell opportunities."
+    },
+    {
+        "id":  143,
+        "question":  "Do you offer ongoing content services?",
+        "answer":  "Yes. We provide recurring content creation, editing, and publishing services as part of retainers to keep your site fresh and SEO-friendly."
+    },
+    {
+        "id":  144,
+        "question":  "Can you integrate with inventory management systems?",
+        "answer":  "Yes. We connect with inventory and ERP systems to sync stock levels, orders, and product information across channels."
+    },
+    {
+        "id":  145,
+        "question":  "Do you assist with regulatory website requirements?",
+        "answer":  "Yes. We help implement required notices, terms, and compliance features for regulated industries; for legal specifics we recommend consulting counsel."
+    },
+    {
+        "id":  146,
+        "question":  "Can you implement offline-capable experiences?",
+        "answer":  "Yes. With service workers we can add offline caching and fallbacks for essential content and interactions in PWAs."
+    },
+    {
+        "id":  147,
+        "question":  "Do you provide image CDNs or optimization services?",
+        "answer":  "Yes. We use image CDNs and build optimization pipelines to deliver responsive, compressed images for better performance and lower bandwidth."
+    },
+    {
+        "id":  148,
+        "question":  "Can you integrate with helpdesk systems?",
+        "answer":  "Yes. We integrate web contact forms and chat systems with helpdesk platforms like Zendesk or Freshdesk to streamline support."
+    },
+    {
+        "id":  149,
+        "question":  "Do you provide code reviews?",
+        "answer":  "Yes. We perform code reviews and security scans to maintain quality and identify issues before deployment."
+    },
+    {
+        "id":  150,
+        "question":  "Can you build accessible forms?",
+        "answer":  "Yes. We design forms with proper labels, error handling, keyboard support, and ARIA attributes to ensure accessibility."
+    },
+    {
+        "id":  151,
+        "question":  "How do you price custom features?",
+        "answer":  "Custom features are estimated based on complexity, integrations, and development time. We provide detailed estimates and options to phase features if needed."
+    },
+    {
+        "id":  152,
+        "question":  "Can you implement product feeds for marketplaces?",
+        "answer":  "Yes. We generate product feeds and integrate with marketplaces like Amazon, Google Merchant Center, and others for automated listings."
+    },
+    {
+        "id":  153,
+        "question":  "Do you help with content governance?",
+        "answer":  "Yes. We provide governance plans and editorial workflows to maintain content quality and brand consistency across teams."
+    },
+    {
+        "id":  154,
+        "question":  "Can you provide load testing?",
+        "answer":  "Yes. We perform load and performance testing to validate infrastructure and ensure your site can handle expected traffic peaks."
+    },
+    {
+        "id":  155,
+        "question":  "Do you offer on-page SEO audits?",
+        "answer":  "Yes. We audit on-page factors like meta tags, headings, URL structure, and content relevance with actionable recommendations."
+    },
+    {
+        "id":  156,
+        "question":  "Can you help with website legal pages?",
+        "answer":  "Yes. We add Terms, Privacy, and Cookie Policy pages and integrate cookie consent mechanisms; for legal wording consult legal counsel."
+    },
+    {
+        "id":  157,
+        "question":  "Do you provide internationalization best practices?",
+        "answer":  "Yes. We advise on language strategies, URL structures, and localization workflows for internationally-targeted websites."
+    },
+    {
+        "id":  158,
+        "question":  "Can you implement image carousels and sliders?",
+        "answer":  "Yes. We implement accessible and performant carousels with touch support and lazy loading for media-heavy pages."
+    },
+    {
+        "id":  159,
+        "question":  "Do you integrate with business intelligence tools?",
+        "answer":  "Yes. We connect data from your website to BI tools and build dashboards to help analyze performance and business metrics."
+    },
+    {
+        "id":  160,
+        "question":  "Can you implement content personalization?",
+        "answer":  "Yes. We implement rules-based or data-driven personalization to show targeted content based on user segments or behavior."
+    },
+    {
+        "id":  161,
+        "question":  "Do you support SSO with Okta or Azure AD?",
+        "answer":  "Yes. We integrate SSO with enterprise identity providers like Okta and Azure AD for seamless authentication in business environments."
+    },
+    {
+        "id":  162,
+        "question":  "Can you build an appointment booking system with payments?",
+        "answer":  "Yes. We combine scheduling, payment capture, and calendar sync to create integrated appointment booking experiences."
+    },
+    {
+        "id":  163,
+        "question":  "Do you provide plugin or extension development?",
+        "answer":  "Yes. We develop custom plugins and extensions for CMS platforms to extend functionality tailored to your needs."
+    },
+    {
+        "id":  164,
+        "question":  "Can you implement multi-tenant portals?",
+        "answer":  "Yes. We design multi-tenant architectures to support separate customer spaces while sharing core infrastructure and codebases."
+    },
+    {
+        "id":  165,
+        "question":  "Do you build directories or listing sites?",
+        "answer":  "Yes. We build searchable directories with listing management, review systems, and moderation tools for marketplace-style sites."
+    },
+    {
+        "id":  166,
+        "question":  "Can you help with trademark and brand name checks?",
+        "answer":  "We can advise on brand checks and processes, but recommend legal counsel for trademark clearance and registration matters."
+    },
+    {
+        "id":  167,
+        "question":  "Do you implement image lazy-loading?",
+        "answer":  "Yes. We implement native and JS-based lazy-loading strategies to defer offscreen images for faster page loads."
+    },
+    {
+        "id":  168,
+        "question":  "Can you setup automatic sitemap generation?",
+        "answer":  "Yes. We generate sitemaps and configure them to update automatically to reflect new pages and content for search engines."
+    },
+    {
+        "id":  169,
+        "question":  "Do you provide conversion funnels analysis?",
+        "answer":  "Yes. We analyze funnel steps, drop-off points, and suggest targeted improvements to recover lost conversions."
+    },
+    {
+        "id":  170,
+        "question":  "Can you build a product catalog with filters?",
+        "answer":  "Yes. We build faceted search and filtering for product catalogs to help customers find products by attributes like size, color, or price."
+    },
+    {
+        "id":  171,
+        "question":  "Do you support multi-store setups?",
+        "answer":  "Yes. We design multi-store or multi-site setups with centralized product management and regional storefronts if required."
+    },
+    {
+        "id":  172,
+        "question":  "Can you help with conversion-focused copy?",
+        "answer":  "Yes. We write persuasive copy and product descriptions designed to highlight benefits and drive conversions."
+    },
+    {
+        "id":  173,
+        "question":  "Do you implement push notifications for PWA?",
+        "answer":  "Yes. We integrate web push notifications for Progressive Web Apps to re-engage users with relevant updates and offers."
+    },
+    {
+        "id":  174,
+        "question":  "Can you add user dashboards and account areas?",
+        "answer":  "Yes. We build secure account areas with order history, profile management, and custom user data as needed."
+    },
+    {
+        "id":  175,
+        "question":  "Do you provide content migration from CSV or spreadsheets?",
+        "answer":  "Yes. We can import products, pages, and data from CSV/ spreadsheets and map fields to your new site structure."
+    },
+    {
+        "id":  176,
+        "question":  "Can you integrate donation management systems?",
+        "answer":  "Yes. We integrate donation reporting, receipts, and recurring gift management for nonprofit clients."
+    },
+    {
+        "id":  177,
+        "question":  "Do you include performance budgets in projects?",
+        "answer":  "Yes. We can set performance budgets (asset sizes, load times) and ensure the build adheres to those targets."
+    },
+    {
+        "id":  178,
+        "question":  "Can you implement secure file uploads?",
+        "answer":  "Yes. We implement secure upload endpoints with validation, virus scanning options, and storage policies to protect your infrastructure."
+    },
+    {
+        "id":  179,
+        "question":  "Do you build custom booking and ticketing platforms?",
+        "answer":  "Yes. We develop ticketing systems with seat selection, payment integration, and QR code ticket generation for events."
+    },
+    {
+        "id":  180,
+        "question":  "Can you implement multilingual SEO sitemaps?",
+        "answer":  "Yes. We generate language-aware sitemaps and configure hreflang and canonical attributes for multilingual SEO best practices."
+    },
+    {
+        "id":  181,
+        "question":  "Do you support headless commerce storefronts?",
+        "answer":  "Yes. We build headless storefronts that connect to commerce backends for fast, flexible frontends and improved UX."
+    },
+    {
+        "id":  182,
+        "question":  "Can you help with reputation management features?",
+        "answer":  "Yes. We build systems for collecting and showcasing customer reviews and integrate reputation monitoring tools as part of broader marketing services."
+    },
+    {
+        "id":  183,
+        "question":  "Do you offer mobile app landing pages?",
+        "answer":  "Yes. We design compelling landing pages for mobile apps with deep links, feature showcases, and App Store/Play Store CTAs."
+    },
+    {
+        "id":  184,
+        "question":  "Can you implement webhooks for real-time updates?",
+        "answer":  "Yes. We set up webhooks to propagate events to external systems like CRMs, analytics, or fulfillment services for near real-time synchronization."
+    },
+    {
+        "id":  185,
+        "question":  "Do you provide structured onboarding for clients?",
+        "answer":  "Yes. We provide a structured onboarding process with kickoff meetings, timelines, content checklists, and milestones to keep projects on track."
+    },
+    {
+        "id":  186,
+        "question":  "Can you integrate with accounting systems?",
+        "answer":  "Yes. We connect e-commerce platforms to accounting tools for order and revenue syncing and reporting workflows."
+    },
+    {
+        "id":  187,
+        "question":  "Do you provide image optimization pipelines?",
+        "answer":  "Yes. We set up build-time and runtime image optimization pipelines to generate responsive sizes and modern formats for reduced bandwidth."
+    },
+    {
+        "id":  188,
+        "question":  "Can you implement API rate limiting and security?",
+        "answer":  "Yes. We implement rate limiting, authentication, and monitoring for APIs to protect against abuse and ensure stability."
+    },
+    {
+        "id":  189,
+        "question":  "Do you support custom analytics instrumentation?",
+        "answer":  "Yes. We instrument custom events and user flows for detailed analytics and attribution across platforms and campaigns."
+    },
+    {
+        "id":  190,
+        "question":  "Can you add advanced filtering and search for large catalogs?",
+        "answer":  "Yes. We implement advanced search and filtering with server-side or third-party search engines to maintain performance at scale."
+    },
+    {
+        "id":  191,
+        "question":  "Do you build SaaS landing and marketing sites?",
+        "answer":  "Yes. We design SaaS product sites optimized for lead capture, feature explanation, and trial signups with clear conversion paths."
+    },
+    {
+        "id":  192,
+        "question":  "Can you implement single-page application (SPA) architectures?",
+        "answer":  "Yes. We build SPAs with frameworks like React or Vue when the project benefits from dynamic client-side interactivity and app-like behavior."
+    },
+    {
+        "id":  193,
+        "question":  "Do you perform security hardening for servers?",
+        "answer":  "Yes. We help harden servers, configure firewalls, update packages, and recommend secure hosting configurations to reduce attack surface."
+    },
+    {
+        "id":  194,
+        "question":  "Can you implement product import/export tools?",
+        "answer":  "Yes. We build tooling to import/export product data, inventory, and content to facilitate migration and integrations with other platforms."
+    },
+    {
+        "id":  195,
+        "question":  "Do you provide API documentation for custom integrations?",
+        "answer":  "Yes. We document APIs and provide usage examples to make integrations easier for your developers or partners."
+    },
+    {
+        "id":  196,
+        "question":  "Can you create knowledge bases or help centers?",
+        "answer":  "Yes. We structure and build searchable knowledge bases, help centers, and documentation hubs with category and article management."
+    },
+    {
+        "id":  197,
+        "question":  "Do you integrate with loyalty and gift card systems?",
+        "answer":  "Yes. We implement loyalty programs and gift card support with balance tracking and redemption flows integrated into checkout."
+    },
+    {
+        "id":  198,
+        "question":  "Can you implement advanced product sorting and ranking?",
+        "answer":  "Yes. We implement ranking logic and business rules to surface the most relevant products based on rules, popularity, or profitability."
+    },
+    {
+        "id":  199,
+        "question":  "Do you provide quarterly site audits?",
+        "answer":  "Yes. We offer regular audits to check performance, security, and SEO health and provide prioritized remediation plans."
+    },
+    {
+        "id":  200,
+        "question":  "Can you integrate with booking marketplaces?",
+        "answer":  "Yes. We integrate with third-party booking marketplaces and handle synchronization of availability, pricing, and reservations."
+    },
+    {
+        "id":  201,
+        "question":  "How will the chatbot use these FAQs?",
+        "answer":  "We provide the FAQ file as structured JSON so your chatbot can search Q/A pairs by keyword or exact match and return concise answers to visitors."
+    },
+    {
+        "id":  202,
+        "question":  "Can I update the FAQ list later?",
+        "answer":  "Yes. The JSON file can be edited or appended with new entries. We can also connect a simple admin UI to manage FAQs without editing files directly."
+    },
+    {
+        "id":  203,
+        "question":  "Should FAQs be short or detailed?",
+        "answer":  "Short, focused answers work best for chat responses. For detailed explanations we include a short answer with an optional \u0027read more\u0027 link to a fuller resource page."
+    },
+    {
+        "id":  204,
+        "question":  "Can FAQs be filtered by topic?",
+        "answer":  "Yes. We can add tags or categories to each FAQ entry so the chatbot can filter by service area such as pricing, hosting, SEO, or e-commerce."
+    },
+    {
+        "id":  205,
+        "question":  "Will the chatbot handle follow-up questions?",
+        "answer":  "The FAQ dataset provides initial responses; follow-up handling requires conversational logic. We can add simple follow-up prompts or connect to an LLM for richer conversations."
+    },
+    {
+        "id":  206,
+        "question":  "Can you prioritize certain FAQ answers?",
+        "answer":  "Yes. We can add a priority or score field so the chatbot prefers authoritative answers for common or important queries."
+    },
+    {
+        "id":  207,
+        "question":  "Do you support synonyms and variations of questions?",
+        "answer":  "Yes. We can add alternate phrasings or implement fuzzy search so the chatbot matches different ways customers ask the same question."
+    },
+    {
+        "id":  208,
+        "question":  "Can FAQs include links to pages on my site?",
+        "answer":  "Yes. Answers can include URLs to relevant pages, contact forms, or resources so users can get more info or request services directly."
+    },
+    {
+        "id":  209,
+        "question":  "How do you handle outdated FAQs?",
+        "answer":  "We version the FAQ file and recommend periodic reviews. We can also add \u0027lastUpdated\u0027 metadata to each entry to track freshness."
+    },
+    {
+        "id":  210,
+        "question":  "Can the chatbot escalate to a human?",
+        "answer":  "Yes. We can configure a handoff button or a rule where certain queries trigger a request for human follow-up via email or ticketing integrations."
+    },
+    {
+        "id":  211,
+        "question":  "Will FAQs support different languages?",
+        "answer":  "Yes. We can create localized FAQ files for other languages and configure the chatbot to serve answers based on user language or preference."
+    },
+    {
+        "id":  212,
+        "question":  "Can you generate FAQs automatically from site content?",
+        "answer":  "We can extract Q\u0026A candidates from site pages and blog content using tooling, then refine them for accuracy and clarity before adding them to the chatbot."
+    },
+    {
+        "id":  213,
+        "question":  "How will you organize 500 FAQs?",
+        "answer":  "Weâ€™ll organize them by category (e.g., Pricing, Hosting, SEO, E-commerce, Maintenance) and include concise answers with optional tags for filtering."
+    },
+    {
+        "id":  214,
+        "question":  "Can FAQs be returned with quick-reply buttons?",
+        "answer":  "Yes. We can format chatbot responses with quick-reply buttons for common follow-ups like \u0027Get a quote\u0027, \u0027Contact sales\u0027, or \u0027See pricing\u0027."
+    },
+    {
+        "id":  215,
+        "question":  "Do you provide analytics on FAQ usage?",
+        "answer":  "Yes. We can track which FAQs are asked most, which answers lead to conversions, and generate reports to improve content and identify gaps."
+    },
+    {
+        "id":  216,
+        "question":  "Can the chatbot suggest related FAQs?",
+        "answer":  "Yes. When answering, the bot can suggest related questions to guide users to more information and keep conversations efficient."
+    },
+    {
+        "id":  217,
+        "question":  "Will answers be concise for chat display?",
+        "answer":  "Yes. Each answer is kept concise for chat; we can add an optional \u0027details\u0027 field with longer explanations if needed."
+    },
+    {
+        "id":  218,
+        "question":  "Can I host the FAQ data externally?",
+        "answer":  "Yes. You can host the FAQ JSON on your server or a CDN; the chatbot can fetch it dynamically for updates without redeploying the site."
+    },
+    {
+        "id":  219,
+        "question":  "Do you handle FAQ search ranking?",
+        "answer":  "Yes. We implement ranking rules and simple relevance scoring to surface the best answer for a user query based on keywords and tags."
+    },
+    {
+        "id":  220,
+        "question":  "Can you add fallbacks when no FAQ matches?",
+        "answer":  "Yes. We provide a default fallback response that offers to connect the visitor with a human or collect their contact details for follow-up."
+    },
+    {
+        "id":  221,
+        "question":  "How large will the JSON file be?",
+        "answer":  "The file size depends on answer length; 500 concise Q/A pairs are typically a few hundred KB â€” suitable to host and fetch quickly from a CDN or server."
+    },
+    {
+        "id":  222,
+        "question":  "Can FAQs include code snippets or examples?",
+        "answer":  "Yes. For technical questions we can include short code snippets or links to example pages; keep snippets short for chat readability."
+    },
+    {
+        "id":  223,
+        "question":  "Will you provide a searchable UI for FAQs?",
+        "answer":  "If you want, we can add an admin UI to search, add, and edit FAQs rather than editing the JSON file directly."
+    },
+    {
+        "id":  224,
+        "question":  "Can the chatbot provide pricing ranges from FAQs?",
+        "answer":  "Yes. FAQ answers can include price ranges; for exact quotes we direct users to request a proposal since pricing depends on project details."
+    },
+    {
+        "id":  225,
+        "question":  "Do you handle FAQ versioning?",
+        "answer":  "Yes. We recommend versioning (e.g., v1, v2) or using timestamps so you can roll back changes and track updates to FAQ content."
+    },
+    {
+        "id":  226,
+        "question":  "Can the FAQ entries be tagged with services?",
+        "answer":  "Yes. Tags like \u0027e-commerce\u0027, \u0027SEO\u0027, \u0027hosting\u0027 make it easy for the bot to filter answers relevant to a user\u0027s needs."
+    },
+    {
+        "id":  227,
+        "question":  "How do you match user queries to FAQ answers?",
+        "answer":  "We use keyword matching, synonyms, and optional fuzzy search; for advanced matching we can integrate an NLP model or vector search for semantic matches."
+    },
+    {
+        "id":  228,
+        "question":  "Will FAQ answers include contact steps?",
+        "answer":  "Yes. Many answers end with a CTA such as \u0027Contact us for a quote\u0027 or a link to your contact form to facilitate conversions."
+    },
+    {
+        "id":  229,
+        "question":  "Can you prioritize FAQ answers that lead to sales?",
+        "answer":  "Yes. We can weight answers with CTAs higher when relevance and intent indicate purchasing interest, helping guide users toward conversion."
+    },
+    {
+        "id":  230,
+        "question":  "Do you support linking FAQs to support tickets?",
+        "answer":  "Yes. If the chatbot can\u0027t resolve an issue, it can create a support ticket with the user\u0027s message and details for follow-up."
+    },
+    {
+        "id":  231,
+        "question":  "Will FAQs help with lead qualification?",
+        "answer":  "Yes. FAQ interactions can collect signals like budget, timeline, or project type which help pre-qualify leads before handing them to sales."
+    },
+    {
+        "id":  232,
+        "question":  "Can I ask for an editable CSV instead of JSON?",
+        "answer":  "Yes. We can provide FAQs in CSV, JSON, or any format that suits your tooling or import processes for your chatbot system."
+    },
+    {
+        "id":  233,
+        "question":  "Do you generate FAQs with SEO in mind?",
+        "answer":  "Yes. FAQ content can be crafted to target common search queries and include keywords that help organic discovery of your services."
+    },
+    {
+        "id":  234,
+        "question":  "Can the bot escalate complex requests to email?",
+        "answer":  "Yes. We can configure the bot to collect details and send them via email to your sales or support team for manual follow-up."
+    },
+    {
+        "id":  235,
+        "question":  "Will you include answers about turnaround times?",
+        "answer":  "Yes. Many FAQs include expected timelines for standard services to set realistic expectations for potential clients."
+    },
+    {
+        "id":  236,
+        "question":  "Can I request custom answers for certain clients?",
+        "answer":  "Yes. We can add client-specific FAQ variants or personalized responses if you have recurring customers who need tailored messaging."
+    },
+    {
+        "id":  237,
+        "question":  "How do you handle sensitive or private answers?",
+        "answer":  "We avoid including sensitive data in public FAQ content. For private information, the bot prompts users to contact securely via private channels."
+    },
+    {
+        "id":  238,
+        "question":  "Will you include FAQs about payment terms?",
+        "answer":  "Yes. We include payment and deposit expectations to clarify billing terms for prospective clients."
+    },
+    {
+        "id":  239,
+        "question":  "Can FAQs be prioritized by frequency?",
+        "answer":  "Yes. We can tag FAQs by frequency and use that to surface the most commonly asked questions more prominently in chat responses."
+    },
+    {
+        "id":  240,
+        "question":  "Do you include technical FAQs for developers?",
+        "answer":  "Yes. We include developer-focused FAQs about APIs, deployment, and integrations for technical audiences visiting your site."
+    },
+    {
+        "id":  241,
+        "question":  "Can the chatbot link to case studies?",
+        "answer":  "Yes. Answers can include links to relevant case studies and portfolio pages to demonstrate past success and social proof."
+    },
+    {
+        "id":  242,
+        "question":  "Do you include pricing FAQs for common packages?",
+        "answer":  "Yes. We include general pricing ranges for common packages while recommending a detailed quote for custom work."
+    },
+    {
+        "id":  243,
+        "question":  "Can you include contract and legal FAQs?",
+        "answer":  "Yes. We create clear FAQ answers about contracts, deliverables, intellectual property, and warranty to set expectations."
+    },
+    {
+        "id":  244,
+        "question":  "Will the FAQ file be easy to update?",
+        "answer":  "Yes. JSON is straightforward to edit and we can provide an admin UI or a spreadsheet import workflow for easier updates."
+    },
+    {
+        "id":  245,
+        "question":  "Can the bot provide appointment scheduling from FAQs?",
+        "answer":  "Yes. The bot can respond with scheduling options and links to book a call based on FAQ triggers like \u0027I want a quote\u0027."
+    },
+    {
+        "id":  246,
+        "question":  "Do you include FAQs about SEO timelines?",
+        "answer":  "Yes. We explain that SEO results typically take several months and provide realistic expectations about ongoing effort and results."
+    },
+    {
+        "id":  247,
+        "question":  "Can FAQs reference pricing calculators?",
+        "answer":  "Yes. FAQ answers can include a link to a pricing calculator or a short form to collect project details for a more accurate estimate."
+    },
+    {
+        "id":  248,
+        "question":  "Do you provide mobile-specific FAQ answers?",
+        "answer":  "Yes. We include mobile performance, responsive design, and mobile-first strategy FAQs to address mobile-related concerns."
+    },
+    {
+        "id":  249,
+        "question":  "Can the FAQ data be localized by region?",
+        "answer":  "Yes. We can provide region-specific FAQ variants that reflect local pricing, regulations, and offerings."
+    },
+    {
+        "id":  250,
+        "question":  "Will FAQs help reduce support workload?",
+        "answer":  "Yes. A well-crafted FAQ set helps answer common questions quickly and reduces repetitive inquiries, freeing your team for higher-value work."
+    },
+    {
+        "id":  251,
+        "question":  "Can you include sample timelines for different project sizes?",
+        "answer":  "Yes. We include sample timelines for small, medium, and large projects to give prospects an initial sense of scheduling."
+    },
+    {
+        "id":  252,
+        "question":  "Do you include FAQs about SEO audits?",
+        "answer":  "Yes. We describe what an SEO audit includes and how it informs content and technical prioritization for improvements."
+    },
+    {
+        "id":  253,
+        "question":  "Can the bot present pricing tiers from FAQs?",
+        "answer":  "Yes. FAQ answers can summarize pricing tiers and link to detailed pages for each package to help prospects self-educate."
+    },
+    {
+        "id":  254,
+        "question":  "Do you include FAQs about revisions and scope changes?",
+        "answer":  "Yes. We clarify revision allowances, change request processes, and how scope changes are estimated and billed."
+    },
+    {
+        "id":  255,
+        "question":  "Can you include examples of deliverables?",
+        "answer":  "Yes. We list typical deliverables such as design mockups, CMS setup, documentation, and deployment artifacts in relevant FAQs."
+    },
+    {
+        "id":  256,
+        "question":  "Do you include FAQs about security best practices?",
+        "answer":  "Yes. We explain common security best practices such as HTTPS, regular updates, least privilege access, and monitoring."
+    },
+    {
+        "id":  257,
+        "question":  "Can the chatbot suggest next steps after answering FAQs?",
+        "answer":  "Yes. After an FAQ response the bot can prompt actions like \u0027Request a quote\u0027, \u0027Book a call\u0027, or \u0027See portfolio\u0027 to guide users toward conversion."
+    },
+    {
+        "id":  258,
+        "question":  "Do you include FAQs about content ownership?",
+        "answer":  "Yes. We explain that clients own site content and that source files and assets are delivered as agreed upon in the contract."
+    },
+    {
+        "id":  259,
+        "question":  "Can the bot support FAQs for onboarding new clients?",
+        "answer":  "Yes. We provide onboarding FAQs that explain timelines, required materials, and communication channels to help new clients get started smoothly."
+    },
+    {
+        "id":  260,
+        "question":  "Do you include FAQs about maintenance SLAs?",
+        "answer":  "Yes. Maintenance FAQ answers outline typical response times, included tasks, and escalation paths for managed plans."
+    },
+    {
+        "id":  261,
+        "question":  "Can you add a \u0027Did this help?\u0027 feedback option to FAQ answers?",
+        "answer":  "Yes. We can add quick feedback buttons so users can indicate whether the answer was helpful and gather data to improve content."
+    },
+    {
+        "id":  262,
+        "question":  "Will FAQs include sample case studies?",
+        "answer":  "Yes. Where relevant we reference short case studies and link to detailed pages to show real examples of our work and outcomes."
+    },
+    {
+        "id":  263,
+        "question":  "Can you include FAQs about performance monitoring?",
+        "answer":  "Yes. We describe monitoring tools and services we provide to keep track of uptime, errors, and performance metrics."
+    },
+    {
+        "id":  264,
+        "question":  "Do you include FAQs about domain transfers?",
+        "answer":  "Yes. We explain domain transfer processes, timelines, and requirements such as auth codes and TTL changes."
+    },
+    {
+        "id":  265,
+        "question":  "Can you add FAQs about image formats and sizes?",
+        "answer":  "Yes. We recommend formats and provide guidance on optimal sizes and responsive image strategies in the relevant FAQ entries."
+    },
+    {
+        "id":  266,
+        "question":  "Do you include FAQs about ADA accessibility?",
+        "answer":  "Yes. We explain accessibility considerations and offer remediation options to help meet ADA and WCAG guidelines where appropriate."
+    },
+    {
+        "id":  267,
+        "question":  "Can the bot provide contact details from FAQs?",
+        "answer":  "Yes. FAQ answers can include contact emails or links to forms while avoiding exposing personal data directly in chat unless requested."
+    },
+    {
+        "id":  268,
+        "question":  "Do you include FAQs about performance testing tools?",
+        "answer":  "Yes. We mention tools like Lighthouse, WebPageTest, and synthetic monitoring used to evaluate performance and guide improvements."
+    },
+    {
+        "id":  269,
+        "question":  "Can FAQs include examples of past client industries?",
+        "answer":  "Yes. We list sectors we\u0027ve served to help prospects identify similar work and build trust in our experience."
+    },
+    {
+        "id":  270,
+        "question":  "Do you add FAQs about backups and restore procedures?",
+        "answer":  "Yes. We describe backup frequency, retention, and steps to restore content in case of issues."
+    },
+    {
+        "id":  271,
+        "question":  "Can the bot assist with portfolio browsing?",
+        "answer":  "Yes. The bot can return portfolio links based on FAQ triggers like \u0027show me examples of e-commerce sites\u0027 to help prospects see relevant work."
+    },
+    {
+        "id":  272,
+        "question":  "Do you include FAQs about CMS training?",
+        "answer":  "Yes. We detail training methods, documentation, and follow-up support available to teach your team how to manage the CMS."
+    },
+    {
+        "id":  273,
+        "question":  "Can you include FAQs about site analytics setup?",
+        "answer":  "Yes. We describe what analytics we configure and how we set up event tracking and goal conversions for measurement."
+    },
+    {
+        "id":  274,
+        "question":  "Do FAQ answers include time estimates for fixes?",
+        "answer":  "Yes. For common fixes we provide typical time ranges; for complex issues we suggest an initial assessment to estimate effort more precisely."
+    },
+    {
+        "id":  275,
+        "question":  "Can you add FAQs about mobile app landing pages?",
+        "answer":  "Yes. We explain best practices for app landing pages and features like deep links, store badges, and feature callouts."
+    },
+    {
+        "id":  276,
+        "question":  "Do you include FAQs about Shopify vs WooCommerce?",
+        "answer":  "Yes. We compare platforms and give guidance on which is better based on catalog size, customization needs, and budget."
+    },
+    {
+        "id":  277,
+        "question":  "Can the bot provide subscription and billing FAQs?",
+        "answer":  "Yes. We include details on subscription billing, cancellation policies, and billing cycles in the FAQ set."
+    },
+    {
+        "id":  278,
+        "question":  "Do you include FAQs about analytics privacy?",
+        "answer":  "Yes. We explain how analytics are handled with privacy in mind, including IP anonymization and cookie consent where required."
+    },
+    {
+        "id":  279,
+        "question":  "Can you provide sample maintenance plans in FAQs?",
+        "answer":  "Yes. We outline typical maintenance tiers and what each includes so prospects can choose the right level of ongoing support."
+    },
+    {
+        "id":  280,
+        "question":  "Do you have FAQs about brand consistency?",
+        "answer":  "Yes. We explain how we preserve brand consistency through style guides, component libraries, and regular reviews."
+    },
+    {
+        "id":  281,
+        "question":  "Can FAQ answers link to pricing or proposal requests?",
+        "answer":  "Yes. Answers can direct users to your pricing page or a proposal request form to accelerate lead capture and sales conversations."
+    },
+    {
+        "id":  282,
+        "question":  "Do you include FAQs about code ownership and licensing?",
+        "answer":  "Yes. We clarify licensing for any third-party libraries used and confirm client ownership of custom code produced during the engagement."
+    },
+    {
+        "id":  283,
+        "question":  "Can you include examples of typical deliverables?",
+        "answer":  "Yes. We enumerate deliverables such as sitemap, wireframes, mockups, production site, documentation, and training in relevant FAQ entries."
+    },
+    {
+        "id":  284,
+        "question":  "Do you provide FAQs about content strategy workshops?",
+        "answer":  "Yes. We describe workshops we run to align stakeholders, define audiences, and plan content that supports business goals."
+    },
+    {
+        "id":  285,
+        "question":  "Can you include FAQs about technical SEO audits?",
+        "answer":  "Yes. We outline technical SEO checks like crawlability, indexability, structured data, and page speed checks in the FAQ set."
+    },
+    {
+        "id":  286,
+        "question":  "Do you include FAQs about staging and production differences?",
+        "answer":  "Yes. We explain the purpose of staging environments, review cycles, and how we promote changes to production safely."
+    },
+    {
+        "id":  287,
+        "question":  "Can the bot provide onboarding checklists?",
+        "answer":  "Yes. Onboarding checklist FAQs include required assets, stakeholder contacts, and expected timelines for getting started."
+    },
+    {
+        "id":  288,
+        "question":  "Do you provide data retention and privacy FAQs?",
+        "answer":  "Yes. We explain data retention policies for backups, logs, and user data and how to request deletion or export if needed."
+    },
+    {
+        "id":  289,
+        "question":  "Can the bot provide examples of SEO improvements?",
+        "answer":  "Yes. We include before/after examples and describe typical SEO wins like improved load times, better meta tags, and optimized content structure."
+    },
+    {
+        "id":  290,
+        "question":  "Do you build web apps with real-time features?",
+        "answer":  "Yes. We build apps with real-time updates using WebSockets, server-sent events, or third-party realtime services when required."
+    },
+    {
+        "id":  291,
+        "question":  "Can FAQ answers include typical ROI expectations?",
+        "answer":  "Yes. We provide conservative ROI expectations and case-study references while noting results depend on marketing and execution."
+    },
+    {
+        "id":  292,
+        "question":  "Do you include FAQs about image copyright and usage?",
+        "answer":  "Yes. We advise on appropriate licensing and crediting for images and help choose compliant stock sources when needed."
+    },
+    {
+        "id":  293,
+        "question":  "Can the bot surface testimonials from FAQs?",
+        "answer":  "Yes. We can display short testimonial excerpts and link to full case studies in response to relevant FAQ queries."
+    },
+    {
+        "id":  294,
+        "question":  "Do you include FAQs about data backups frequency?",
+        "answer":  "Yes. We describe typical backup cadences (daily, weekly) and retention periods depending on the hosting plan chosen."
+    },
+    {
+        "id":  295,
+        "question":  "Can the bot suggest packages based on user needs?",
+        "answer":  "Yes. By asking a few qualifying questions the bot can recommend appropriate packages or arrange a consultation for a bespoke quote."
+    },
+    {
+        "id":  296,
+        "question":  "Do you provide FAQs about image optimization tools?",
+        "answer":  "Yes. We list recommended tools and explain how we automate optimization in the build or deployment process."
+    },
+    {
+        "id":  297,
+        "question":  "Can you add FAQs about website scalability?",
+        "answer":  "Yes. We explain approaches such as horizontal scaling, CDNs, and caching strategies to prepare sites for growth."
+    },
+    {
+        "id":  298,
+        "question":  "Do you include FAQs about deployment rollbacks?",
+        "answer":  "Yes. We outline rollback procedures and how we keep backups to restore prior versions if a deployment causes issues."
+    },
+    {
+        "id":  299,
+        "question":  "Can the chatbot share average conversion benchmarks?",
+        "answer":  "Yes. We can include industry benchmark ranges while emphasizing that results vary by industry and traffic quality."
+    },
+    {
+        "id":  300,
+        "question":  "Do you provide FAQs about accessibility statement content?",
+        "answer":  "Yes. We provide examples of accessibility statements and guidance on making your site more inclusive for users with disabilities."
+    },
+    {
+        "id":  301,
+        "question":  "Can you include FAQs about refund policies and warranties?",
+        "answer":  "Yes. We explain refund policies for services and any warranty periods for bug fixes included in project agreements."
+    },
+    {
+        "id":  302,
+        "question":  "Do you include FAQs about third-party integrations stability?",
+        "answer":  "Yes. We discuss how third-party services affect stability and propose fallback strategies for critical integrations."
+    },
+    {
+        "id":  303,
+        "question":  "Can the bot provide quick links to scheduling and contact pages?",
+        "answer":  "Yes. FAQ responses can include direct links or buttons to schedule calls or open contact forms to streamline lead capture."
+    },
+    {
+        "id":  304,
+        "question":  "Do you include FAQs about culture and team?",
+        "answer":  "Yes. We provide brief info about our team, values, and work approach to build rapport with potential clients."
+    },
+    {
+        "id":  305,
+        "question":  "Can you add FAQs about testing payment flows?",
+        "answer":  "Yes. We describe sandbox testing and verification steps used to ensure payment flows work correctly before going live."
+    },
+    {
+        "id":  306,
+        "question":  "Do you include FAQs about version control?",
+        "answer":  "Yes. We use version control (usually Git) and can provide access to repositories for collaboration and transparency in development."
+    },
+    {
+        "id":  307,
+        "question":  "Can the chatbot show estimated costs for common features?",
+        "answer":  "Yes. We include indicative price ranges for common features like contact forms, galleries, and small e-commerce stores to help prospects budget."
+    },
+    {
+        "id":  308,
+        "question":  "Do you add FAQs about legal compliance for e-commerce?",
+        "answer":  "Yes. We explain common legal requirements such as tax setup, consumer rights, and necessary policies for online stores, with legal counsel recommended for specifics."
+    },
+    {
+        "id":  309,
+        "question":  "Can you include FAQs about server logs and monitoring?",
+        "answer":  "Yes. We explain how logs are used for debugging and monitoring and recommend practices for retention and analysis."
+    },
+    {
+        "id":  310,
+        "question":  "Do you include FAQs about image alt text best practices?",
+        "answer":  "Yes. We recommend writing descriptive alt text for accessibility and SEO benefits and include examples in the FAQ set."
+    },
+    {
+        "id":  311,
+        "question":  "Can the bot provide recommendations for content length?",
+        "answer":  "Yes. We provide guidance on content length per page type and advice on balancing depth with scannability for users and SEO."
+    },
+    {
+        "id":  312,
+        "question":  "Do you include FAQs about user data encryption?",
+        "answer":  "Yes. We use encryption in transit (TLS) and recommend encryption at rest for sensitive data along with secure key management."
+    },
+    {
+        "id":  313,
+        "question":  "Can you add FAQs about multi-factor authentication?",
+        "answer":  "Yes. We recommend and can implement MFA for admin and user accounts to improve security posture."
+    },
+    {
+        "id":  314,
+        "question":  "Do you provide FAQs about analytics event naming?",
+        "answer":  "Yes. We recommend consistent event naming conventions and document them so marketing and analytics teams can collaborate effectively."
+    },
+    {
+        "id":  315,
+        "question":  "Can the chatbot provide portfolio filters by industry?",
+        "answer":  "Yes. The bot can return filtered portfolio results based on industry keywords to help prospects see relevant examples quickly."
+    },
+    {
+        "id":  316,
+        "question":  "Do you provide FAQs about progressive enhancement best practices?",
+        "answer":  "Yes. We explain progressive enhancement strategies to ensure baseline functionality while offering advanced features for capable browsers."
+    },
+    {
+        "id":  317,
+        "question":  "Can you include FAQs about image CDN costs?",
+        "answer":  "Yes. We provide typical cost ranges for image CDNs and advise on selecting plans based on traffic and storage needs."
+    },
+    {
+        "id":  318,
+        "question":  "Do you add FAQs about template vs custom designs?",
+        "answer":  "Yes. We compare templates and custom designs, explaining pros and cons for budget, uniqueness, and flexibility."
+    },
+    {
+        "id":  319,
+        "question":  "Can the bot provide answers about time zone scheduling?",
+        "answer":  "Yes. We handle scheduling across time zones and can present availability in the userâ€™s local time to avoid confusion."
+    },
+    {
+        "id":  320,
+        "question":  "Do you include FAQs about API authentication best practices?",
+        "answer":  "Yes. We describe token-based authentication, scopes, and secure storage practices for APIs to protect access and data."
+    },
+    {
+        "id":  321,
+        "question":  "Can you add FAQs about GDPR cookie consent?",
+        "answer":  "Yes. We explain how to implement cookie consent mechanisms and document consent in compliance with privacy regulations where applicable."
+    },
+    {
+        "id":  322,
+        "question":  "Do you provide FAQs about SEO content briefs?",
+        "answer":  "Yes. We provide content brief templates and guidance on keyword usage, headings, and internal linking for SEO-friendly content."
+    },
+    {
+        "id":  323,
+        "question":  "Can the bot provide sample SOWs or proposals?",
+        "answer":  "Yes. We can provide sample scopes of work or proposal outlines to help prospects understand what a typical engagement includes."
+    },
+    {
+        "id":  324,
+        "question":  "Do you support sending invoices via accounting systems?",
+        "answer":  "Yes. We integrate invoicing workflows with accounting systems or provide invoice PDFs depending on your bookkeeping requirements."
+    },
+    {
+        "id":  325,
+        "question":  "Can you include FAQs about color contrast and accessibility?",
+        "answer":  "Yes. We recommend sufficient color contrast and provide examples and testing resources to meet accessibility standards."
+    },
+    {
+        "id":  326,
+        "question":  "Do you provide FAQs about retention of analytics data?",
+        "answer":  "Yes. We explain retention windows for analytics, privacy considerations, and how long we store aggregated data for reporting."
+    },
+    {
+        "id":  327,
+        "question":  "Can you add FAQs about image SEO?",
+        "answer":  "Yes. We describe best practices like descriptive filenames, alt text, captions, and structured data to help image discoverability."
+    },
+    {
+        "id":  328,
+        "question":  "Do you include FAQs about site navigation best practices?",
+        "answer":  "Yes. We give guidance on simple, predictable navigation patterns and information architecture principles that help users find content quickly."
+    },
+    {
+        "id":  329,
+        "question":  "Can the bot provide sample sitemap structures?",
+        "answer":  "Yes. We provide example sitemaps for small, medium, and large sites to help prospects plan content and SEO structure."
+    },
+    {
+        "id":  330,
+        "question":  "Do you include FAQs about cross-origin resource sharing (CORS)?",
+        "answer":  "Yes. We explain CORS basics and configuration practices when integrating APIs and third-party services."
+    },
+    {
+        "id":  331,
+        "question":  "Can you add FAQs about staging environment security?",
+        "answer":  "Yes. We explain staging access controls, IP restrictions, and password protection to keep pre-production environments secure."
+    },
+    {
+        "id":  332,
+        "question":  "Do you provide FAQs about cookie categories and consent?",
+        "answer":  "Yes. We explain typical cookie categories (necessary, performance, targeting) and approaches for collecting consent and storing preferences."
+    },
+    {
+        "id":  333,
+        "question":  "Can the bot provide troubleshooting steps for common issues?",
+        "answer":  "Yes. We include basic troubleshooting steps for common issues like cache clearing, browser updates, and form validation errors."
+    },
+    {
+        "id":  334,
+        "question":  "Do you include FAQs about HTTPS and mixed content?",
+        "answer":  "Yes. We explain mixed content issues and how to fix them to ensure all site assets are served securely over HTTPS."
+    },
+    {
+        "id":  335,
+        "question":  "Can you add FAQs about structured data testing tools?",
+        "answer":  "Yes. We reference tools like Google\u0027s Rich Results Test and schema validators to help verify structured data implementation."
+    },
+    {
+        "id":  336,
+        "question":  "Do you provide FAQs about CDN caching strategies?",
+        "answer":  "Yes. We explain cache-control headers, edge caching, and invalidation strategies to optimize performance and updates."
+    },
+    {
+        "id":  337,
+        "question":  "Can the bot recommend plugins for WordPress?",
+        "answer":  "Yes. We recommend plugins for SEO, security, caching, and backups while considering performance and compatibility best practices."
+    },
+    {
+        "id":  338,
+        "question":  "Do you include FAQs about content versioning?",
+        "answer":  "Yes. We explain content versioning strategies and tools to maintain a history of edits and rollbacks for key pages."
+    },
+    {
+        "id":  339,
+        "question":  "Can you add FAQs about multi-factor authentication for admins?",
+        "answer":  "Yes. We strongly recommend MFA for admin users and can help implement it using available identity providers or plugins."
+    },
+    {
+        "id":  340,
+        "question":  "Do you provide FAQs about image CDN selection?",
+        "answer":  "Yes. We help select suitable image CDNs based on geographic reach, pricing, and integration flexibility for your site."
+    },
+    {
+        "id":  341,
+        "question":  "Can the bot suggest content structure for service pages?",
+        "answer":  "Yes. We provide recommended outlines for service pages including value propositions, features, social proof, and CTAs to improve conversions."
+    },
+    {
+        "id":  342,
+        "question":  "Do you include FAQs about A11y keyboard navigation?",
+        "answer":  "Yes. We explain keyboard navigation best practices and how we test interactive elements for keyboard accessibility."
+    },
+    {
+        "id":  343,
+        "question":  "Can you provide FAQs about search engine indexing timelines?",
+        "answer":  "Yes. We explain that indexing times vary but improvements like sitemap submission and internal linking can speed up discovery by search engines."
+    },
+    {
+        "id":  344,
+        "question":  "Do you include FAQs about GDPR data processors?",
+        "answer":  "Yes. We explain processor vs controller responsibilities and how we handle data processing as a vendor under contractual terms."
+    },
+    {
+        "id":  345,
+        "question":  "Can the bot provide sample conversion rate improvements?",
+        "answer":  "Yes. We provide case-study examples and ranges of improvements clients have seen, with the caveat that results vary by market and execution."
+    },
+    {
+        "id":  346,
+        "question":  "Do you include FAQs about SEO-friendly URL structures?",
+        "answer":  "Yes. We recommend clean, readable URLs with keywords and proper redirects for moved pages to preserve SEO value."
+    },
+    {
+        "id":  347,
+        "question":  "Can you add FAQs about caching invalidation on deploys?",
+        "answer":  "Yes. We outline strategies for cache invalidation and cache-busting techniques to ensure users see fresh content after deployments."
+    },
+    {
+        "id":  348,
+        "question":  "Do you provide FAQs about form spam protection?",
+        "answer":  "Yes. We implement CAPTCHA, honeypots, and server-side validation to reduce form spam and protect your site from abuse."
+    },
+    {
+        "id":  349,
+        "question":  "Can the bot provide best practices for homepage content?",
+        "answer":  "Yes. We recommend clear headlines, concise value propositions, visible CTAs, and proof points to help visitors understand your offering quickly."
+    },
+    {
+        "id":  350,
+        "question":  "Do you include FAQs about progressive image loading?",
+        "answer":  "Yes. We explain techniques like blurred placeholders and responsive images to make image-heavy pages feel faster while loading."
+    },
+    {
+        "id":  351,
+        "question":  "Can you add FAQs about analytics goal setup?",
+        "answer":  "Yes. We describe common goals like form submissions, purchases, and signups and how we configure them in analytics platforms."
+    },
+    {
+        "id":  352,
+        "question":  "Do you provide FAQs about sitemap best practices?",
+        "answer":  "Yes. We explain including canonical URLs, images where relevant, and updating sitemaps when content changes to help indexing."
+    },
+    {
+        "id":  353,
+        "question":  "Can the bot provide guidance on writing product descriptions?",
+        "answer":  "Yes. We provide tips for persuasive product descriptions that highlight benefits, use cases, and unique features to help conversions."
+    },
+    {
+        "id":  354,
+        "question":  "Do you include FAQs about performance monitoring tools?",
+        "answer":  "Yes. We recommend monitoring tools for uptime, errors, and synthetic performance checks to keep site health visible."
+    },
+    {
+        "id":  355,
+        "question":  "Can you add FAQs about search engine penalties and recovery?",
+        "answer":  "Yes. We explain common penalties, how to diagnose issues in Search Console, and steps to recover from manual or algorithmic penalties."
+    },
+    {
+        "id":  356,
+        "question":  "Do you provide FAQs about site map vs robots.txt?",
+        "answer":  "Yes. We clarify the roles of sitemaps (indexing hints) and robots.txt (crawl directives) and how to use them together correctly."
+    },
+    {
+        "id":  357,
+        "question":  "Can the bot provide sample onboarding timelines?",
+        "answer":  "Yes. We outline typical onboarding timelines and milestones so clients understand project phases from kickoff to launch."
+    },
+    {
+        "id":  358,
+        "question":  "Do you include FAQs about cookie consent storage?",
+        "answer":  "Yes. We explain storing cookie preferences, expiration, and integration with consent management platforms when required by law."
+    },
+    {
+        "id":  359,
+        "question":  "Can you add FAQs about content audits?",
+        "answer":  "Yes. We explain content audits that review existing pages, identify gaps, and prioritize updates for SEO and clarity."
+    },
+    {
+        "id":  360,
+        "question":  "Do you provide FAQs about URL canonicalization?",
+        "answer":  "Yes. We explain canonical tags and best practices to avoid duplicate content issues across similar pages."
+    },
+    {
+        "id":  361,
+        "question":  "Can the bot offer tips for writing headlines?",
+        "answer":  "Yes. We provide headline-writing tips focusing on clarity, benefits, and keywords to improve engagement and SEO."
+    },
+    {
+        "id":  362,
+        "question":  "Do you include FAQs about lazy-loading third-party scripts?",
+        "answer":  "Yes. We discuss deferring or lazy-loading analytics and other third-party scripts to improve perceived performance."
+    },
+    {
+        "id":  363,
+        "question":  "Can you add FAQs about image CDN integration steps?",
+        "answer":  "Yes. We outline integration steps, configuration, and recommended settings to serve optimized images via a CDN."
+    },
+    {
+        "id":  364,
+        "question":  "Do you provide FAQs about responsive typography best practices?",
+        "answer":  "Yes. We recommend fluid typography scales, responsive font sizes, and line length guidance for comfortable reading across devices."
+    },
+    {
+        "id":  365,
+        "question":  "Can the bot provide sample sprint plans?",
+        "answer":  "Yes. For phased projects we provide sample sprint plans showing tasks, milestones, and review cycles to clarify the process."
+    },
+    {
+        "id":  366,
+        "question":  "Do you include FAQs about content migration timelines?",
+        "answer":  "Yes. We estimate content migration timelines based on volume and complexity and provide phased approaches when needed."
+    },
+    {
+        "id":  367,
+        "question":  "Can you add FAQs about serverless hosting options?",
+        "answer":  "Yes. We discuss serverless and JAMstack hosting approaches and their pros and cons for cost and scalability."
+    },
+    {
+        "id":  368,
+        "question":  "Do you provide FAQs about asset fingerprinting and cache busting?",
+        "answer":  "Yes. We describe fingerprinting builds and cache-busting strategies to ensure users get updated assets after deployments."
+    },
+    {
+        "id":  369,
+        "question":  "Can the bot provide product page SEO tips?",
+        "answer":  "Yes. We include tips like unique product descriptions, structured data, and user-generated reviews to boost product page SEO."
+    },
+    {
+        "id":  370,
+        "question":  "Do you include FAQs about disaster recovery planning?",
+        "answer":  "Yes. We outline disaster recovery plans including RTO/RPO targets, backups, and failover approaches for critical sites."
+    },
+    {
+        "id":  371,
+        "question":  "Can you add FAQs about staging content previews for clients?",
+        "answer":  "Yes. We describe preview links, password-protected staging, and approval workflows for content review before publishing."
+    },
+    {
+        "id":  372,
+        "question":  "Do you provide FAQs about GDPR data portability?",
+        "answer":  "Yes. We explain how to export user data in a portable format and respond to data portability requests as part of compliance support."
+    },
+    {
+        "id":  373,
+        "question":  "Can the bot recommend monitoring metrics to track?",
+        "answer":  "Yes. We recommend key metrics like conversion rate, bounce rate, LCP, error rates, and user engagement metrics relevant to your goals."
+    },
+    {
+        "id":  374,
+        "question":  "Do you include FAQs about multi-region hosting?",
+        "answer":  "Yes. We explain multi-region hosting setups for low-latency experiences across geographies and the trade-offs involved."
+    },
+    {
+        "id":  375,
+        "question":  "Can you add FAQs about image sprite usage?",
+        "answer":  "Yes. We explain when sprites are useful and modern alternatives like inline SVGs or responsive image techniques for better maintainability."
+    },
+    {
+        "id":  376,
+        "question":  "Do you provide FAQs about database backups and retention?",
+        "answer":  "Yes. We describe backup strategies for databases including frequency, offsite storage, and restore testing practices."
+    },
+    {
+        "id":  377,
+        "question":  "Can the bot provide tips for onboarding content teams?",
+        "answer":  "Yes. We recommend workflows, permissions, and training tips to onboard internal content teams efficiently to manage website content."
+    },
+    {
+        "id":  378,
+        "question":  "Do you include FAQs about performance budgets for assets?",
+        "answer":  "Yes. We recommend asset size limits and monitoring to ensure performance budgets are met throughout development and updates."
+    },
+    {
+        "id":  379,
+        "question":  "Can you add FAQs about schema for product reviews?",
+        "answer":  "Yes. We explain how to implement review schema and requirements to be eligible for rich snippets in search results."
+    },
+    {
+        "id":  380,
+        "question":  "Do you provide FAQs about SEO redirects management?",
+        "answer":  "Yes. We describe tools and processes to manage redirect maps, bulk redirects, and avoid redirect chains that harm SEO."
+    },
+    {
+        "id":  381,
+        "question":  "Can the bot include developer-facing FAQs about build tooling?",
+        "answer":  "Yes. We include developer-focused answers covering build tools, bundlers, and recommended workflows for deployment."
+    },
+    {
+        "id":  382,
+        "question":  "Do you include FAQs about site performance KPIs?",
+        "answer":  "Yes. We define KPIs like LCP, Time to Interactive, and conversion metrics to measure performance impact on user experience."
+    },
+    {
+        "id":  383,
+        "question":  "Can you add FAQs about image copyright compliance?",
+        "answer":  "Yes. We explain best practices for licensing, attribution, and how to document rights for images used on the site."
+    },
+    {
+        "id":  384,
+        "question":  "Do you provide FAQs about CSS architecture and patterns?",
+        "answer":  "Yes. We explain CSS organization patterns like BEM, utility-first, and component-based styles and recommend approaches per project."
+    },
+    {
+        "id":  385,
+        "question":  "Can the bot provide guidance for collecting testimonials?",
+        "answer":  "Yes. We provide best practices for requesting testimonials, formatting them, and adding schema to improve credibility."
+    },
+    {
+        "id":  386,
+        "question":  "Do you include FAQs about headless CMS security?",
+        "answer":  "Yes. We discuss authentication, access control, and secure APIs for headless CMS solutions to protect content and data."
+    },
+    {
+        "id":  387,
+        "question":  "Can you add FAQs about service onboarding docs?",
+        "answer":  "Yes. We provide templates and examples of onboarding documentation to set expectations and speed up project starts."
+    },
+    {
+        "id":  388,
+        "question":  "Do you provide FAQs about email deliverability best practices?",
+        "answer":  "Yes. We discuss sender reputation, SPF/DKIM/DMARC setup, and list hygiene to improve deliverability for marketing emails."
+    },
+    {
+        "id":  389,
+        "question":  "Can the bot link to portfolio case studies in answers?",
+        "answer":  "Yes. We include links to case studies and project pages in answers to showcase relevant experience and outcomes."
+    },
+    {
+        "id":  390,
+        "question":  "Do you include FAQs about monitoring 3rd-party integrations?",
+        "answer":  "Yes. We suggest monitoring approaches for third-party services and fallback plans to handle outages gracefully."
+    },
+    {
+        "id":  391,
+        "question":  "Can you add FAQs about sitemap submission to search engines?",
+        "answer":  "Yes. We describe submitting sitemaps to Search Console and Bing Webmaster Tools and best practices for keeping them up to date."
+    },
+    {
+        "id":  392,
+        "question":  "Do you provide FAQs about legal pages for EU vs US customers?",
+        "answer":  "Yes. We explain differences in privacy and compliance obligations and suggest where legal counsel is recommended for jurisdiction-specific requirements."
+    },
+    {
+        "id":  393,
+        "question":  "Can the bot provide recommended analytics segments to track?",
+        "answer":  "Yes. We recommend segments like organic traffic, paid traffic, mobile vs desktop, and new vs returning users to understand audience behavior."
+    },
+    {
+        "id":  394,
+        "question":  "Do you include FAQs about database scaling strategies?",
+        "answer":  "Yes. We discuss vertical and horizontal scaling, read replicas, and caching strategies for database scalability."
+    },
+    {
+        "id":  395,
+        "question":  "Can you add FAQs about handling sensitive customer data?",
+        "answer":  "Yes. We explain encryption, access controls, and compliance workflows to protect PII and sensitive customer information."
+    },
+    {
+        "id":  396,
+        "question":  "Do you provide FAQs about content scheduling and publishing?",
+        "answer":  "Yes. We explain scheduling features and editorial workflows to publish content at specific times and manage releases."
+    },
+    {
+        "id":  397,
+        "question":  "Can the bot provide sample onboarding emails?",
+        "answer":  "Yes. We provide templates for onboarding emails to communicate timelines, next steps, and requests for assets to clients."
+    },
+    {
+        "id":  398,
+        "question":  "Do you include FAQs about scalability for marketing campaigns?",
+        "answer":  "Yes. We advise on landing page architectures, campaign tracking, and scaling ad traffic handling to avoid site slowdowns."
+    },
+    {
+        "id":  399,
+        "question":  "Can you add FAQs about caching strategies for APIs?",
+        "answer":  "Yes. We discuss caching at CDN, edge, and application layers and strategies for cache invalidation and freshness for APIs."
+    },
+    {
+        "id":  400,
+        "question":  "Do you provide FAQs about multilingual redirects and hreflang?",
+        "answer":  "Yes. We explain hreflang usage, canonicalization, and redirect patterns to ensure the correct language versions are served to users."
+    },
+    {
+        "id":  401,
+        "question":  "Can the bot list typical deliverables for an e-commerce project?",
+        "answer":  "Yes. Deliverables often include storefront design, product import, payment setup, shipping configuration, testing, and launch support."
+    },
+    {
+        "id":  402,
+        "question":  "Do you include FAQs about cross-platform analytics tracking?",
+        "answer":  "Yes. We explain how to unify tracking across web and mobile channels for consistent attribution and reporting."
+    },
+    {
+        "id":  403,
+        "question":  "Can you add FAQs about security patching cadence?",
+        "answer":  "Yes. We recommend regular patching schedules for OS, dependencies, and CMS components and outline automated update strategies where appropriate."
+    },
+    {
+        "id":  404,
+        "question":  "Do you provide FAQs about CDN geo-restrictions?",
+        "answer":  "Yes. We discuss geo-blocking, content restrictions, and how to configure CDNs for regional availability controls when needed."
+    },
+    {
+        "id":  405,
+        "question":  "Can the bot provide sample content outlines for service pages?",
+        "answer":  "Yes. We provide outlines covering problem, solution, features, testimonials, pricing, and CTAs to structure effective service pages."
+    },
+    {
+        "id":  406,
+        "question":  "Do you include FAQs about data anonymization?",
+        "answer":  "Yes. We describe anonymization techniques for analytics and reporting to protect privacy while enabling insights."
+    },
+    {
+        "id":  407,
+        "question":  "Can you add FAQs about staging to production promotion steps?",
+        "answer":  "Yes. We outline promotion steps including backups, maintenance windows, DNS updates, and validation checks to minimize risk during the launch."
+    },
+    {
+        "id":  408,
+        "question":  "Do you provide FAQs about split testing analytics?",
+        "answer":  "Yes. We explain experiment setup, sample size considerations, and interpretation of A/B test results for data-driven decisions."
+    },
+    {
+        "id":  409,
+        "question":  "Can the bot include examples of engaging CTAs?",
+        "answer":  "Yes. We give CTA examples tailored to service sites such as \u0027Get a Free Quote\u0027, \u0027Schedule a Demo\u0027, and \u0027See Our Work\u0027."
+    },
+    {
+        "id":  410,
+        "question":  "Do you include FAQs about cross-browser testing tools?",
+        "answer":  "Yes. We recommend and use tools like BrowserStack and discuss strategies to ensure consistent rendering across browsers."
+    },
+    {
+        "id":  411,
+        "question":  "Can you add FAQs about secure cookie flags and settings?",
+        "answer":  "Yes. We explain flags like Secure and HttpOnly and recommend cookie policies to minimize risk of client-side attacks."
+    },
+    {
+        "id":  412,
+        "question":  "Do you provide FAQs about image CDN edge rules?",
+        "answer":  "Yes. We explain edge rules for resizing, format conversion, and caching to deliver optimal images per device and connection."
+    },
+    {
+        "id":  413,
+        "question":  "Can the bot show examples of good portfolio case layouts?",
+        "answer":  "Yes. We include portfolio layout examples that highlight problem, solution, visual screenshots, and results to showcase work effectively."
+    },
+    {
+        "id":  414,
+        "question":  "Do you include FAQs about session handling and security?",
+        "answer":  "Yes. We explain secure session handling practices including expiration, invalidation on logout, and secure storage."
+    },
+    {
+        "id":  415,
+        "question":  "Can you add FAQs about automated regression testing?",
+        "answer":  "Yes. We outline automated testing strategies including unit, integration, and end-to-end tests to prevent regressions in production."
+    },
+    {
+        "id":  416,
+        "question":  "Do you provide FAQs about consent-driven tracking approaches?",
+        "answer":  "Yes. We discuss consent-first analytics approaches and how to degrade gracefully when users opt out of tracking."
+    },
+    {
+        "id":  417,
+        "question":  "Can the bot provide onboarding templates for new clients?",
+        "answer":  "Yes. We provide templates for kickoff emails, asset requests, and project timelines to streamline onboarding."
+    },
+    {
+        "id":  418,
+        "question":  "Do you include FAQs about load balancing strategies?",
+        "answer":  "Yes. We describe load balancing approaches and when to use IP vs DNS-based load balancing for resilience and scaling."
+    },
+    {
+        "id":  419,
+        "question":  "Can you add FAQs about secure file storage options?",
+        "answer":  "Yes. We recommend secure cloud storage with restrictive permissions and encryption for storing user uploads and sensitive files."
+    },
+    {
+        "id":  420,
+        "question":  "Do you provide FAQs about session replay and privacy concerns?",
+        "answer":  "Yes. We explain the benefits and privacy implications of session replay tools and how to mask sensitive information when used."
+    },
+    {
+        "id":  421,
+        "question":  "Can the bot recommend plugin alternatives for performance?",
+        "answer":  "Yes. We suggest lightweight plugin or code alternatives and explain trade-offs to keep sites fast and maintainable."
+    },
+    {
+        "id":  422,
+        "question":  "Do you include FAQs about time to first byte (TTFB)?",
+        "answer":  "Yes. We explain TTFB, its causes, and how to improve it with caching, optimized hosting, and CDNs."
+    },
+    {
+        "id":  423,
+        "question":  "Can you add FAQs about content approval workflows?",
+        "answer":  "Yes. We detail review and approval steps and tools to manage editorial workflows for teams publishing content."
+    },
+    {
+        "id":  424,
+        "question":  "Do you provide FAQs about image sprite alternatives?",
+        "answer":  "Yes. We discuss modern alternatives such as SVG icons, icon fonts, and responsive images which are typically better maintained than sprites."
+    },
+    {
+        "id":  425,
+        "question":  "Can the bot list common gotchas when migrating sites?",
+        "answer":  "Yes. We highlight issues like broken links, missing redirects, differing URL structures, and lost metadata to watch for during migrations."
+    },
+    {
+        "id":  426,
+        "question":  "Do you include FAQs about server uptime monitoring?",
+        "answer":  "Yes. We describe monitoring strategies and services that alert on downtime and performance degradations so issues can be addressed quickly."
+    },
+    {
+        "id":  427,
+        "question":  "Can you add FAQs about structured content for SEO?",
+        "answer":  "Yes. We describe structuring content into silos and topic clusters to improve topical authority and discoverability in search engines."
+    },
+    {
+        "id":  428,
+        "question":  "Do you provide FAQs about authentication flows for mobile apps?",
+        "answer":  "Yes. We discuss recommended mobile auth flows like OAuth and token refresh strategies to keep users authenticated securely."
+    },
+    {
+        "id":  429,
+        "question":  "Can the bot suggest typical contract timeframes?",
+        "answer":  "Yes. We explain common contract lengths for projects and retainers, and benefits of ongoing partnerships for long-term success."
+    },
+    {
+        "id":  430,
+        "question":  "Do you include FAQs about logging and observability?",
+        "answer":  "Yes. We explain logging strategies and observability practices to detect issues and analyze performance in production systems."
+    },
+    {
+        "id":  431,
+        "question":  "Can you add FAQs about server provisioning best practices?",
+        "answer":  "Yes. We detail server provisioning steps including security hardening, resource sizing, and automated provisioning with IaC tools."
+    },
+    {
+        "id":  432,
+        "question":  "Do you provide FAQs about content localization workflows?",
+        "answer":  "Yes. We outline workflows for translating content, quality review, and managing localized assets across languages."
+    },
+    {
+        "id":  433,
+        "question":  "Can the bot provide guidance on pricing strategies?",
+        "answer":  "Yes. We provide guidance on tiered pricing, value-based pricing, and how to align pricing with target customer segments."
+    },
+    {
+        "id":  434,
+        "question":  "Do you include FAQs about analytics data sampling?",
+        "answer":  "Yes. We explain sampling implications in analytics reports and ways to reduce sampling for more accurate insights."
+    },
+    {
+        "id":  435,
+        "question":  "Can you add FAQs about secure storage of API keys?",
+        "answer":  "Yes. We recommend secure vaults, environment variables, and restricted access policies for storing sensitive API keys."
+    },
+    {
+        "id":  436,
+        "question":  "Do you provide FAQs about performance impact of third-party scripts?",
+        "answer":  "Yes. We discuss the performance trade-offs of third-party scripts and strategies to mitigate their impact such as async loading and deferring."
+    },
+    {
+        "id":  437,
+        "question":  "Can the bot suggest best times to publish content?",
+        "answer":  "Yes. We give general guidance on publishing cadence and best times depending on audience behavior and platform analytics."
+    },
+    {
+        "id":  438,
+        "question":  "Do you include FAQs about managing media large files?",
+        "answer":  "Yes. We recommend cloud storage, CDNs, and optimized delivery approaches for handling large media like videos and high-resolution images."
+    },
+    {
+        "id":  439,
+        "question":  "Can you add FAQs about implementing server-side rendering (SSR)?",
+        "answer":  "Yes. We explain SSR benefits for SEO and initial load performance and recommend when to use SSR vs client-side rendering."
+    },
+    {
+        "id":  440,
+        "question":  "Do you provide FAQs about security testing and penetration tests?",
+        "answer":  "Yes. We discuss penetration testing options and how to remediate identified issues to improve security posture."
+    },
+    {
+        "id":  441,
+        "question":  "Can the bot recommend ways to collect user feedback?",
+        "answer":  "Yes. We suggest in-page surveys, feedback widgets, and follow-up emails to collect actionable user feedback for iterative improvements."
+    },
+    {
+        "id":  442,
+        "question":  "Do you include FAQs about image CDN cache invalidation?",
+        "answer":  "Yes. We explain invalidation strategies and API-based cache purges to update images when needed without downtime."
+    },
+    {
+        "id":  443,
+        "question":  "Can you add FAQs about search engine verification steps?",
+        "answer":  "Yes. We outline steps to verify sites with Google Search Console and Bing Webmaster Tools for indexing and monitoring."
+    },
+    {
+        "id":  444,
+        "question":  "Do you provide FAQs about common SEO mistakes?",
+        "answer":  "Yes. We list typical mistakes like duplicate content, missing meta tags, slow pages, and poor internal linking and how to fix them."
+    },
+    {
+        "id":  445,
+        "question":  "Can the bot provide tips for improving site navigation?",
+        "answer":  "Yes. We recommend clear labels, logical hierarchy, and search options to help users find content quickly and reduce bounce rates."
+    },
+    {
+        "id":  446,
+        "question":  "Do you add FAQs about headless CMS caching patterns?",
+        "answer":  "Yes. We explain cache invalidation, incremental builds, and edge caching patterns for headless CMS setups to ensure content freshness."
+    },
+    {
+        "id":  447,
+        "question":  "Can you include FAQs about multi-step form best practices?",
+        "answer":  "Yes. We recommend breaking long forms into steps, saving progress, and clear validation to improve completion rates."
+    },
+    {
+        "id":  448,
+        "question":  "Do you provide FAQs about deploying to serverless platforms?",
+        "answer":  "Yes. We discuss deployment steps, cold starts, and performance considerations when using serverless hosting platforms."
+    },
+    {
+        "id":  449,
+        "question":  "Can the bot suggest examples of call-to-action wording?",
+        "answer":  "Yes. We provide CTA wording suggestions tailored to goals like lead generation, demo requests, and product purchases."
+    },
+    {
+        "id":  450,
+        "question":  "Do you include FAQs about lazy loading videos?",
+        "answer":  "Yes. We explain lazy-loading approaches for video to defer heavy resources until users interact or scroll near them."
+    },
+    {
+        "id":  451,
+        "question":  "Can you add FAQs about performance impact of analytics?",
+        "answer":  "Yes. We explain how analytics scripts can affect performance and recommend lightweight or deferred analytics solutions."
+    },
+    {
+        "id":  452,
+        "question":  "Do you provide FAQs about image retina support?",
+        "answer":  "Yes. We explain serving higher-resolution images for retina displays with responsive image techniques to ensure crisp visuals."
+    },
+    {
+        "id":  453,
+        "question":  "Can the bot provide best practices for admin roles and permissions?",
+        "answer":  "Yes. We recommend role separation, least privilege, and audit logging to keep admin access tight and secure."
+    },
+    {
+        "id":  454,
+        "question":  "Do you include FAQs about automated backups testing?",
+        "answer":  "Yes. We stress the importance of regular restore tests to ensure backups are usable and provide recommended restore verification steps."
+    },
+    {
+        "id":  455,
+        "question":  "Can you add FAQs about CDN origin failover?",
+        "answer":  "Yes. We explain origin failover configurations so CDNs can serve stale content or route traffic to backup origins during outages."
+    },
+    {
+        "id":  456,
+        "question":  "Do you provide FAQs about image lazy-loading best practices?",
+        "answer":  "Yes. We describe using native lazy loading, intersection observers, and progressive placeholders for better UX."
+    },
+    {
+        "id":  457,
+        "question":  "Can the bot provide sample privacy policy clauses?",
+        "answer":  "Yes. We provide generic privacy policy examples but recommend legal review to ensure compliance with local laws and regulations."
+    },
+    {
+        "id":  458,
+        "question":  "Do you include FAQs about A/B testing sample sizes?",
+        "answer":  "Yes. We explain sample size considerations and statistical significance to run reliable A/B tests and avoid misleading results."
+    },
+    {
+        "id":  459,
+        "question":  "Can you add FAQs about image CDN cost-saving tips?",
+        "answer":  "Yes. We recommend strategies like responsive images, selective caching, and tiered asset serving to reduce CDN costs while maintaining performance."
+    },
+    {
+        "id":  460,
+        "question":  "Do you provide FAQs about headless CMS webhook usage?",
+        "answer":  "Yes. We explain using webhooks to trigger builds, cache invalidation, and content synchronization across services in headless architectures."
+    },
+    {
+        "id":  461,
+        "question":  "Can the bot recommend ways to improve accessibility quickly?",
+        "answer":  "Yes. We suggest quick wins like adding alt text, keyboard focus styles, clear headings, and sufficient color contrast to improve accessibility fast."
+    },
+    {
+        "id":  462,
+        "question":  "Do you include FAQs about handling large file uploads?",
+        "answer":  "Yes. We explain chunked uploads, server validation, and background processing strategies for large file handling."
+    },
+    {
+        "id":  463,
+        "question":  "Can you add FAQs about session storage vs cookies?",
+        "answer":  "Yes. We explain differences, use cases, and security considerations when choosing between session storage and cookies for client state."
+    },
+    {
+        "id":  464,
+        "question":  "Do you provide FAQs about analytics event sampling strategies?",
+        "answer":  "Yes. We discuss how to sample events for cost-effective analytics while keeping key signals for decision making."
+    },
+    {
+        "id":  465,
+        "question":  "Can the bot recommend best practices for hero sections?",
+        "answer":  "Yes. We recommend concise value statements, clear CTAs, lightweight visuals, and accessible headings for effective hero sections."
+    },
+    {
+        "id":  466,
+        "question":  "Do you include FAQs about custom checkout flows?",
+        "answer":  "Yes. We describe options for customizing checkout experiences and integrations with payment and shipping providers for complex flows."
+    },
+    {
+        "id":  467,
+        "question":  "Can you add FAQs about throttling and rate limiting?",
+        "answer":  "Yes. We explain how to implement throttling to protect APIs and ensure fair usage while maintaining performance."
+    },
+    {
+        "id":  468,
+        "question":  "Do you provide FAQs about content indexing and noindex usage?",
+        "answer":  "Yes. We explain when to use noindex, how to control indexing, and best practices to keep private pages out of search engines."
+    },
+    {
+        "id":  469,
+        "question":  "Can the bot provide tips for 404 page design?",
+        "answer":  "Yes. We recommend helpful 404 pages with search, popular links, and clear guidance to improve user recovery after broken links."
+    },
+    {
+        "id":  470,
+        "question":  "Do you include FAQs about CDN SSL/TLS certificate management?",
+        "answer":  "Yes. We explain how TLS termination at the CDN works and strategies to manage certificates across origins and edge services."
+    },
+    {
+        "id":  471,
+        "question":  "Can you add FAQs about minimizing layout shift (CLS)?",
+        "answer":  "Yes. We recommend reserving space for images and embeds, loading fonts carefully, and avoiding inserting content above existing content to reduce CLS."
+    },
+    {
+        "id":  472,
+        "question":  "Do you provide FAQs about caching user-specific data?",
+        "answer":  "Yes. We discuss patterns for caching personalized data safely and when to rely on server logic instead of caching for dynamic content."
+    },
+    {
+        "id":  473,
+        "question":  "Can the bot recommend strategies for homepage conversion optimization?",
+        "answer":  "Yes. We suggest clear messaging, prioritized CTAs, social proof, and simplified navigation to guide visitors toward conversions on the homepage."
+    },
+    {
+        "id":  474,
+        "question":  "Do you include FAQs about accessibility testing tools?",
+        "answer":  "Yes. We list tools like axe, WAVE, and Lighthouse and describe how we incorporate them into QA workflows for accessibility checks."
+    },
+    {
+        "id":  475,
+        "question":  "Can you add FAQs about incremental static regeneration?",
+        "answer":  "Yes. We explain ISR and when to use it to balance static performance with dynamic freshness for content-driven sites."
+    },
+    {
+        "id":  476,
+        "question":  "Do you provide FAQs about fallback content strategies?",
+        "answer":  "Yes. We discuss graceful fallbacks for unavailable resources and how to design resilient user experiences when services fail."
+    },
+    {
+        "id":  477,
+        "question":  "Can the bot provide tips for writing effective CTAs?",
+        "answer":  "Yes. We advise making CTAs benefit-focused, action-oriented, and visually distinct to improve click-through rates."
+    },
+    {
+        "id":  478,
+        "question":  "Do you include FAQs about platform selection guidance?",
+        "answer":  "Yes. We recommend platforms based on business goals, scale, technical resources, and feature requirements to ensure the best fit."
+    },
+    {
+        "id":  479,
+        "question":  "Can you add FAQs about deployment pipelines for static sites?",
+        "answer":  "Yes. We describe CI/CD steps for static site builds, previews, and atomic deployments to host providers or CDNs."
+    },
+    {
+        "id":  480,
+        "question":  "Do you provide FAQs about using structured content models?",
+        "answer":  "Yes. We explain modeling content as reusable components to improve content reuse and multi-channel publishing consistency."
+    },
+    {
+        "id":  481,
+        "question":  "Can the bot recommend metrics to track after launch?",
+        "answer":  "Yes. We recommend tracking conversion rate, bounce rate, load times, organic traffic, and form completions to measure post-launch health."
+    },
+    {
+        "id":  482,
+        "question":  "Do you include FAQs about ensuring mobile usability?",
+        "answer":  "Yes. We recommend testing on real devices, prioritizing tap targets, and simplifying navigation for mobile usability improvements."
+    },
+    {
+        "id":  483,
+        "question":  "Can you add FAQs about image delivery optimization?",
+        "answer":  "Yes. We discuss responsive images, modern formats, CDNs, and compression strategies to deliver images efficiently across devices."
+    },
+    {
+        "id":  484,
+        "question":  "Do you provide FAQs about audit frequency for security?",
+        "answer":  "Yes. We recommend periodic security audits and continuous monitoring to detect vulnerabilities and ensure remediation timelines are met."
+    },
+    {
+        "id":  485,
+        "question":  "Can the bot provide sample user personas for website design?",
+        "answer":  "Yes. We outline sample personas to guide content and design choices tailored to different audience segments."
+    },
+    {
+        "id":  486,
+        "question":  "Do you include FAQs about multi-step checkout optimization?",
+        "answer":  "Yes. We suggest minimizing friction, progress indicators, and guest checkout options to improve completion rates in multi-step checkouts."
+    },
+    {
+        "id":  487,
+        "question":  "Can you add FAQs about image lazy-load placeholders?",
+        "answer":  "Yes. We recommend using low-quality image placeholders (LQIP) or blurred placeholders to improve perceived performance during lazy loading."
+    },
+    {
+        "id":  488,
+        "question":  "Do you provide FAQs about secure deployment best practices?",
+        "answer":  "Yes. We outline secure deployment steps including environment separation, secrets management, and review processes to reduce risk."
+    },
+    {
+        "id":  489,
+        "question":  "Can the bot recommend content testing strategies?",
+        "answer":  "Yes. We recommend A/B testing, user interviews, and analytics-driven content experiments to optimize messaging and layout."
+    },
+    {
+        "id":  490,
+        "question":  "Do you include FAQs about required assets for kickoff?",
+        "answer":  "Yes. We list common kickoff assets like logos, brand colors, copy, images, and access to domain and hosting accounts."
+    },
+    {
+        "id":  491,
+        "question":  "Can you add FAQs about building multilingual SEO sitemaps?",
+        "answer":  "Yes. We explain generating sitemaps that include language variants and how to submit them to search engines for indexing."
+    },
+    {
+        "id":  492,
+        "question":  "Do you provide FAQs about progressive enhancement for media?",
+        "answer":  "Yes. We suggest providing accessible fallbacks and progressively enhanced media formats to support wide device compatibility."
+    },
+    {
+        "id":  493,
+        "question":  "Can the bot provide tips for improving site trust signals?",
+        "answer":  "Yes. We recommend clear contact info, client logos, case studies, and reviews to build trust with visitors quickly."
+    },
+    {
+        "id":  494,
+        "question":  "Do you include FAQs about rollout plans for new features?",
+        "answer":  "Yes. We recommend phased rollouts, feature flags, and monitoring to minimize impact and gather feedback during new feature launches."
+    },
+    {
+        "id":  495,
+        "question":  "Can you add FAQs about data export for clients?",
+        "answer":  "Yes. We explain how clients can request their data exports and typical formats provided for content and user data."
+    },
+    {
+        "id":  496,
+        "question":  "Do you provide FAQs about multi-origin asset strategies?",
+        "answer":  "Yes. We discuss when to use multi-origin setups and how to route assets for resilience and geographic performance."
+    },
+    {
+        "id":  497,
+        "question":  "Can the bot recommend routines for content freshness?",
+        "answer":  "Yes. We suggest editorial calendars, seasonal updates, and scheduled content reviews to keep your site current and engaging."
+    },
+    {
+        "id":  498,
+        "question":  "Do you include FAQs about measuring user retention?",
+        "answer":  "Yes. We explain retention metrics and techniques like cohort analysis to understand user return behavior over time."
+    },
+    {
+        "id":  499,
+        "question":  "Can you add FAQs about architecture decisions for scaling?",
+        "answer":  "Yes. We outline common architecture choices like microservices, serverless, and containerization and when each is appropriate for scaling."
+    },
+    {
+        "id":  500,
+        "question":  "Do you provide guidance on next steps after the FAQ is implemented?",
+        "answer":  "Yes. After implementing the FAQ dataset we recommend monitoring usage, refining answers based on analytics, and adding conversational logic or human handoff rules to improve lead conversion."
+    }
+
+    
+]

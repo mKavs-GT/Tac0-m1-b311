@@ -1,0 +1,352 @@
+:root {
+    --kairon-purple: #4A148C;
+    /* Deep Purple Brand */
+    --kairon-accent: #7C4DFF;
+    --kairon-blue: #2962FF;
+    /* Blue for Send Button */
+    --white: #ffffff;
+    --text-main: #4A148C;
+    /* Purple Text */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+}
+
+/* Main Panel - Fixed Layout */
+#kairon-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 380px;
+    height: 650px;
+    max-height: 90vh;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 10000;
+    font-family: sans-serif;
+    border: 1px solid #e0e0e0;
+
+    /* Animation State (Closed) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px) scale(0.95);
+    transform-origin: bottom right;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+#kairon-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* HEADER - Fixed Top */
+.panel-header {
+    flex-shrink: 0;
+    height: 60px;
+    background: var(--kairon-purple);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.panel-header .left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel-header .logo-placeholder {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel-header .logo-placeholder img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.panel-header .title {
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.panel-header .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+/* MESSAGES - Scrollable Middle */
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #fff;
+}
+
+/* Chat Bubbles */
+.msg {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 20px;
+    font-size: 15px;
+    line-height: 1.4;
+    position: relative;
+    font-weight: 500;
+}
+
+/* Bot: Purple Outline */
+.msg.bot {
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    background: #fff;
+    border: 1px solid var(--kairon-purple);
+    color: #000;
+}
+
+/* User: Light Purple Fill */
+.msg.user {
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    background: #E1BEE7;
+    border: none;
+    color: var(--kairon-purple);
+}
+
+.msg.agent {
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    background: #fff;
+    border: 1px solid #10b981;
+    color: #059669;
+}
+
+.msg.system {
+    align-self: center;
+    border: none;
+    background: #f3f4f6;
+    color: #6b7280;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* INTERACTIVE AREA - Fixed above Footer */
+.interactive-area {
+    flex-shrink: 0;
+    background: #fff;
+    padding: 10px 16px;
+    border-top: 1px solid #000;
+    /* Thin black border */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+/* Horizontal Categories */
+.kairon-controls {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--kairon-purple) #f0f0f0;
+}
+
+.kairon-controls::-webkit-scrollbar {
+    height: 4px;
+}
+
+.kairon-controls::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 2px;
+}
+
+.kairon-controls::-webkit-scrollbar-thumb {
+    background: var(--kairon-purple);
+    border-radius: 2px;
+}
+
+.kairon-controls::-webkit-scrollbar-thumb:hover {
+    background: #6A1B9A;
+}
+
+.kairon-categories {
+    display: flex;
+    gap: 8px;
+}
+
+.kairon-categories button,
+.category-chip {
+    white-space: nowrap;
+    padding: 8px 16px;
+    background: #fff;
+    border: 1px solid #000;
+    /* Thin black border */
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--kairon-purple);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.kairon-categories button.active,
+.kairon-categories button:hover,
+.category-chip.active,
+.category-chip:hover {
+    background: var(--kairon-purple);
+    color: #fff;
+}
+
+.kairon-browse-all {
+    display: none;
+}
+
+/* Vertical Suggestions */
+.kairon-faq-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.kairon-faq-pane button,
+.suggestion-btn {
+    width: 100%;
+    text-align: left;
+    padding: 10px 16px;
+    background: #fff;
+    border: 1px solid #000;
+    /* Thin black border */
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--kairon-purple);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.kairon-faq-pane button:hover,
+.suggestion-btn:hover {
+    background: #f3e5f5;
+    border-color: var(--kairon-purple);
+}
+
+/* FOOTER - Fixed Bottom */
+.composer {
+    flex-shrink: 0;
+    padding: 16px;
+    background: #fff;
+    border-top: 1px solid #000;
+    /* Thin black border */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.composer input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--kairon-purple);
+    font-weight: 500;
+}
+
+.composer input::placeholder {
+    color: var(--kairon-purple);
+    opacity: 0.7;
+}
+
+.composer button {
+    width: 48px;
+    height: 36px;
+    background: var(--kairon-blue);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.composer button svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.composer button:hover {
+    background: #1e40ff;
+}
+
+/* Launcher Button */
+#kairon-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: var(--kairon-purple);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#kairon-button img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    #kairon-panel {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        max-height: 100vh;
+    }
+}

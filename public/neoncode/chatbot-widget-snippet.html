@@ -1,0 +1,64 @@
+<!-- Kairon Chat Widget -->
+<div id="kairon">
+    <!-- Floating Launcher Button -->
+    <button id="kairon-button" aria-label="Open chat">
+        <img src="../about/images/little.png" alt="Kairon">
+    </button>
+
+    <!-- Main Chat Panel -->
+    <div id="kairon-panel" role="dialog" aria-modal="true" aria-label="Chat window">
+        <!-- Header -->
+        <div class="panel-header">
+            <div class="left-section">
+                <div class="logo-placeholder">
+                    <img src="../about/images/little.png" alt="Logo">
+                </div>
+                <div class="title">Kairon</div>
+            </div>
+            <select id="agent-selector" class="agent-selector" style="display:none">
+                <option value="" disabled selected>Talk to Agent</option>
+                <option value="Mr.K">Mr.K</option>
+                <option value="Mr.A">Mr.A</option>
+                <option value="Mr.S">Mr.S</option>
+                <option value="Mr.V">Mr.V</option>
+                <option value="Mr.M">Mr.M</option>
+            </select>
+            <button id="kairon-close" class="close-btn" aria-label="Close chat">×</button>
+        </div>
+
+        <!-- Messages Area -->
+        <div id="kairon-messages" class="messages"></div>
+
+        <!-- Interactive Area -->
+        <div class="interactive-area">
+            <div id="kairon-controls" class="kairon-controls">
+                <div id="kairon-categories" class="kairon-categories"></div>
+                <button id="kairon-browse-all" class="kairon-browse-all">Browse all</button>
+            </div>
+            <div id="kairon-faq-pane" class="kairon-faq-pane"></div>
+        </div>
+
+        <!-- Input Area -->
+        <form id="kairon-form" class="composer" autocomplete="off">
+            <input id="kairon-input" type="text" aria-label="Message" />
+            <button type="submit" aria-label="Send">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="currentColor" />
+                </svg>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Hidden elements for legacy compatibility -->
+<div id="kairon-live" class="kairon-live-panel" style="display:none"></div>
+<button id="kairon-header-back-bot" style="display:none"></button>
+<button id="kairon-faq-toggle" style="display:none"></button>
+
+<!-- Kairon Widget Scripts -->
+<script>
+    // Ensure base path is set for assets if not already defined
+    if (!window.KAIRON_BASE_PATH) {
+        window.KAIRON_BASE_PATH = "./neoncode/kairon live bot/";
+    }
+</script>

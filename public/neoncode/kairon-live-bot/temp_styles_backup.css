@@ -1,0 +1,300 @@
+﻿:root {
+    --kairon-purple: #6366f1;
+    --kairon-dark: #4f46e5;
+    --kairon-success: #10b981;
+    --white: #fff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-600: #6b7280;
+    --gray-900: #1f2937;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0
+}
+
+body {
+    background: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #222
+}
+
+/* Smooth animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes typing {
+
+    0%,
+    60%,
+    100% {
+        opacity: 0.3;
+    }
+
+    30% {
+        opacity: 1;
+    }
+}
+
+#kairon {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    z-index: 9999
+}
+
+#kairon-button {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--kairon-purple);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+    transition: transform .15s ease, box-shadow .15s ease
+}
+
+#kairon-button:focus {
+    outline: 3px solid rgba(99, 102, 241, 0.18)
+}
+
+#kairon-button .inner-ring {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: transparent;
+    border: 6px solid #fff;
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.02)
+}
+
+#kairon-button img.kairon-icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
+    z-index: 1
+}
+
+#kairon-button .horn {
+    position: absolute;
+    top: 8px;
+    width: 34px;
+    height: 28px;
+    background: var(--kairon-purple);
+}
+
+#kairon-button .horn-left {
+    left: -6px;
+    border-top-left-radius: 14px 10px;
+    border-bottom-left-radius: 6px;
+    transform: rotate(-22deg);
+}
+
+#kairon-button .horn-right {
+    right: -6px;
+    border-top-right-radius: 14px 10px;
+    border-bottom-right-radius: 6px;
+    transform: rotate(22deg);
+}
+
+#kairon-button .label {
+    position: absolute;
+    right: 100%;
+    margin-right: 12px;
+    background: var(--kairon-dark);
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(6px);
+    transition: opacity .12s ease, transform .12s ease
+}
+
+#kairon-button:hover {
+    transform: translateY(-6px) scale(1.03)
+}
+
+#kairon-button:hover .label {
+    opacity: 1;
+    transform: translateX(0)
+}
+
+/* ========================================
+   FIXED 3-SECTION LAYOUT (Perplexity/ChatGPT style)
+   ======================================== */
+
+/* Main chat panel - FIXED HEIGHT CONTAINER */
+#kairon-panel {
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    width: 400px;
+    height: 600px;
+    /* Fixed height */
+    max-height: 90vh;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Prevent overall scrolling */
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease;
+    z-index: 100000;
+}
+
+#kairon.open #kairon-panel {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* SECTION 1: HEADER - FIXED AT TOP */
+.panel-header {
+    flex-shrink: 0;
+    /* Never shrinks - stays at top */
+    padding: 16px;
+    background: linear-gradient(135deg, var(--kairon-purple) 0%, var(--kairon-dark) 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 16px 16px 0 0;
+}
+
+.panel-header .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    margin-right: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.panel-header .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block
+}
+
+.panel-header .title {
+    font-weight: 600;
+    font-size: 15px;
+    flex: 1;
+    min-width: 0;
+}
+
+.panel-header .agent-selector {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 135px;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23fff' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 28px;
+}
+
+.panel-header .agent-selector:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.panel-header .agent-selector:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.panel-header .agent-selector option {
+    padding: 8px;
+    font-weight: 500;
+    background: white;
+    color: var(--gray-900);
+}
+
+.panel-header button {
+    margin-left: 0;
+    border: 0;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+    color: white;
+}
+
+.panel-header button:hover {
+    opacity: 0.7;
+}
+
+.panel-header .back-to-bot-btn {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: white;
+    display: none;
+    transition: all 0.2s ease;
+}
+
+padding: 10px 12px;
+border-top: 1px solid #f0f0f0;
+background: #fff
+}
+
+.kairon-all-faqs details {
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 6px;

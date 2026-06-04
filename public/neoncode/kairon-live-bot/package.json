@@ -1,0 +1,17 @@
+{
+  "name": "kairon-livechat",
+  "version": "1.0.0",
+  "description": "Simple WebSocket server for Kairon live chat (staff/customer)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0",
+    "ws": "^8.18.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

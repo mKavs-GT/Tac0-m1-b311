@@ -1,0 +1,42 @@
+<section class="portfolio-section">
+            <h2>PORTFOLIO</h2>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    
+                    <div class="carousel-item clone" data-index="6">
+                        <img src="images/w6.png" alt="Portfolio Image 6 (Clone)">
+                    </div>
+
+                    <div class="carousel-item " data-index="1">
+                        <img src="images/w1.png" alt="Portfolio Image 1">
+                    </div>
+                    <div class="carousel-item " data-index="2">
+                        <img src="images/w2.png" alt="Portfolio Image 2">
+                    </div>
+                    <div class="carousel-item " data-index="3">
+                        <img src="images/w3.png" alt="Portfolio Image 3">
+                    </div>
+                    <div class="carousel-item " data-index="4">
+                        <img src="images/w4.png" alt="Portfolio Image 4">
+                    </div>
+                    <div class="carousel-item " data-index="5">
+                        <img src="images/w5.png" alt="Portfolio Image 5">
+                    </div>
+                    <div class="carousel-item " data-index="6">
+                        <img src="images/w6.png" alt="Portfolio Image 6">
+                    </div>
+                    
+                    <div class="carousel-item clone" data-index="1">
+                        <img src="images/w1.png" alt="Portfolio Image 1 (Clone)">
+                    </div>
+                   <div class="carousel-item clone" data-index="2">
+                        <img src="images/w2.png" alt="Portfolio Image 2 (Clone)">
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="arrow-btn left-arrow"><i class="fas fa-arrow-left"></i></button>
+                    <span class="paging-text">1 of 6</span> 
+                    <button class="arrow-btn right-arrow"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div> </section>

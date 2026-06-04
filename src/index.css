@@ -1,0 +1,109 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-accent: var(--theme-accent);
+  --color-accent-soft: var(--theme-accent-soft);
+
+  --color-bg-root: var(--theme-bg-root);
+  --color-bg-surface: var(--theme-bg-surface);
+  --color-bg-muted: var(--theme-bg-muted);
+  --color-text-main: var(--theme-text-main);
+  --color-text-secondary: var(--theme-text-secondary);
+  --color-text-muted: var(--theme-text-muted);
+  --color-border-main: var(--theme-border-main);
+}
+
+@layer base {
+  :root {
+    --theme-bg-root: #FAFAEB;
+    --theme-bg-surface: #FFFFFF;
+    --theme-bg-muted: #F2F2E4;
+    --theme-text-main: #252C37;
+    --theme-text-secondary: #475569;
+    --theme-text-muted: #64748B;
+    --theme-border-main: #E5E5D5;
+    
+    --theme-accent: #F8C61E;
+    --theme-accent-soft: #AAD7CD;
+  }
+  .dark {
+    --theme-bg-root: #252C37;
+    --theme-bg-surface: #303845;
+    --theme-bg-muted: #3B4453;
+    --theme-text-main: #FAFAEB;
+    --theme-text-secondary: #CBD5E1;
+    --theme-text-muted: #94A3B8;
+    --theme-border-main: #3B4453;
+    
+    --theme-accent: #F8C61E;
+    --theme-accent-soft: #729B91;
+  }
+}
+
+@layer utilities {
+  .ease-product {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .duration-product {
+    transition-duration: 240ms;
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+body {
+  @apply bg-bg-root text-text-main transition-colors duration-200;
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+  /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
+}
+
+/* Custom Scrollbar for minimalistic look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--theme-border-main);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--theme-text-muted);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Prevent body scroll when menu is open */
+.lock-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+}

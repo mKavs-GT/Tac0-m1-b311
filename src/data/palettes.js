@@ -1,0 +1,4682 @@
+export default [
+  {
+    "id": 1,
+    "name": "Tech Frost Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#0b3f2d",
+      "#157253",
+      "#ff1966",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Vintage Lagoon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#231d1d",
+      "#3c3232",
+      "#27dede",
+      "#e372e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Dark Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0d0d0b",
+      "#1c1c18",
+      "#cdf019",
+      "#72d4e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Elegant Velvet Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#29bba2",
+      "#e52d4c",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Deep Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a1d1c",
+      "#2f3534",
+      "#e82a4a",
+      "#88e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Natural Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f1f1a",
+      "#37372e",
+      "#99d01a",
+      "#72c5e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Zen Nebula Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#18b782",
+      "#e52d6b",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Silent Velvet Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#095021",
+      "#108336",
+      "#ff19b2",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Ocean Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#151214",
+      "#2f272c",
+      "#e522de",
+      "#e3e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Zen Canvas Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#1577d9",
+      "#e5892d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Deep Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#151616",
+      "#212424",
+      "#4ae2b4",
+      "#c072e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Royal Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1d1a1c",
+      "#2b2629",
+      "#e04c82",
+      "#9fe572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Deep Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1e1c1d",
+      "#363233",
+      "#3de5ad",
+      "#bc72e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Urban Nebula Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#460430",
+      "#790753",
+      "#19ff65",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Deep Lagoon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#151517",
+      "#232427",
+      "#3c24d7",
+      "#e57f72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Future Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#191d1f",
+      "#282f33",
+      "#2d79fe",
+      "#e5729f",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Modern Copper Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#5622bf",
+      "#a8e52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Dark Nebula Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0e0f0e",
+      "#20211f",
+      "#d2d832",
+      "#72e3e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Tech Steel Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#232524",
+      "#3b3f3d",
+      "#3eddbd",
+      "#cc72e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Natural Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1e2025",
+      "#2b2e35",
+      "#daaa49",
+      "#72e5bc",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Dark Steel Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#d42744",
+      "#2de5c6",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Vibrant Obsidian Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#415bdb",
+      "#e5c62d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Corporate Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#10110f",
+      "#252624",
+      "#3bdb35",
+      "#7278e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Vintage Mist Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#3acd84",
+      "#e52d89",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Urban Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#110f11",
+      "#292329",
+      "#d72fa4",
+      "#c5e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Slate Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1d1b1d",
+      "#2e2b2f",
+      "#8743fb",
+      "#e59a72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Tech Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1d1d19",
+      "#35352e",
+      "#f7f728",
+      "#72e5e3",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Slate Forest Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#9241e3",
+      "#89e52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Slate Copper Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1e1b1c",
+      "#2c2728",
+      "#db1873",
+      "#aae572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Corporate Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c1c1d",
+      "#2f2f32",
+      "#5b26d9",
+      "#e59272",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Dark Ember Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#18181a",
+      "#292a2c",
+      "#4349f9",
+      "#e57278",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Deep Shadow Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#111165",
+      "#191998",
+      "#fffe19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Vibrant Velvet Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#be4e38",
+      "#2dc6e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Ocean Ember Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#161513",
+      "#292724",
+      "#599de0",
+      "#e572ae",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Royal Lagoon Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#1c0b3d",
+      "#331470",
+      "#b2ff19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Soft Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#181716",
+      "#2b2a27",
+      "#dcd627",
+      "#72e5df",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Dark Obsidian Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#341505",
+      "#67290a",
+      "#19b2ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Electric Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1d2321",
+      "#2d3734",
+      "#f81d66",
+      "#9be572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Electric Iron Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#343e06",
+      "#60710b",
+      "#3f19ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Elegant Frost Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#5e4006",
+      "#916409",
+      "#1965ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Corporate Obsidian Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#19171a",
+      "#2b272c",
+      "#934ad3",
+      "#e5ad72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Soft Steel Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#01c4a3",
+      "#e52d4c",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Soft Horizon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f1e19",
+      "#302f26",
+      "#f2d235",
+      "#72e5d0",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Vintage Frost Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c6aa1f",
+      "#2d4ce5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Future Shadow Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c78e1c",
+      "#2d6be5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Modern Canvas Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c1b1a",
+      "#2c2a28",
+      "#ecb547",
+      "#72e5bc",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Tech Mist Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#12db98",
+      "#e52d6b",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Slate Horizon Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#960bdc",
+      "#6be52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Elegant Copper Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#20241f",
+      "#363e35",
+      "#65d04f",
+      "#7288e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Elegant Sunset Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#44c22b",
+      "#c62de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Modern Frost Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0a0c0c",
+      "#171b1b",
+      "#db2626",
+      "#75e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Slate Ember Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#422d02",
+      "#755004",
+      "#1965ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Natural Ember Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f1110",
+      "#262b28",
+      "#38d285",
+      "#a972e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Vibrant Nebula Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#214200",
+      "#3a7500",
+      "#8c19ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Tech Quartz Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#b93661",
+      "#2de5a8",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Ocean Desert Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#6336be",
+      "#a8e52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Elegant Canvas Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#121511",
+      "#242a23",
+      "#d443f0",
+      "#e5d072",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Silent Copper Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c1a728",
+      "#2d4ce5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Electric Copper Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#221c1c",
+      "#302828",
+      "#f97035",
+      "#72e592",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Dark Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#12110f",
+      "#25231e",
+      "#cec92e",
+      "#72e5df",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Natural Glacier Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#43430b",
+      "#767614",
+      "#1919ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Crimson Quartz Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#2fc1de",
+      "#e54c2d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Slate Obsidian Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#246eb8",
+      "#e5892d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Silent Desert Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1d1e1f",
+      "#2d2f31",
+      "#2b80d5",
+      "#e572ae",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Royal Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#141415",
+      "#28282a",
+      "#4c60dd",
+      "#e57284",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Corporate Iron Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#28c7c7",
+      "#e52d2d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Crimson Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#141514",
+      "#202220",
+      "#3fdd27",
+      "#7284e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Tech Glacier Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#0025dd",
+      "#e5c62d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Electric Glacier Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#252520",
+      "#32322c",
+      "#eded50",
+      "#72e5e3",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Silent Ember Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#35081f",
+      "#68113c",
+      "#19ff8c",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Muted Obsidian Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#161515",
+      "#2b2929",
+      "#e37344",
+      "#72e592",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Vintage Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a191a",
+      "#312e30",
+      "#d019ec",
+      "#e5d372",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Modern Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f0d0d",
+      "#292324",
+      "#dc1f77",
+      "#aae572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Electric Iron Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f1c22",
+      "#36313a",
+      "#4c20f9",
+      "#e58772",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Deep Copper Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f0e0d",
+      "#1e1c1b",
+      "#469fcc",
+      "#e572c1",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Dark Steel Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#3f0909",
+      "#721010",
+      "#19ffff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Crimson Ember Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#5e280d",
+      "#913e15",
+      "#19b2ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Natural Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#211c21",
+      "#362d36",
+      "#981ecc",
+      "#e5c072",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Future Iron Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#23a1ba",
+      "#e54c2d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Modern Canvas Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#cf10af",
+      "#2de54c",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Dark Onyx Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#68bf11",
+      "#892de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Vintage Ember Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#191617",
+      "#2f292b",
+      "#37d9a3",
+      "#bc72e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Electric Forest Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#074912",
+      "#0c7c1e",
+      "#ff19d8",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Modern Iron Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#e0149c",
+      "#2de56b",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Vibrant Steel Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#b7d717",
+      "#4c2de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Vibrant Nebula Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#10100f",
+      "#1d1e1b",
+      "#d5f72b",
+      "#72d4e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Muted Horizon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0d0b0c",
+      "#1c1819",
+      "#ea563f",
+      "#72e57f",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Modern Glacier Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#0bdb50",
+      "#e52da8",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Soft Glacier Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#0b2354",
+      "#123987",
+      "#ffb219",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Silent Steel Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#0c405a",
+      "#13648d",
+      "#ff6619",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Royal Copper Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f1d1d",
+      "#2e2b2b",
+      "#ec4561",
+      "#88e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Soft Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c1e22",
+      "#2a2e34",
+      "#286df7",
+      "#e5729b",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Vibrant Steel Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c02f2f",
+      "#2de5e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Royal Lagoon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#171315",
+      "#2a2328",
+      "#df1c9e",
+      "#c1e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Natural Desert Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#5623bd",
+      "#a8e52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Muted Glacier Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#44c901",
+      "#a82de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Royal Steel Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#171c1c",
+      "#232b2b",
+      "#d11717",
+      "#75e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Vibrant Quartz Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#3bda1b",
+      "#c62de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Modern Canvas Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#3f043f",
+      "#720772",
+      "#19ff19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Modern Forest Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#213ab7",
+      "#e5c62d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Natural Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#161615",
+      "#2e2f2b",
+      "#dbc747",
+      "#72e5d3",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Natural Ember Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#161817",
+      "#262928",
+      "#4dd1e5",
+      "#e572d8",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Deep Onyx Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0e0d0f",
+      "#262329",
+      "#9a48ec",
+      "#e5a972",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Vibrant Forest Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#6335bf",
+      "#a8e52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Silent Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0c0d0f",
+      "#212327",
+      "#464be1",
+      "#e57278",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Slate Frost Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#e226a3",
+      "#2de56b",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Elegant Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#181918",
+      "#272a28",
+      "#31f2ab",
+      "#b972e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Soft Ember Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#d62501",
+      "#2dc6e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Elegant Glacier Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c73496",
+      "#2de56b",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Urban Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#111114",
+      "#1f1f23",
+      "#3166e1",
+      "#e57297",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Natural Nebula Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#b2127d",
+      "#2de56b",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Tech Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#11100e",
+      "#22211d",
+      "#def44a",
+      "#72d8e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Vintage Desert Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#09c027",
+      "#e52dc6",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Electric Obsidian Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#221e20",
+      "#3b3237",
+      "#3ef99c",
+      "#a972e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Deep Velvet Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#bbe003",
+      "#4c2de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Future Quartz Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#121f61",
+      "#1c3094",
+      "#ffd819",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Dark Glacier Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#171a1c",
+      "#23282b",
+      "#3173e5",
+      "#e5729f",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Tech Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0d0e0d",
+      "#1f2321",
+      "#e93a92",
+      "#aee572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Ocean Desert Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c56302",
+      "#2d89e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 120,
+    "name": "Slate Velvet Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#003813",
+      "#006b24",
+      "#ff19b2",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Ocean Quartz Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#0e364a",
+      "#185c7d",
+      "#ff6619",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Soft Glacier Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#4c0026",
+      "#7f0140",
+      "#19ff8c",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 123,
+    "name": "Natural Frost Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c2c229",
+      "#2d2de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 124,
+    "name": "Zen Mist Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#14aecd",
+      "#e54c2d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 125,
+    "name": "Dark Desert Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#0cd14e",
+      "#e52da8",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 126,
+    "name": "Muted Lagoon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#181619",
+      "#242126",
+      "#9249db",
+      "#e5a972",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 127,
+    "name": "Urban Iron Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#131314",
+      "#2a292c",
+      "#534ef3",
+      "#e57472",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 128,
+    "name": "Ocean Copper Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c82275",
+      "#2de589",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 129,
+    "name": "Corporate Iron Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0e0e0d",
+      "#21201f",
+      "#4862e4",
+      "#e57288",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Vintage Shadow Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#480606",
+      "#7b0b0b",
+      "#19ffff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 131,
+    "name": "Electric Velvet Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#1a68b7",
+      "#e5892d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 132,
+    "name": "Soft Nebula Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f0f0e",
+      "#272622",
+      "#1a38cc",
+      "#e57288",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 133,
+    "name": "Zen Glacier Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#21261e",
+      "#2f362c",
+      "#90fb5b",
+      "#729be5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 134,
+    "name": "Elegant Shadow Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c72a78",
+      "#2de589",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 135,
+    "name": "Crimson Quartz Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#37ceb5",
+      "#e52d4c",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 136,
+    "name": "Ocean Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#161818",
+      "#262a2b",
+      "#47c2db",
+      "#e572d4",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 137,
+    "name": "Vibrant Onyx Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f2222",
+      "#303536",
+      "#1d91f5",
+      "#e572b2",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 138,
+    "name": "Elegant Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#242121",
+      "#383332",
+      "#fb2441",
+      "#84e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 139,
+    "name": "Elegant Onyx Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#181418",
+      "#2c252c",
+      "#ea40ea",
+      "#e5e372",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 140,
+    "name": "Future Steel Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#181a1b",
+      "#25282a",
+      "#44a7d9",
+      "#e572c1",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 141,
+    "name": "Silent Iron Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#0d285d",
+      "#153e90",
+      "#ffb219",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 142,
+    "name": "Natural Canvas Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#1acd74",
+      "#e52d89",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 143,
+    "name": "Soft Shadow Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#331b02",
+      "#663505",
+      "#198cff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 144,
+    "name": "Modern Forest Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#59c423",
+      "#a82de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 145,
+    "name": "Deep Velvet Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#d80f52",
+      "#2de5a8",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 146,
+    "name": "Slate Onyx Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#bf2d2d",
+      "#2de5e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 147,
+    "name": "Silent Lagoon Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#0fc76b",
+      "#e52d89",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 148,
+    "name": "Muted Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1b1d18",
+      "#2c2f27",
+      "#6de926",
+      "#729fe5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 149,
+    "name": "Zen Lagoon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0d0e0e",
+      "#1a1a1c",
+      "#3b59f2",
+      "#e57288",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 150,
+    "name": "Soft Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#24201f",
+      "#332d2c",
+      "#5bdff9",
+      "#e572d4",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 151,
+    "name": "Soft Onyx Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#0cba0c",
+      "#e52de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 152,
+    "name": "Dark Glacier Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#a8c614",
+      "#4c2de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 153,
+    "name": "Tech Desert Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a171d",
+      "#302b36",
+      "#9049d7",
+      "#e5a972",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 154,
+    "name": "Silent Iron Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#2300d2",
+      "#c6e52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 155,
+    "name": "Ocean Desert Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1b181c",
+      "#2e292f",
+      "#b01ccd",
+      "#e5d072",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 156,
+    "name": "Tech Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#191916",
+      "#292823",
+      "#fadf5b",
+      "#72e5d0",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 157,
+    "name": "Soft Steel Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#0d355e",
+      "#145291",
+      "#ff8c19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 158,
+    "name": "Corporate Canvas Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#df00ba",
+      "#2de54c",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 159,
+    "name": "Urban Frost Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#daa740",
+      "#2d6be5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 160,
+    "name": "Elegant Horizon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1d201b",
+      "#30352d",
+      "#971fd3",
+      "#e5bc72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 161,
+    "name": "Future Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c231f",
+      "#27312c",
+      "#33de89",
+      "#a972e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 164,
+    "name": "Electric Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#10100e",
+      "#282723",
+      "#3954d7",
+      "#e57288",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 165,
+    "name": "Electric Iron Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0c0c0d",
+      "#1e1f22",
+      "#6167fe",
+      "#e57278",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 166,
+    "name": "Electric Frost Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#1f013d",
+      "#390270",
+      "#8cff19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 168,
+    "name": "Electric Midnight Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#de2948",
+      "#2de5c6",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 170,
+    "name": "Crimson Ember Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a1a15",
+      "#312f28",
+      "#dcf72c",
+      "#72d8e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 171,
+    "name": "Future Shadow Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#32b917",
+      "#c62de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 172,
+    "name": "Vibrant Glacier Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0d0d0c",
+      "#201f1d",
+      "#cfc922",
+      "#72e5df",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 173,
+    "name": "Crimson Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#121011",
+      "#252223",
+      "#f6489f",
+      "#aee572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 174,
+    "name": "Zen Frost Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#cd0909",
+      "#2de5e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 175,
+    "name": "Vintage Sunset Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#016bd4",
+      "#e5892d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 176,
+    "name": "Vibrant Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#252020",
+      "#3e3636",
+      "#ee2424",
+      "#75e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 178,
+    "name": "Corporate Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#141818",
+      "#232a2a",
+      "#49b4e1",
+      "#e572c5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 179,
+    "name": "Tech Nebula Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#034261",
+      "#056594",
+      "#ff6619",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 180,
+    "name": "Dark Nebula Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c1e1d",
+      "#2c2f2e",
+      "#ee3b77",
+      "#9be572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 181,
+    "name": "Modern Midnight Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#300c42",
+      "#551675",
+      "#66ff19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 182,
+    "name": "Zen Copper Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0d0d0d",
+      "#1e1c1d",
+      "#c14bd4",
+      "#e5d372",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 183,
+    "name": "Royal Mist Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#11b965",
+      "#e52d89",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 185,
+    "name": "Muted Canvas Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#022c41",
+      "#044f74",
+      "#ff6619",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 186,
+    "name": "Urban Obsidian Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0d100f",
+      "#222725",
+      "#3ae2c1",
+      "#cc72e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 187,
+    "name": "Tech Horizon Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#3393c3",
+      "#e56b2d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 188,
+    "name": "Tech Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c181a",
+      "#362e30",
+      "#e55786",
+      "#9be572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 189,
+    "name": "Dark Nebula Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0e0e11",
+      "#1b1a20",
+      "#3047df",
+      "#e57284",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 191,
+    "name": "Zen Obsidian Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c86c0f",
+      "#2d89e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 192,
+    "name": "Electric Copper Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#161b18",
+      "#27302b",
+      "#29e950",
+      "#8772e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 193,
+    "name": "Tech Mist Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#434f09",
+      "#6f8210",
+      "#3f19ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 194,
+    "name": "Deep Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f2520",
+      "#2f3930",
+      "#42f127",
+      "#7284e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 195,
+    "name": "Electric Frost Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#222224",
+      "#39393d",
+      "#d9d936",
+      "#72e5e3",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 196,
+    "name": "Crimson Mist Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#8bcc0a",
+      "#6b2de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 197,
+    "name": "Natural Ember Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1b201c",
+      "#272d28",
+      "#ed20cb",
+      "#d4e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 198,
+    "name": "Dark Ember Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#0e194c",
+      "#18297f",
+      "#ffd819",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 199,
+    "name": "Ocean Copper Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#3b001e",
+      "#6e0037",
+      "#19ff8c",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 200,
+    "name": "Corporate Glacier Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#1499dc",
+      "#e56b2d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 203,
+    "name": "Ocean Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#251f23",
+      "#3e353b",
+      "#d63ea4",
+      "#c1e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 204,
+    "name": "Modern Steel Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#171915",
+      "#2a2e26",
+      "#a8cd15",
+      "#72d0e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 205,
+    "name": "Natural Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0c0d0e",
+      "#1e2022",
+      "#f0b94b",
+      "#72e5bc",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 206,
+    "name": "Natural Iron Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f2121",
+      "#363939",
+      "#1be0bf",
+      "#d072e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 207,
+    "name": "Royal Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#141715",
+      "#282f2a",
+      "#52f789",
+      "#9672e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 209,
+    "name": "Muted Canvas Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#1457de",
+      "#e5a82d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 211,
+    "name": "Zen Glacier Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0e0d0d",
+      "#221f1f",
+      "#cf3232",
+      "#75e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 212,
+    "name": "Dark Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#111114",
+      "#1e1f23",
+      "#1c81f6",
+      "#e572aa",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 213,
+    "name": "Ocean Iron Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#03b922",
+      "#e52dc6",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 214,
+    "name": "Modern Frost Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0e0e0d",
+      "#1c1b1a",
+      "#e5e03b",
+      "#72e5df",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 215,
+    "name": "Corporate Nebula Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#2e5409",
+      "#4b870f",
+      "#8c19ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 216,
+    "name": "Electric Iron Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#412100",
+      "#743b01",
+      "#198cff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 217,
+    "name": "Crimson Frost Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0e0d0d",
+      "#262523",
+      "#ce7923",
+      "#72e5a9",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 218,
+    "name": "Dark Copper Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c0a625",
+      "#2d4ce5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 219,
+    "name": "Vintage Onyx Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#040e40",
+      "#071973",
+      "#ffd819",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 221,
+    "name": "Corporate Steel Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#3a3a07",
+      "#6d6d0e",
+      "#1919ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 222,
+    "name": "Vibrant Frost Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#0f515f",
+      "#177d92",
+      "#ff3f19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 223,
+    "name": "Vintage Nebula Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#60bd31",
+      "#a82de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 224,
+    "name": "Zen Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#171c1a",
+      "#252e29",
+      "#18e27d",
+      "#a972e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 225,
+    "name": "Ocean Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0e1111",
+      "#191f1f",
+      "#1ceeaf",
+      "#c072e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 226,
+    "name": "Modern Frost Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#24550c",
+      "#3a8813",
+      "#b219ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 227,
+    "name": "Zen Frost Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1b1719",
+      "#332b2f",
+      "#f55bd6",
+      "#d0e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 228,
+    "name": "Vintage Onyx Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#dfbc09",
+      "#2d4ce5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 229,
+    "name": "Future Forest Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#093b54",
+      "#0f5f87",
+      "#ff6619",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 230,
+    "name": "Electric Canvas Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#120553",
+      "#1d0886",
+      "#d8ff19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 232,
+    "name": "Zen Iron Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#033703",
+      "#066a06",
+      "#ff19ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 233,
+    "name": "Future Horizon Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#61530a",
+      "#947e10",
+      "#193fff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 235,
+    "name": "Muted Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#221b20",
+      "#362b33",
+      "#1bd057",
+      "#9672e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 236,
+    "name": "Crimson Midnight Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#64b513",
+      "#892de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 237,
+    "name": "Dark Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#111212",
+      "#242626",
+      "#3aacdd",
+      "#e572c5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 238,
+    "name": "Tech Velvet Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#ce391b",
+      "#2dc6e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 239,
+    "name": "Tech Glacier Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c1d20",
+      "#2e3033",
+      "#dead4a",
+      "#72e5bc",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 240,
+    "name": "Modern Onyx Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#4e0d38",
+      "#81165d",
+      "#19ff65",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 241,
+    "name": "Future Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#100f10",
+      "#211f21",
+      "#eb2aeb",
+      "#e5e372",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 243,
+    "name": "Natural Onyx Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#131113",
+      "#2b2729",
+      "#e84ab3",
+      "#c1e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 244,
+    "name": "Dark Obsidian Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#085038",
+      "#0d835c",
+      "#ff1966",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 245,
+    "name": "Urban Horizon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1d2122",
+      "#32383b",
+      "#1f61d3",
+      "#e5729f",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 246,
+    "name": "Future Mist Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#14d534",
+      "#e52dc6",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 247,
+    "name": "Vibrant Copper Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#101b55",
+      "#192c88",
+      "#ffd819",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 248,
+    "name": "Vibrant Frost Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#180a35",
+      "#301468",
+      "#b2ff19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 249,
+    "name": "Future Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f1b20",
+      "#342e38",
+      "#661be8",
+      "#e59a72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 251,
+    "name": "Crimson Lagoon Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#a8c324",
+      "#4c2de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 252,
+    "name": "Dark Lagoon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f1112",
+      "#222527",
+      "#438ed9",
+      "#e572ae",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 253,
+    "name": "Zen Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c1e1c",
+      "#2f312f",
+      "#24cf57",
+      "#9272e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 255,
+    "name": "Electric Steel Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#44051a",
+      "#77092d",
+      "#19ffb2",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 256,
+    "name": "Corporate Frost Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#121110",
+      "#282624",
+      "#3395f6",
+      "#e572ae",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 257,
+    "name": "Vintage Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1b1a1a",
+      "#312f2e",
+      "#d25536",
+      "#72e587",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 258,
+    "name": "Deep Lagoon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#22211f",
+      "#32312e",
+      "#e6ac39",
+      "#72e5bc",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 259,
+    "name": "Ocean Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#111413",
+      "#252b29",
+      "#52f38d",
+      "#9a72e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 261,
+    "name": "Corporate Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1b1d1c",
+      "#2a2d2b",
+      "#4ad8a4",
+      "#b972e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 262,
+    "name": "Muted Frost Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#111211",
+      "#212220",
+      "#3bcf16",
+      "#728be5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 263,
+    "name": "Tech Iron Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#201f21",
+      "#2f2d30",
+      "#641ce0",
+      "#e59a72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 264,
+    "name": "Royal Velvet Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#55640b",
+      "#819711",
+      "#3f19ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 266,
+    "name": "Tech Horizon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0d0d0c",
+      "#1b1c19",
+      "#95d517",
+      "#72c1e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 267,
+    "name": "Natural Midnight Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#295fca",
+      "#e5a82d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 269,
+    "name": "Elegant Ember Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#e0e00e",
+      "#2d2de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 270,
+    "name": "Royal Nebula Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#191b18",
+      "#30342d",
+      "#8721ed",
+      "#e5a972",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 271,
+    "name": "Elegant Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f0d0f",
+      "#272327",
+      "#34f234",
+      "#7275e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 273,
+    "name": "Royal Onyx Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#191c1a",
+      "#2b302d",
+      "#44e749",
+      "#7472e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 274,
+    "name": "Vibrant Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#111214",
+      "#1d1f21",
+      "#e27e1a",
+      "#72e5a9",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 276,
+    "name": "Muted Onyx Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1d1f1f",
+      "#323635",
+      "#f13e7a",
+      "#9be572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 278,
+    "name": "Royal Iron Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#30ce4b",
+      "#e52dc6",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 279,
+    "name": "Zen Iron Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#191b1d",
+      "#2e3236",
+      "#1f49f3",
+      "#e5728b",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 280,
+    "name": "Royal Iron Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#26e300",
+      "#c62de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 281,
+    "name": "Ocean Horizon Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#08c108",
+      "#e52de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 284,
+    "name": "Modern Shadow Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#e3520a",
+      "#2da8e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 286,
+    "name": "Urban Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#252520",
+      "#3e3e35",
+      "#d3d33b",
+      "#72e5e3",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 287,
+    "name": "Vibrant Nebula Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f1f1a",
+      "#38382e",
+      "#f7f71b",
+      "#72e5e3",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 288,
+    "name": "Modern Frost Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#be4d15",
+      "#2da8e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 290,
+    "name": "Corporate Onyx Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#191c19",
+      "#292d29",
+      "#4ad072",
+      "#9272e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 291,
+    "name": "Ocean Desert Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#364ec9",
+      "#e5c62d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 292,
+    "name": "Muted Quartz Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#240534",
+      "#480967",
+      "#66ff19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 293,
+    "name": "Natural Steel Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#262221",
+      "#332f2c",
+      "#e2a02e",
+      "#72e5b9",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 295,
+    "name": "Royal Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f0f10",
+      "#242528",
+      "#5cbff8",
+      "#e572bd",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 296,
+    "name": "Vintage Horizon Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#316ce2",
+      "#e5a82d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 298,
+    "name": "Vibrant Desert Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0d0d0e",
+      "#1b1b1d",
+      "#1e5df0",
+      "#e57297",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 302,
+    "name": "Muted Desert Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#110f12",
+      "#252026",
+      "#bd51d2",
+      "#e5d072",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 304,
+    "name": "Zen Horizon Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#d4346a",
+      "#2de5a8",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 306,
+    "name": "Royal Iron Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#111114",
+      "#1f1f24",
+      "#5585f6",
+      "#e57297",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 309,
+    "name": "Royal Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f2024",
+      "#2f3035",
+      "#2b84e9",
+      "#e572aa",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 313,
+    "name": "Tech Shadow Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#4930c3",
+      "#c6e52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 315,
+    "name": "Urban Steel Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#161516",
+      "#2b2a2d",
+      "#342ecd",
+      "#e57472",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 317,
+    "name": "Urban Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#201d1d",
+      "#302c2d",
+      "#46f0d4",
+      "#d072e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 323,
+    "name": "Future Copper Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#161514",
+      "#272423",
+      "#36aae4",
+      "#e572c1",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 324,
+    "name": "Zen Horizon Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#d11050",
+      "#2de5a8",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 327,
+    "name": "Natural Nebula Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#151214",
+      "#2e292b",
+      "#ed1bc3",
+      "#d0e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 329,
+    "name": "Ocean Obsidian Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#afcc1c",
+      "#4c2de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 331,
+    "name": "Ocean Desert Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a1c1c",
+      "#2c302f",
+      "#f43e7b",
+      "#9be572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 332,
+    "name": "Corporate Onyx Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#161719",
+      "#24262a",
+      "#3c99cf",
+      "#e572bd",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 334,
+    "name": "Urban Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1e221c",
+      "#2f362c",
+      "#7cd94e",
+      "#729be5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 336,
+    "name": "Natural Frost Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#131515",
+      "#2a2d2e",
+      "#4afae2",
+      "#d372e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 338,
+    "name": "Zen Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#15181b",
+      "#252a2f",
+      "#25b9de",
+      "#e572d0",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 340,
+    "name": "Future Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c1c19",
+      "#31312c",
+      "#e1a721",
+      "#72e5c0",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 341,
+    "name": "Royal Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#151917",
+      "#272c29",
+      "#f357a5",
+      "#aee572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 342,
+    "name": "Natural Quartz Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#330d46",
+      "#591779",
+      "#66ff19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 343,
+    "name": "Corporate Glacier Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a151a",
+      "#322932",
+      "#eb57eb",
+      "#e5e372",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 344,
+    "name": "Modern Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c1d1b",
+      "#2e2f2c",
+      "#71ef29",
+      "#729fe5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 349,
+    "name": "Zen Steel Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#131713",
+      "#293028",
+      "#c439e0",
+      "#e5d072",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 350,
+    "name": "Zen Forest Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#2d2dc0",
+      "#e5e52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 351,
+    "name": "Royal Onyx Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#33dc87",
+      "#e52d89",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 353,
+    "name": "Tech Desert Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#26cc94",
+      "#e52d6b",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 355,
+    "name": "Natural Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0b0d0d",
+      "#1e2424",
+      "#18d2d2",
+      "#e372e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 356,
+    "name": "Ocean Horizon Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#53021d",
+      "#86032f",
+      "#19ffb2",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 358,
+    "name": "Natural Desert Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#330800",
+      "#661100",
+      "#19d8ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 360,
+    "name": "Natural Desert Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1f1d22",
+      "#35323b",
+      "#bff84b",
+      "#72c1e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 362,
+    "name": "Natural Canvas Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1b191c",
+      "#322e33",
+      "#7f23d0",
+      "#e5ad72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 364,
+    "name": "Zen Obsidian Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f0e0f",
+      "#232124",
+      "#7b46d7",
+      "#e59a72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 369,
+    "name": "Future Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f1210",
+      "#1e2420",
+      "#e358b4",
+      "#c1e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 373,
+    "name": "Ocean Lagoon Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#141312",
+      "#2e2a2a",
+      "#da624a",
+      "#72e583",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 374,
+    "name": "Ocean Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#241d1f",
+      "#3b2f33",
+      "#da4ea7",
+      "#bde572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 379,
+    "name": "Zen Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#120f0f",
+      "#241f1f",
+      "#f02b2b",
+      "#75e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 380,
+    "name": "Royal Mist Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#364cb8",
+      "#e5c62d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 382,
+    "name": "Ocean Iron Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#10b9db",
+      "#e54c2d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 387,
+    "name": "Urban Frost Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#1d3ee1",
+      "#e5c62d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 393,
+    "name": "Future Horizon Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c18205",
+      "#2d6be5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 396,
+    "name": "Crimson Obsidian Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#54c11e",
+      "#a82de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 403,
+    "name": "Corporate Copper Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#d31e1e",
+      "#2de5e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 406,
+    "name": "Future Ember Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#29a0db",
+      "#e56b2d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 408,
+    "name": "Tech Frost Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#2cd4b8",
+      "#e52d4c",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 409,
+    "name": "Corporate Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#211c22",
+      "#38303a",
+      "#8c2ce0",
+      "#e5ad72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 410,
+    "name": "Tech Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#121410",
+      "#242921",
+      "#56d152",
+      "#7278e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 412,
+    "name": "Crimson Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#13120f",
+      "#22211c",
+      "#4664f6",
+      "#e57288",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 413,
+    "name": "Zen Iron Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#130360",
+      "#1d0593",
+      "#d8ff19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 416,
+    "name": "Royal Mist Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#56b328",
+      "#a82de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 418,
+    "name": "Corporate Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#131212",
+      "#262524",
+      "#e98246",
+      "#72e59a",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 424,
+    "name": "Ocean Copper Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#3a1e02",
+      "#6d3804",
+      "#198cff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 426,
+    "name": "Zen Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1d221c",
+      "#2e362c",
+      "#8cdf42",
+      "#72aae5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 428,
+    "name": "Tech Copper Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#c527e4",
+      "#4ce52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 429,
+    "name": "Future Nebula Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#092255",
+      "#0e3788",
+      "#ffb219",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 433,
+    "name": "Natural Iron Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#015244",
+      "#02856f",
+      "#ff193f",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 437,
+    "name": "Natural Copper Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c191a",
+      "#322e2f",
+      "#d55369",
+      "#88e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 438,
+    "name": "Ocean Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#131410",
+      "#252720",
+      "#83d229",
+      "#72b2e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 444,
+    "name": "Ocean Iron Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#0c4f18",
+      "#158227",
+      "#ff19d8",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 445,
+    "name": "Natural Copper Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a181a",
+      "#2c292c",
+      "#f821f8",
+      "#e5e372",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 446,
+    "name": "Royal Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f0e0e",
+      "#1e1b1d",
+      "#df26ba",
+      "#d0e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 457,
+    "name": "Ocean Onyx Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#181617",
+      "#292729",
+      "#2bce61",
+      "#9672e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 459,
+    "name": "Future Obsidian Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#5fc62c",
+      "#a82de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 465,
+    "name": "Ocean Quartz Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#033039",
+      "#075b6c",
+      "#ff3f19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 471,
+    "name": "Zen Glacier Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#4a4a05",
+      "#7d7d09",
+      "#1919ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 472,
+    "name": "Future Midnight Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#137fb5",
+      "#e56b2d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 473,
+    "name": "Ocean Shadow Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#573be1",
+      "#c6e52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 474,
+    "name": "Ocean Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#171518",
+      "#27252a",
+      "#5330df",
+      "#e58772",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 475,
+    "name": "Future Horizon Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#b7b71b",
+      "#2d2de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 478,
+    "name": "Royal Quartz Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#100e10",
+      "#292529",
+      "#cd3787",
+      "#b2e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 480,
+    "name": "Royal Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0b0e0c",
+      "#171d19",
+      "#e02fa5",
+      "#c1e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 483,
+    "name": "Future Obsidian Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#4e5d03",
+      "#799004",
+      "#3f19ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 484,
+    "name": "Tech Sunset Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#1d3bcd",
+      "#e5c62d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 485,
+    "name": "Zen Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a1615",
+      "#332c2a",
+      "#e13d1c",
+      "#72e583",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 487,
+    "name": "Zen Forest Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#dca129",
+      "#2d6be5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 489,
+    "name": "Future Shadow Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#dc0494",
+      "#2de56b",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 491,
+    "name": "Natural Sunset Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#04c244",
+      "#e52da8",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 494,
+    "name": "Future Onyx Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#09405b",
+      "#0e638e",
+      "#ff6619",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 497,
+    "name": "Tech Steel Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0c0d10",
+      "#17191d",
+      "#5a8ff8",
+      "#e5729b",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 498,
+    "name": "Urban Quartz Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#47bc2f",
+      "#c62de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 500,
+    "name": "Future Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#191815",
+      "#272521",
+      "#d8a641",
+      "#72e5bc",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 502,
+    "name": "Tech Ember Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1e201b",
+      "#34362e",
+      "#e5eb40",
+      "#72e3e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 505,
+    "name": "Natural Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1b1e1c",
+      "#2d312f",
+      "#f41d89",
+      "#aee572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 507,
+    "name": "Ocean Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1b201e",
+      "#29302e",
+      "#f63978",
+      "#9be572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 509,
+    "name": "Ocean Onyx Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#41064d",
+      "#6c0a80",
+      "#3fff19",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 510,
+    "name": "Royal Shadow Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0c0c10",
+      "#202028",
+      "#6f35f8",
+      "#e59272",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 511,
+    "name": "Urban Desert Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#14161a",
+      "#22252b",
+      "#373cd4",
+      "#e57278",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 514,
+    "name": "Royal Iron Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#121113",
+      "#252225",
+      "#e443ce",
+      "#d8e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 518,
+    "name": "Tech Nebula Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#bb3f26",
+      "#2dc6e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 519,
+    "name": "Future Midnight Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#024322",
+      "#03763d",
+      "#ff198c",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 524,
+    "name": "Natural Canvas Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#191b19",
+      "#252825",
+      "#23f562",
+      "#9272e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 527,
+    "name": "Royal Midnight Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1d1917",
+      "#342d2a",
+      "#209edd",
+      "#e572c1",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 528,
+    "name": "Royal Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#141315",
+      "#232123",
+      "#924bd1",
+      "#e5ad72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 541,
+    "name": "Future Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#0f0d0e",
+      "#231d21",
+      "#dc40a8",
+      "#c1e572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 544,
+    "name": "Zen Velvet Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#e05d1b",
+      "#2da8e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 546,
+    "name": "Tech Horizon Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#520a16",
+      "#851124",
+      "#19ffd8",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 551,
+    "name": "Urban Obsidian Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#191917",
+      "#2a2c27",
+      "#581ad3",
+      "#e59672",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 553,
+    "name": "Zen Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#141712",
+      "#252a22",
+      "#67fd61",
+      "#7278e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 566,
+    "name": "Tech Nebula Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#3068d7",
+      "#e5a82d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 572,
+    "name": "Zen Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#11120f",
+      "#20221d",
+      "#dcfc5d",
+      "#72d0e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 574,
+    "name": "Royal Forest Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#620f1d",
+      "#95172c",
+      "#19ffd8",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 576,
+    "name": "Urban Quartz Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#bad828",
+      "#4c2de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 579,
+    "name": "Future Obsidian Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#231d23",
+      "#3c313c",
+      "#cc5efb",
+      "#e5c072",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 580,
+    "name": "Zen Onyx Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1e1b1e",
+      "#363237",
+      "#8e26ea",
+      "#e5ad72",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 586,
+    "name": "Future Forest Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a1817",
+      "#2b2926",
+      "#f08d2b",
+      "#72e5a9",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 590,
+    "name": "Urban Sunset Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#330213",
+      "#660526",
+      "#19ffb2",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 599,
+    "name": "Royal Iron Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#100f0f",
+      "#1e1c1c",
+      "#3f9ecd",
+      "#e572c1",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 606,
+    "name": "Urban Nebula Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#9302dc",
+      "#6be52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 608,
+    "name": "Urban Sunset Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#100d0e",
+      "#201b1c",
+      "#f82f8d",
+      "#aae572",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 609,
+    "name": "Urban Obsidian Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#bb7229",
+      "#2d89e5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 616,
+    "name": "Tech Forest Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#2354b7",
+      "#e5a82d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 617,
+    "name": "Royal Steel Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#58011e",
+      "#8b0230",
+      "#19ffb2",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 620,
+    "name": "Urban Frost Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#da034a",
+      "#2de5a8",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 629,
+    "name": "Urban Velvet Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a1a1f",
+      "#26252d",
+      "#d2ec54",
+      "#72d4e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 630,
+    "name": "Future Forest Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#5ac425",
+      "#a82de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 670,
+    "name": "Urban Obsidian Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1a1e1e",
+      "#2d3434",
+      "#29a3d7",
+      "#e572c5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 706,
+    "name": "Urban Glacier Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c1d20",
+      "#313338",
+      "#e5b556",
+      "#72e5bc",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 723,
+    "name": "Urban Copper Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#74d018",
+      "#892de5",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 745,
+    "name": "Urban Nebula Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c231e",
+      "#2f3b33",
+      "#3fd772",
+      "#9672e5",
+      "#F5F5F5"
+    ]
+  },
+  {
+    "id": 758,
+    "name": "Urban Velvet Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#2ec794",
+      "#e52d6b",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 812,
+    "name": "Urban Iron Light",
+    "type": "Light / SaaS",
+    "colors": [
+      "#FFFFFF",
+      "#F4F6F8",
+      "#d202d2",
+      "#2de52d",
+      "#1A202C"
+    ]
+  },
+  {
+    "id": 820,
+    "name": "Urban Sunset Bold",
+    "type": "Bold / Artistic",
+    "colors": [
+      "#4e5d04",
+      "#799006",
+      "#3f19ff",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 823,
+    "name": "Urban Mist Dark",
+    "type": "Dark / Professional",
+    "colors": [
+      "#1c1f21",
+      "#2c3032",
+      "#1fb1fa",
+      "#e572c1",
+      "#F5F5F5"
+    ]
+  }
+];

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairon Chat Widget</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="kairon">
+        <!-- Floating Launcher Button -->
+        <button id="kairon-button" aria-label="Open chat">
+            <img src="../../about/images/little.png" alt="Kairon">
+        </button>
+
+        <!-- Main Chat Panel -->
+        <div id="kairon-panel" role="dialog" aria-modal="true" aria-label="Chat window" >
+
+            <!-- Header -->
+            <div class="panel-header">
+                <div class="left-section">
+                    <div class="logo-placeholder">
+                        <img src="../../about/images/little.png" alt="Logo">
+                    </div>
+                    <div class="title">Kairon</div>
+                </div>
+                <!-- Agent Selector (Hidden by default, shown via JS if needed) -->
+                <select id="agent-selector" class="agent-selector" style="display:none">
+                    <option value="" disabled selected>Talk to Agent</option>
+                    <option value="Mr.K">Mr.K</option>
+                    <option value="Mr.A">Mr.A</option>
+                    <option value="Mr.S">Mr.S</option>
+                    <option value="Mr.V">Mr.V</option>
+                    <option value="Mr.M">Mr.M</option>
+                </select>
+                <button id="kairon-close" class="close-btn" aria-label="Close chat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="kairon-messages" class="messages"></div>
+
+            <!-- Interactive Area (Fixed above footer) -->
+            <div class="interactive-area">
+                <!-- Row 1: Categories (Horizontal Scroll) -->
+                <div id="kairon-controls" class="kairon-controls">
+                    <div id="kairon-categories" class="kairon-categories"></div>
+                    <!-- 'Browse all' is hidden via CSS as per wireframe -->
+                    <button id="kairon-browse-all" class="kairon-browse-all">Browse all</button>
+                </div>
+
+                <!-- Row 2: Questions (Vertical List) -->
+                <div id="kairon-faq-pane" class="kairon-faq-pane"></div>
+            </div>
+
+            <!-- Input Area (Fixed Footer) -->
+            <form id="kairon-form" class="composer" autocomplete="off">
+                <input id="kairon-input" type="text" aria-label="Message" />
+                <button type="submit" aria-label="Send">
+                    <!-- Blue Arrow Icon -->
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="currentColor" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hidden elements for legacy compatibility -->
+    <div id="kairon-live" class="kairon-live-panel" style="display:none"></div>
+    <button id="kairon-header-back-bot" style="display:none"></button> <!-- Hidden back button ref -->
+    <button id="kairon-faq-toggle" style="display:none"></button> <!-- Hidden toggle ref -->
+
+    <script src="script.fixed.js" defer></script>
+    <script>
+        // Inline script to handle specific UI logic for this layout
+        window.addEventListener('DOMContentLoaded', () => {
+            // Ensure elements exist
+            const controls = document.getElementById('kairon-controls');
+            const liveBtn = document.getElementById('kairon-live-btn');
+
+            // If live button doesn't exist (it's usually created by script.fixed.js), we might need to style it or move it
+            // The CSS handles .kairon-categories button styling.
+
+            // Expose functions expected by script.fixed.js if they aren't there
+            if (!window.showTypingIndicator) {
+                window.showTypingIndicator = () => {
+                    const msgs = document.getElementById('kairon-messages');
+                    const indicator = document.createElement('div');
+                    indicator.id = 'typing-indicator';
+                    indicator.className = 'typing-indicator';
+                    indicator.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+                    msgs.appendChild(indicator);
+                    msgs.scrollTop = msgs.scrollHeight;
+                };
+            }
+
+            if (!window.hideTypingIndicator) {
+                window.hideTypingIndicator = () => {
+                    const indicator = document.getElementById('typing-indicator');
+                    if (indicator) indicator.remove();
+                };
+            }
+
+            // Ensure scroll to bottom on new messages
+            const observer = new MutationObserver(() => {
+                const msgs = document.getElementById('kairon-messages');
+                msgs.scrollTop = msgs.scrollHeight;
+            });
+            observer.observe(document.getElementById('kairon-messages'), { childList: true });
+        });
+    </script>
+</body>
+
+</html>

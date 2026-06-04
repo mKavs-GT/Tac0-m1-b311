@@ -1,0 +1,1510 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kairon — Staff Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/neoncode/kairon-live-bot/styles.css">
+  <style>
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       KAIRON LIVE — STAFF DASHBOARD
+       Enterprise design system
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+    :root {
+      /* Background layers — matches admin panel white theme */
+      --bg:         #ffffff;
+      --surface:    #f9f9fb;
+      --surface-2:  #f3f4f6;
+      --surface-3:  #e5e7eb;
+
+      /* Brand */
+      --blue:       #3b6cf4;
+      --blue-dim:   rgba(59,108,244,0.08);
+      --blue-glow:  rgba(59,108,244,0.15);
+      --purple:     #7c3aed;
+      --lime:       #bef264;
+
+      /* Text */
+      --text-primary:   #1a1a1b;
+      --text-secondary: #6a737d;
+      --text-muted:     #959da5;
+
+      /* Borders */
+      --border:     #e1e4e8;
+      --border-accent: rgba(59,108,244,0.2);
+
+      /* Semantic */
+      --green:  #22c55e;
+      --amber:  #f59e0b;
+      --red:    #ef4444;
+
+      /* Misc */
+      --radius-sm: 8px;
+      --radius:    12px;
+      --radius-lg: 16px;
+      --transition: 0.18s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* Dark Mode variables — matches admin panel dark theme */
+    html.dark {
+      --bg:         #18181b;
+      --surface:    #09090b;
+      --surface-2:  #27272a;
+      --surface-3:  #3f3f46;
+      --text-primary:   #f4f4f5;
+      --text-secondary: #a1a1aa;
+      --text-muted:     #71717a;
+      --border:     #27272a;
+      --border-accent: rgba(59,108,244,0.4);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      color: var(--text-primary);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ━━━━━━━━ TOP BAR ━━━━━━━━ */
+    #staff-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 58px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .topbar-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--blue-dim);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .topbar-logo img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    .topbar-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.2px;
+    }
+
+    .topbar-divider {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+      margin: 0 6px;
+    }
+
+    #staff-identity {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    /* Status dot */
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      flex-shrink: 0;
+      transition: background var(--transition);
+    }
+
+    .status-dot.online {
+      background: var(--green);
+      box-shadow: 0 0 0 0 rgba(34,197,94,0.4);
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%   { box-shadow: 0 0 0 0   rgba(34,197,94,0.4); }
+      70%  { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+      100% { box-shadow: 0 0 0 0   rgba(34,197,94,0); }
+    }
+
+    #status-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    /* Topbar action buttons */
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .topbar-btn {
+      padding: 7px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all var(--transition);
+      letter-spacing: 0;
+    }
+
+    .topbar-btn:hover {
+      background: var(--surface-3);
+      color: var(--text-primary);
+      border-color: rgba(0,0,0,0.12);
+    }
+
+    .topbar-btn.active {
+      background: var(--blue);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 2px 12px var(--blue-glow);
+    }
+
+    .topbar-btn.active:hover {
+      background: #4a78f5;
+    }
+
+    /* ━━━━━━━━ LAYOUT ━━━━━━━━ */
+    #dashboard {
+      display: flex;
+      gap: 16px;
+      padding: 20px 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+      height: calc(100vh - 58px);
+      box-sizing: border-box;
+    }
+
+    /* ━━━━━━━━ CARDS ━━━━━━━━ */
+    .kairon-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition);
+    }
+
+    .kairon-card:focus-within {
+      border-color: var(--border-accent);
+    }
+
+    .card-header {
+      flex-shrink: 0;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface-2);
+    }
+
+    .card-header-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .session-count {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue);
+      background: var(--blue-dim);
+      border: 1px solid var(--border-accent);
+      padding: 2px 8px;
+      border-radius: 20px;
+      min-width: 24px;
+      text-align: center;
+      letter-spacing: 0;
+    }
+
+    /* ━━━━━━━━ INBOX COLUMN ━━━━━━━━ */
+    #inbox-card { width: 280px; flex-shrink: 0; }
+
+    #incoming {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--surface-3) transparent;
+    }
+
+    #incoming::-webkit-scrollbar { width: 4px; }
+    #incoming::-webkit-scrollbar-track { background: transparent; }
+    #incoming::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 4px; }
+
+    .session-item {
+      width: 100%;
+      text-align: left;
+      padding: 10px 14px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .session-item:hover {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      border-color: var(--border);
+    }
+
+    .session-item.active {
+      background: var(--blue-dim);
+      color: var(--text-primary);
+      border-color: var(--border-accent);
+      font-weight: 600;
+    }
+
+    .session-item-name {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .session-item-id {
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--text-muted);
+      white-space: nowrap;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .unread-badge {
+      flex-shrink: 0;
+      background: var(--blue);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      border-radius: 20px;
+      padding: 2px 7px;
+      min-width: 18px;
+      text-align: center;
+    }
+
+    .session-item.active .unread-badge {
+      background: rgba(0,0,0,0.2);
+    }
+
+    .inbox-empty {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      gap: 8px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .inbox-empty-icon {
+      font-size: 28px;
+      opacity: 0.4;
+    }
+
+    /* ━━━━━━━━ VIEWER COLUMN ━━━━━━━━ */
+    #viewer-card { flex: 1; min-width: 0; }
+
+    #chatMeta {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      background: var(--surface-2);
+      min-height: 44px;
+    }
+
+    .meta-chip {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.1px;
+    }
+
+    .meta-placeholder {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    #chatContent {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: var(--surface);
+      scrollbar-width: thin;
+      scrollbar-color: var(--surface-3) transparent;
+    }
+
+    #chatContent::-webkit-scrollbar { width: 4px; }
+    #chatContent::-webkit-scrollbar-track { background: transparent; }
+    #chatContent::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 4px; }
+
+    .viewer-empty {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      gap: 10px;
+    }
+
+    .viewer-empty-icon { font-size: 36px; opacity: 0.25; }
+    .viewer-empty-text { font-size: 13px; font-weight: 500; }
+
+    /* Chat bubbles */
+    .staff-msg-bubble {
+      max-width: 72%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      line-height: 1.55;
+      font-weight: 400;
+      word-break: break-word;
+    }
+
+    .staff-msg-bubble.customer {
+      align-self: flex-start;
+      background: var(--lime);
+      color: #0d0d0d;
+      border-bottom-left-radius: 3px;
+      font-weight: 500;
+    }
+
+    .staff-msg-bubble.agent {
+      align-self: flex-end;
+      background: var(--blue);
+      color: #fff;
+      border-bottom-right-radius: 3px;
+    }
+
+    /* System message */
+    .msg.system {
+      align-self: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.2px;
+      font-weight: 500;
+    }
+
+    /* ━━━━━━━━ ACTION ROW ━━━━━━━━ */
+    #action-row {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+      flex-wrap: wrap;
+    }
+
+    .action-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    #transferTo {
+      padding: 6px 30px 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 500;
+      font-family: inherit;
+      color: var(--text-primary);
+      background: var(--surface-3);
+      cursor: pointer;
+      outline: none;
+      transition: all var(--transition);
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='%238b8ba0'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+    }
+
+    #transferTo:focus {
+      border-color: var(--border-accent);
+      box-shadow: 0 0 0 3px var(--blue-dim);
+    }
+
+    #transferTo option { background: #f9f9fb; }
+
+    .action-chip {
+      white-space: nowrap;
+      padding: 6px 14px;
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 12px;
+      font-family: inherit;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .action-chip:hover {
+      background: var(--blue);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 2px 10px var(--blue-glow);
+    }
+
+    .action-chip.danger:hover {
+      background: var(--red);
+      box-shadow: 0 2px 10px rgba(239,68,68,0.3);
+    }
+
+    /* ━━━━━━━━ COMPOSER ━━━━━━━━ */
+    #composer-row { flex-shrink: 0; }
+
+    #composer-row .composer {
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #composer-row .composer input {
+      flex: 1;
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 400;
+      padding: 10px 14px;
+      outline: none;
+      transition: all var(--transition);
+    }
+
+    #composer-row .composer input::placeholder { color: var(--text-muted); }
+
+    #composer-row .composer input:focus {
+      border-color: var(--border-accent);
+      background: var(--surface);
+      box-shadow: 0 0 0 3px var(--blue-dim);
+    }
+
+    #composer-row .composer button {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      background: var(--blue);
+      border: none;
+      border-radius: var(--radius-sm);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      box-shadow: 0 2px 8px var(--blue-glow);
+    }
+
+    #composer-row .composer button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    #composer-row .composer button:hover {
+      background: #4a78f5;
+      box-shadow: 0 4px 14px var(--blue-glow);
+    }
+
+    /* ━━━━━━━━ RESPONSIVE ━━━━━━━━ */
+    @media (max-width: 700px) {
+      #dashboard { flex-direction: column; padding: 12px; height: auto; }
+      #inbox-card { width: 100%; }
+      #viewer-card { height: 70vh; }
+    }
+
+    /* ━━━━━━━━ NOTIFICATION SYSTEM ━━━━━━━━ */
+
+    #toast-container {
+      position: fixed;
+      top: 70px;
+      right: 16px;
+      z-index: 9000;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .kairon-toast {
+      pointer-events: auto;
+      min-width: 280px;
+      max-width: 340px;
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15), 0 1px 0 rgba(255,255,255,0.8) inset;
+      backdrop-filter: blur(16px);
+      animation: toast-in 0.3s cubic-bezier(0.2,0,0,1) forwards;
+    }
+
+    .kairon-toast.toast-success { background: rgba(22,163,74,0.92); border-color: rgba(34,197,94,0.3); }
+    .kairon-toast.toast-warning { background: rgba(180,83,9,0.92);  border-color: rgba(245,158,11,0.3); }
+    .kairon-toast.toast-info    { background: rgba(37,64,220,0.92); border-color: rgba(59,108,244,0.3); }
+    .kairon-toast.toast-error   { background: rgba(185,28,28,0.92); border-color: rgba(239,68,68,0.3); }
+    .kairon-toast.toast-exit    { animation: toast-out 0.25s ease forwards; }
+
+    .toast-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .toast-body { flex: 1; }
+    .toast-title { font-weight: 700; font-size: 13px; }
+    .toast-msg   { font-size: 12px; opacity: 0.8; margin-top: 2px; font-weight: 400; }
+    .toast-close {
+      background: none; border: none; color: rgba(255,255,255,0.7);
+      cursor: pointer; font-size: 15px; padding: 0; line-height: 1;
+      flex-shrink: 0; transition: color 0.15s; margin-top: 1px;
+    }
+    .toast-close:hover { color: #fff; }
+
+    @keyframes toast-in {
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes toast-out {
+      to { opacity: 0; transform: translateX(20px); }
+    }
+
+    /* ━━━━━━━━ REQUEST POPUP ━━━━━━━━ */
+    #request-popup-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9100;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .request-popup {
+      pointer-events: auto;
+      width: 308px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.7), 0 0 0 1px rgba(59,108,244,0.1);
+      overflow: hidden;
+      animation: popup-in 0.35s cubic-bezier(0.2,0,0,1) forwards;
+    }
+
+    .request-popup.popup-exit {
+      animation: popup-out 0.25s ease forwards;
+    }
+
+    .popup-accent-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--purple));
+    }
+
+    .popup-body { padding: 14px 16px 12px; }
+
+    .popup-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .popup-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: var(--blue-dim);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .popup-info { flex: 1; min-width: 0; }
+
+    .popup-customer-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .popup-customer-id {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .popup-message-preview {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding: 7px 10px;
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+    }
+
+    .popup-timer-bar {
+      height: 2px;
+      background: var(--surface-3);
+      border-radius: 2px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .popup-timer-fill {
+      height: 100%;
+      background: var(--blue);
+      border-radius: 2px;
+      width: 100%;
+      transition: width linear;
+    }
+
+    .popup-actions { display: flex; gap: 8px; }
+
+    .popup-btn {
+      flex: 1;
+      padding: 8px 0;
+      border-radius: var(--radius-sm);
+      border: none;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all var(--transition);
+      letter-spacing: 0.2px;
+    }
+
+    .popup-btn-accept {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 2px 8px var(--blue-glow);
+    }
+    .popup-btn-accept:hover {
+      background: #4a78f5;
+      box-shadow: 0 4px 14px var(--blue-glow);
+    }
+
+    .popup-btn-decline {
+      background: var(--surface-3);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+    .popup-btn-decline:hover {
+      background: rgba(239,68,68,0.1);
+      color: #f87171;
+      border-color: rgba(239,68,68,0.25);
+    }
+
+    @keyframes popup-in {
+      from { opacity: 0; transform: translateY(16px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes popup-out {
+      to { opacity: 0; transform: translateY(10px) scale(0.96); }
+    }
+
+    /* Badge attention pulse */
+    @keyframes badge-attention {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.25); }
+    }
+    .session-count.attention {
+      animation: badge-attention 0.6s ease-in-out 4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Identity Bar -->
+  <header id="staff-topbar">
+    <div class="topbar-brand">
+      <div class="topbar-logo">
+        <img src="/neoncode/kairon-live-bot/logo.png" alt="Kairon">
+      </div>
+      <div class="topbar-title">Kairon</div>
+      <div class="topbar-divider"></div>
+      <div id="staff-identity">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="agentName">Live Agent</span>
+        <span id="statusLabel" style="font-size:12px;opacity:0.7;font-weight:500">● Offline</span>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button id="goOnline" class="topbar-btn">Go Online</button>
+      <button id="goOffline" class="topbar-btn">Go Offline</button>
+    </div>
+  </header>
+
+  <!-- Main Dashboard -->
+  <main id="dashboard">
+
+    <!-- ── Inbox Card ── -->
+    <section class="kairon-card" id="inbox-card" aria-label="Session inbox">
+      <div class="card-header">
+        <span class="card-header-title">Inbox</span>
+        <span class="session-count" id="sessionCount">0</span>
+      </div>
+      <div id="incoming">
+        <div class="inbox-empty">
+          <div class="inbox-empty-icon">📭</div>
+          <div>No active sessions</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Viewer Card ── -->
+    <section class="kairon-card" id="viewer-card" aria-label="Chat viewer">
+      <div class="card-header">
+        <span class="card-header-title">Chat Viewer</span>
+      </div>
+
+      <!-- Session Meta -->
+      <div id="chatMeta">
+        <span class="meta-placeholder">Select a session from the inbox</span>
+      </div>
+
+      <!-- Messages -->
+      <div id="chatContent">
+        <div class="viewer-empty">
+          <div class="viewer-empty-icon">💬</div>
+          <div class="viewer-empty-text">No session selected</div>
+        </div>
+      </div>
+
+      <!-- Action Row: Transfer + Close -->
+      <div id="action-row">
+        <span class="action-label">Transfer to</span>
+        <select id="transferTo"></select>
+        <button id="transferBtn" class="action-chip">⇄ Transfer</button>
+        <button id="closeBtn" class="action-chip danger">✕ Close</button>
+      </div>
+
+      <!-- Composer (reuses .composer from styles.css) -->
+      <div id="composer-row">
+        <div class="composer">
+          <input id="msgIn" type="text" aria-label="Type your message" placeholder="Type a message…">
+          <button id="sendBtn" type="button" aria-label="Send">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Toast Container ── -->
+  <div id="toast-container" role="status" aria-live="polite"></div>
+
+  <!-- ── Incoming Request Pop-up Container ── -->
+  <div id="request-popup-container" aria-live="assertive"></div>
+
+  <script>
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    let wsHost = isLocal ? 'ws://127.0.0.1:3000' : 'wss://mkavs-backend.onrender.com';
+    // If the dashboard is hosted on the same domain as the API, we could also do:
+    // let wsHost = window.location.protocol === 'https:' ? 'wss://' : 'ws://' + window.location.host;
+    const WS_BASE = wsHost;
+
+    let myId = null, myName = 'Live Agent', ws = null;
+    const sessions = {};
+    let selectedSessionId = null;
+
+    /**
+     * pendingRequests — queue of incoming support requests that have not yet
+     * been accepted or declined. Each entry: { customerId, customerName, timer }
+     * Using a Map keyed by customerId prevents duplicate pop-ups for the same
+     * customer when the server re-sends a request.
+     */
+    const pendingRequests = new Map();
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 1 — TOAST NOTIFICATION SYSTEM
+       Lightweight, non-blocking status banners anchored top-right.
+       Supports: 'success' | 'warning' | 'info' | 'error'
+    ══════════════════════════════════════════════════════════════ */
+
+    /**
+     * showToast — render a dismissible banner.
+     * @param {string} title   — bold headline
+     * @param {string} msg     — sub-text (optional)
+     * @param {string} type    — 'success'|'warning'|'info'|'error'
+     * @param {number} duration — ms before auto-dismiss (default 4000)
+     */
+    function showToast(title, msg = '', type = 'info', duration = 4000) {
+      const container = document.getElementById('toast-container');
+
+      const icons = { success: '✅', warning: '⚠️', info: '💬', error: '🚫' };
+
+      // Build toast element
+      const toast = document.createElement('div');
+      toast.className = `kairon-toast toast-${type}`;
+      toast.setAttribute('role', 'alert');
+      toast.innerHTML = `
+        <span class="toast-icon">${icons[type] || 'ℹ️'}</span>
+        <div class="toast-body">
+          <div class="toast-title">${title}</div>
+          ${msg ? `<div class="toast-msg">${msg}</div>` : ''}
+        </div>
+        <button class="toast-close" aria-label="Dismiss notification">×</button>
+      `;
+
+      // Dismiss helper — plays exit animation then removes DOM node
+      function dismiss() {
+        toast.classList.add('toast-exit');
+        toast.addEventListener('animationend', () => toast.remove(), { once: true });
+      }
+
+      toast.querySelector('.toast-close').addEventListener('click', dismiss);
+      container.appendChild(toast);
+
+      // Auto-dismiss after `duration` ms
+      setTimeout(dismiss, duration);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 2 — AUDIBLE ALERT (Web Audio API)
+       Generates a short two-tone chime without external files.
+    ══════════════════════════════════════════════════════════════ */
+
+    /**
+     * playAlertChime — plays a brief notification sound.
+     * Silently fails if the browser blocks AudioContext.
+     */
+    function playAlertChime() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+
+        // Helper: schedule a single beep
+        function beep(freq, startTime, endTime, gainVal) {
+          const osc  = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, startTime);
+          gain.gain.setValueAtTime(gainVal, startTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, endTime);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(startTime);
+          osc.stop(endTime);
+        }
+
+        // Two ascending tones: 880 Hz then 1100 Hz
+        const now = ctx.currentTime;
+        beep(880,  now,        now + 0.18, 0.35);
+        beep(1100, now + 0.20, now + 0.40, 0.30);
+
+        // Close context after sounds finish to free browser resources
+        setTimeout(() => ctx.close(), 600);
+      } catch (e) {
+        // Browser denied AudioContext — fail silently
+        console.warn('[Kairon] AudioContext unavailable:', e.message);
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 3 — INCOMING REQUEST POP-UP SYSTEM
+       Each new customer request spawns a timed pop-up card.
+       Stacks properly for multiple simultaneous requests.
+       Auto-accepts after timeout so no request is ever lost.
+    ══════════════════════════════════════════════════════════════ */
+
+    /**
+     * showRequestPopup — display an action card for an incoming customer.
+     * @param {string} customerId   — customer session ID
+     * @param {string} customerName — display name
+     * @param {number} timeoutMs    — ms before card auto-accepts (default 30 s)
+     */
+    function showRequestPopup(customerId, customerName, timeoutMs = 30000) {
+      // Prevent duplicate pop-ups for the same customer
+      if (pendingRequests.has(customerId)) return;
+
+      const container = document.getElementById('request-popup-container');
+      const shortId   = customerId.length > 12 ? customerId.slice(0, 10) + '…' : customerId;
+
+      // ── Build the card DOM ──
+      const card = document.createElement('div');
+      card.className = 'request-popup';
+      card.dataset.cid = customerId;
+      card.setAttribute('role', 'dialog');
+      card.setAttribute('aria-label', `New support request from ${customerName}`);
+      card.innerHTML = `
+        <div class="popup-accent-bar"></div>
+        <div class="popup-body">
+          <div class="popup-header">
+            <div class="popup-avatar">👤</div>
+            <div class="popup-info">
+              <div class="popup-customer-name">${customerName}</div>
+              <div class="popup-customer-id">${shortId}</div>
+            </div>
+          </div>
+          <div class="popup-message-preview">🎧 Requesting live agent support…</div>
+          <div class="popup-timer-bar">
+            <div class="popup-timer-fill" id="timer-fill-${customerId}"></div>
+          </div>
+          <div class="popup-actions">
+            <button class="popup-btn popup-btn-accept"  id="accept-${customerId}">✓ Accept</button>
+            <button class="popup-btn popup-btn-decline" id="decline-${customerId}">✕ Decline</button>
+          </div>
+        </div>
+      `;
+
+      container.appendChild(card);
+
+      // ── Countdown timer bar ──
+      const fill = document.getElementById(`timer-fill-${customerId}`);
+      if (fill) {
+        // Trigger CSS transition: full-width shrinks to 0 over timeoutMs
+        requestAnimationFrame(() => {
+          fill.style.transition = `width ${timeoutMs}ms linear`;
+          fill.style.width = '0%';
+        });
+      }
+
+      // ── Accept / Decline handlers ──
+      function dismissPopup() {
+        clearTimeout(autoTimer);
+        pendingRequests.delete(customerId);
+        card.classList.add('popup-exit');
+        card.addEventListener('animationend', () => card.remove(), { once: true });
+      }
+
+      function acceptRequest() {
+        if (!ws || ws.readyState !== WebSocket.OPEN) {
+          showToast('Not connected', 'Click Go Online to reconnect.', 'error');
+          return;
+        }
+        // Accept the session on the server
+        ws.send(JSON.stringify({ type: 'accept_request', customerId, staffName: myName }));
+        // Send a greeting
+        ws.send(JSON.stringify({ type: 'staff_message', customerId, staffName: myName, message: 'Hello! I am ' + myName + '. How can I help you?' }));
+
+        // Create local session entry if it doesn't exist
+        if (!sessions[customerId]) {
+          sessions[customerId] = { id: customerId, customer: { name: customerName }, messages: [], _unread: 0 };
+        }
+        sessions[customerId]._unread = (sessions[customerId]._unread || 0) + 1;
+        renderSessionsList();
+
+        // Auto-open this session in the viewer
+        selectedSessionId = customerId;
+        renderSessionViewer(customerId);
+        try { document.getElementById('msgIn').focus(); } catch(e) {}
+
+        showToast('Session accepted', `Now chatting with ${customerName}`, 'success', 3000);
+        dismissPopup();
+      }
+
+      function declineRequest() {
+        if (ws && ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({ type: 'decline_request', customerId, staffName: myName }));
+        }
+        showToast('Request declined', `Session with ${customerName} was declined.`, 'warning', 3000);
+        dismissPopup();
+      }
+
+      card.querySelector(`#accept-${customerId}`).addEventListener('click', acceptRequest);
+      card.querySelector(`#decline-${customerId}`).addEventListener('click', declineRequest);
+
+      // ── Auto-accept after timeout so no request is silently dropped ──
+      const autoTimer = setTimeout(() => {
+        if (pendingRequests.has(customerId)) {
+          acceptRequest();
+        }
+      }, timeoutMs);
+
+      // Register in pending map
+      pendingRequests.set(customerId, { customerId, customerName, timer: autoTimer });
+
+      // Pulse the inbox badge to draw attention
+      const badge = document.getElementById('sessionCount');
+      if (badge) {
+        badge.classList.remove('attention'); // reset
+        void badge.offsetWidth;              // force reflow to restart animation
+        badge.classList.add('attention');
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 4 — STATUS / UI HELPERS
+    ══════════════════════════════════════════════════════════════ */
+
+    function setOnlineUI(isOnline) {
+      const dot = document.getElementById('statusDot');
+      const label = document.getElementById('statusLabel');
+      const goOn = document.getElementById('goOnline');
+      const goOff = document.getElementById('goOffline');
+
+      if (isOnline) {
+        dot.className = 'status-dot online';
+        label.textContent = '● Online as ' + myName;
+        label.style.opacity = '1';
+        goOn.classList.add('active');
+        goOff.classList.remove('active');
+      } else {
+        dot.className = 'status-dot';
+        label.textContent = '● Offline';
+        label.style.opacity = '0.7';
+        goOn.classList.remove('active');
+        goOff.classList.add('active');
+      }
+    }
+
+    function loadStaff() {
+      const transfer = document.getElementById('transferTo');
+      transfer.innerHTML = '';
+      const opt = document.createElement('option');
+      opt.value = 'Live Agent';
+      opt.textContent = 'Live Agent';
+      transfer.appendChild(opt);
+    }
+
+    /* ─── Session List ─── */
+
+    function renderSessionsList() {
+      const c = document.getElementById('incoming');
+      const sessionArr = Object.values(sessions);
+
+      // Update count badge
+      document.getElementById('sessionCount').textContent = sessionArr.length;
+
+      if (sessionArr.length === 0) {
+        c.innerHTML = `<div class="inbox-empty"><div class="inbox-empty-icon">📭</div><div>No active sessions</div></div>`;
+        return;
+      }
+
+      c.innerHTML = '';
+      sessionArr.forEach(s => {
+        const unread = s._unread || 0;
+        const div = document.createElement('div');
+        div.className = 'session-item' + (s.id === selectedSessionId ? ' active' : '');
+        div.dataset.id = s.id;
+
+        // Truncate session ID for display
+        const shortId = s.id.length > 12 ? s.id.slice(0, 10) + '…' : s.id;
+
+        div.innerHTML = `
+          <div>
+            <div class="session-item-name">${s.customer.name || 'Guest'}</div>
+            <div class="session-item-id">${shortId}</div>
+          </div>
+          ${unread ? `<span class="unread-badge">${unread}</span>` : ''}
+        `;
+        div.onclick = () => selectSession(s.id);
+        c.appendChild(div);
+      });
+    }
+
+    /* ─── Session Viewer ─── */
+
+    function renderSessionViewer(id) {
+      selectedSessionId = id;
+      const session = sessions[id];
+      if (!session) return;
+
+      session._unread = 0;
+      renderSessionsList();
+
+      // Meta strip
+      const meta = document.getElementById('chatMeta');
+      meta.innerHTML = `
+        <span class="meta-chip">📋 ${session.id}</span>
+        <span class="meta-chip">👤 ${session.customer.name || 'Guest'}</span>
+        <span class="meta-chip">🎧 ${session.staff || 'Unassigned'}</span>
+      `;
+
+      // Messages
+      const v = document.getElementById('chatContent');
+      v.innerHTML = '';
+
+      if (!session.messages || session.messages.length === 0) {
+        v.innerHTML = `<div class="viewer-empty"><div class="viewer-empty-icon">💬</div><div class="viewer-empty-text">No messages yet</div></div>`;
+        return;
+      }
+
+      (session.messages || []).forEach(m => {
+        const isStaff = (m.from === myName || m.from === 'Live Agent');
+        const isSystem = (m.from === 'System' || m.from === 'system');
+        let cls = isSystem ? 'msg system' : isStaff ? 'msg agent' : 'msg user';
+
+        const p = document.createElement('div');
+        p.className = cls;
+
+        if (isSystem) {
+          p.textContent = m.text;
+        } else {
+          // Customer messages get lime bubble, staff get blue-gradient
+          const isAgentMsg = (m.from === myName || m.from === 'Live Agent' || m.from === 'staff');
+          p.className = `staff-msg-bubble ${isAgentMsg ? 'agent' : 'customer'}`;
+          p.textContent = m.text;
+        }
+        v.appendChild(p);
+      });
+
+      v.scrollTop = v.scrollHeight;
+    }
+
+    function addMessageToSession(sessionId, from, text) {
+      const s = sessions[sessionId] || (sessions[sessionId] = {
+        id: sessionId,
+        customer: { name: 'Guest' },
+        staff: null,
+        messages: [],
+        _unread: 0
+      });
+      s.messages.push({ from, text });
+      if (selectedSessionId !== sessionId) {
+        s._unread = (s._unread || 0) + 1;
+      }
+      renderSessionsList();
+      if (selectedSessionId === sessionId) renderSessionViewer(sessionId);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 5 — WEBSOCKET MANAGER
+       Connects to the /staff endpoint, handles all inbound event
+       types, and delegates pop-ups / toasts to the functions above.
+    ══════════════════════════════════════════════════════════════ */
+
+    function startWs() {
+      myName = 'Live Agent';
+
+      // Prevent opening a duplicate connection
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        showToast('Already online', 'You are already connected.', 'info', 2500);
+        return;
+      }
+
+      ws = new WebSocket(WS_BASE + '/staff');
+
+      /* ── On connection open ── */
+      ws.addEventListener('open', () => {
+        try { ws.send(JSON.stringify({ type: 'staff_online', staffName: myName, isChatAgent: true })); } catch(e) {}
+        setOnlineUI(true);
+
+        // ── GO ONLINE NOTIFICATION ──
+        // Notify the agent visually that they are now live and accepting requests.
+        showToast(
+          '🟢 You are now Online',
+          'Live agent requests will appear as pop-ups below.',
+          'success',
+          5000
+        );
+      });
+
+      /* ── Inbound WebSocket messages ── */
+      ws.addEventListener('message', (ev) => {
+        let d = {};
+        try { d = JSON.parse(ev.data || '{}'); } catch(e) { return; }
+
+        /* ── New support request from a customer ──
+           Instead of auto-accepting immediately, we show a pop-up
+           so the agent can consciously accept or decline. Multiple
+           simultaneous requests each get their own pop-up card. */
+        if (d.type === 'request_staff') {
+          const cid  = d.customerId;
+          const name = d.customerName || 'Guest';
+          if (!cid) return;
+
+          // Ensure a session slot exists so messages can queue even before acceptance
+          sessions[cid] = sessions[cid] || {
+            id: cid,
+            customer: { name },
+            messages: [],
+            _unread: 0
+          };
+          renderSessionsList();
+
+          // Play an audible alert so agents notice even if they're away
+          playAlertChime();
+
+          // Spawn the interactive pop-up card (30-second auto-accept)
+          showRequestPopup(cid, name, 30000);
+        }
+
+        /* ── Server confirms the session was assigned to us ──
+           This fires after accept_request is processed server-side. */
+        else if (d.type === 'assigned') {
+          const cid  = d.customerId || (d.session && d.session.id);
+          const name = d.customerName || (d.session && d.session.customer && d.session.customer.name) || 'Guest';
+          if (!cid) return;
+
+          sessions[cid] = sessions[cid] || { id: cid, customer: { name }, messages: [], _unread: 0 };
+          sessions[cid]._unread = (sessions[cid]._unread || 0) + 1;
+          renderSessionsList();
+        }
+
+        /* ── Customer message arriving for an active or queued session ── */
+        else if (d.type === 'queued_message' || d.type === 'customer_message') {
+          const cid = d.customerId;
+          if (!cid) return;
+          addMessageToSession(cid, d.customerName || 'Guest', d.message);
+
+          // If a pop-up is already open for this customer, update its preview
+          const previewEl = document.querySelector(
+            `.request-popup[data-cid="${cid}"] .popup-message-preview`
+          );
+          if (previewEl) {
+            previewEl.textContent = `💬 "${d.message.slice(0, 60)}${d.message.length > 60 ? '…' : ''}"`;
+          }
+
+          // Also toast a brief message preview if session is not selected
+          if (selectedSessionId !== cid) {
+            showToast(
+              `${d.customerName || 'Guest'} says:`,
+              d.message.slice(0, 80) + (d.message.length > 80 ? '…' : ''),
+              'info',
+              4000
+            );
+          }
+        }
+
+        /* ── Session transferred or closed ── */
+        else if (d.type === 'transferred' || d.type === 'closed') {
+          if (d.session && d.session.id) sessions[d.session.id] = d.session;
+          renderSessionsList();
+          const action = d.type === 'closed' ? 'closed' : 'transferred';
+          showToast(`Session ${action}`, '', 'warning', 3000);
+        }
+      });
+
+      /* ── Disconnection ── */
+      ws.addEventListener('close', () => {
+        setOnlineUI(false);
+        showToast('Disconnected', 'You went offline. Click Go Online to reconnect.', 'warning', 6000);
+      });
+
+      /* ── WebSocket error ── */
+      ws.addEventListener('error', () => {
+        showToast('Connection error', 'Could not reach the chat server.', 'error', 6000);
+      });
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 6 — EVENT LISTENERS
+    ══════════════════════════════════════════════════════════════ */
+
+    /* ── Go Online button ─────────────────────────────────────────
+       Triggers WebSocket connection + the Go Online toast.
+       The toast itself is fired inside ws.onopen so it only shows
+       after the server connection is confirmed, not on click. */
+    document.getElementById('goOnline').addEventListener('click', () => {
+        window.parent.postMessage({ type: 'KAIRON_IS_ONLINE' }, '*');
+        startWs();
+    });
+
+    /* ── Go Offline button ──────────────────────────────────────── */
+    document.getElementById('goOffline').addEventListener('click', () => {
+      window.parent.postMessage({ type: 'KAIRON_IS_OFFLINE' }, '*');
+      if (ws) {
+        try { ws.send(JSON.stringify({ type: 'staff_offline', staffName: myName })); } catch(e) {}
+        ws.close(); ws = null;
+      }
+      setOnlineUI(false);
+      // Dismiss any open request pop-ups so they don't linger when offline
+      pendingRequests.forEach((req) => clearTimeout(req.timer));
+      pendingRequests.clear();
+      document.querySelectorAll('.request-popup').forEach(el => el.remove());
+      showToast('You are now Offline', 'Incoming requests are paused.', 'warning', 4000);
+    });
+
+    function selectSession(id) { renderSessionViewer(id); }
+
+    document.getElementById('sendBtn').addEventListener('click', () => {
+      const t = document.getElementById('msgIn').value.trim();
+      if (!t) return;
+      if (!selectedSessionId) { alert('Please select a session first.'); return; }
+      try {
+        ws.send(JSON.stringify({ type: 'staff_message', customerId: selectedSessionId, staffName: myName, message: t }));
+      } catch(e) { alert('Not connected. Click Go Online first.'); return; }
+      addMessageToSession(selectedSessionId, myName, t);
+      document.getElementById('msgIn').value = '';
+      document.getElementById('msgIn').focus();
+    });
+
+    // Allow Enter key in composer
+    document.getElementById('msgIn').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        document.getElementById('sendBtn').click();
+      }
+    });
+
+    document.getElementById('transferBtn').addEventListener('click', () => {
+      const to = document.getElementById('transferTo').value;
+      if (!selectedSessionId) { alert('Please select a session first.'); return; }
+      try {
+        ws.send(JSON.stringify({ type: 'transfer_chat', customerId: selectedSessionId, fromStaff: myName, toStaff: to }));
+      } catch(e) { alert('Not connected.'); return; }
+      delete sessions[selectedSessionId];
+      selectedSessionId = null;
+      renderSessionsList();
+      document.getElementById('chatContent').innerHTML = `<div class="viewer-empty"><div class="viewer-empty-icon">💬</div><div class="viewer-empty-text">No session selected</div></div>`;
+      document.getElementById('chatMeta').innerHTML = `<span class="meta-placeholder">Select a session from the inbox</span>`;
+    });
+
+    document.getElementById('closeBtn').addEventListener('click', () => {
+      if (!selectedSessionId) { alert('Please select a session first.'); return; }
+      try {
+        ws.send(JSON.stringify({ type: 'close_chat', customerId: selectedSessionId, staffName: myName }));
+      } catch(e) { alert('Not connected.'); return; }
+      delete sessions[selectedSessionId];
+      selectedSessionId = null;
+      renderSessionsList();
+      document.getElementById('chatContent').innerHTML = `<div class="viewer-empty"><div class="viewer-empty-icon">💬</div><div class="viewer-empty-text">No session selected</div></div>`;
+      document.getElementById('chatMeta').innerHTML = `<span class="meta-placeholder">Select a session from the inbox</span>`;
+    });
+
+    // Init
+    loadStaff();
+
+    // Listen for commands from parent React App
+    window.addEventListener('message', (event) => {
+        if (event.data?.type === 'KAIRON_GO_ONLINE') {
+            document.getElementById('goOnline').click();
+        } else if (event.data?.type === 'KAIRON_GO_OFFLINE') {
+            document.getElementById('goOffline').click();
+        } else if (event.data?.type === 'SET_THEME') {
+            if (event.data.isDark) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+    });
+
+    // Auto-connect on load if localStorage says we are live
+    window.addEventListener('load', () => {
+        if (localStorage.getItem('mkavs_kairon_live') === 'true') {
+            document.getElementById('goOnline').click();
+        }
+    });
+  </script>
+  <script>
+    // Theme synchronization with parent
+    function syncTheme() {
+      try {
+        const isDark = window.parent.document.documentElement.classList.contains('dark');
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {
+        // Fallback for cross-origin or if parent not accessible
+        console.warn('Theme sync failed:', e);
+      }
+    }
+
+    // Initial sync
+    syncTheme();
+
+    // Watch for parent theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          syncTheme();
+        }
+      });
+    });
+
+    try {
+      observer.observe(window.parent.document.documentElement, { attributes: true });
+    } catch (e) {}
+  </script>
+</body>
+</html>
