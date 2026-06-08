@@ -12,13 +12,15 @@ router.post('/', verifyToken, async (req, res) => {
     const { name, description, client, status, startDate, endDate, members } = req.body;
     if (!name) return res.status(400).json({ error: 'Project name is required' });
 
+    const finalDueDate = endDate && endDate.trim() !== '' ? new Date(endDate) : null;
+
     const project = await prisma.project.create({
       data: {
         name,
         description: description || null,
         client: client || null,
         status: status || 'Active',
-        dueDate: endDate ? new Date(endDate) : null,
+        dueDate: finalDueDate,
         members: members || []
       },
       include: {
@@ -132,11 +134,12 @@ router.delete('/:id', verifyToken, async (req, res) => {
 router.post('/:id/sprints', verifyToken, async (req, res) => {
   if (!req.user.isExecutive && !req.user.isManager) return res.status(403).json({ error: 'Forbidden' });
   try {
+    const finalDueDate = req.body.dueDate && req.body.dueDate.trim() !== '' ? new Date(req.body.dueDate) : null;
     const sprint = await prisma.sprint.create({
       data: {
         name: req.body.name || 'New Sprint',
         project: { connect: { id: req.params.id } },
-        endDate: req.body.dueDate ? new Date(req.body.dueDate) : null
+        endDate: finalDueDate
       }
     });
     res.json(sprint);
