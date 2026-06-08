@@ -5,11 +5,11 @@ const isLocalEnv = ['localhost', '127.0.0.1'].includes(window.location.hostname)
 
 export const API_BASE_URL = isLocalEnv
   ? '' // Use Vite proxy in development
-  : 'https://mkavs-backend.onrender.com';
+  : 'https://tac0-m1-b311.onrender.com';
 
 export const WS_URL = isLocalEnv
   ? `ws://${window.location.hostname}:3000/staff`
-  : 'wss://mkavs-backend.onrender.com/staff';
+  : 'wss://tac0-m1-b311.onrender.com/staff';
 export const authHeader = () => {
   const saved = localStorage.getItem('mkavs_admin_user');
   if (!saved) return {};
