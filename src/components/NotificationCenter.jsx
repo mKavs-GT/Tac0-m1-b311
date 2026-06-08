@@ -52,6 +52,23 @@ export default function NotificationCenter({ user }) {
     }
   };
 
+  const handleApprove = async (taskId, notifId) => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/tasks/${taskId}/approve`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json', ...authHeader() }
+      });
+      if (res.ok) {
+        markAsRead(notifId);
+      } else {
+        const err = await res.json();
+        alert('Failed to approve: ' + err.error);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <div className="relative">
       <button 
@@ -100,6 +117,21 @@ export default function NotificationCenter({ user }) {
                         {!n.read && <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.5)]"></div>}
                       </div>
                       <p className="text-xs font-bold text-zinc-900 dark:text-white leading-tight mb-2">{n.message}</p>
+                      
+                      {n.type === 'APPROVAL_NEEDED' && n.taskId && !n.read && (
+                        <div className="mb-2">
+                          <button 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleApprove(n.taskId, n.id);
+                            }}
+                            className="px-3 py-1.5 bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400 text-[10px] font-black uppercase tracking-widest rounded hover:bg-emerald-100 transition-colors border border-emerald-100 dark:border-emerald-500/20"
+                          >
+                            Approve Now
+                          </button>
+                        </div>
+                      )}
+
                       <div className="flex items-center gap-1 text-[8px] font-black text-zinc-400 uppercase">
                         <Clock size={10} />
                         {new Date(n.createdAt).toLocaleDateString()} at {new Date(n.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
