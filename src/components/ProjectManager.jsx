@@ -4,7 +4,8 @@ import {
   Plus, Calendar, X, ChevronRight, ChevronDown, Clock, Activity, Trash2, Edit3, MoreVertical 
 } from 'lucide-react';
 import { TEAM_MEMBERS } from '../constants/users';
-import { API_BASE_URL, authHeader } from '../config';
+import { API_BASE_URL, WS_URL, authHeader } from '../config';
+import { io } from 'socket.io-client';
 
 const COLUMN_TITLES = {
   TASKS: 'Tasks',
@@ -53,7 +54,14 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
   useEffect(() => {
     fetchTasks();
     const interval = setInterval(fetchTasks, 10000);
-    return () => clearInterval(interval);
+    
+    const socket = io(`${WS_URL}/staff`);
+    socket.on('board_update', fetchTasks);
+    
+    return () => {
+      clearInterval(interval);
+      socket.disconnect();
+    };
   }, []);
 
   const fetchTasks = async () => {
@@ -189,6 +197,7 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
       });
       if (res.ok) {
         fetchTasks();
+        if (onRefresh) onRefresh();
       } else {
         const err = await res.json();
         alert('Action failed: ' + err.error);
@@ -304,7 +313,7 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
                                    <div className="space-y-3 min-h-[200px] p-2 bg-bg-root rounded-xl border border-dashed border-border-main">
                                       {sortTasks(colTasks).map(task => (
                                         <div key={task.id} className="bg-bg-surface p-4 rounded-lg border border-border-main shadow-sm hover:shadow-md transition-all group">
-                                           <div className={`w-8 h-1 rounded-full mb-3 ${task.priority === 'HIGH' || task.priority === 'URGENT' ? 'bg-rose-500' : task.priority === 'MEDIUM' ? 'bg-amber-500' : 'bg-emerald-500'}`} />
+                                           <div className={`w-8 h-1 rounded-full mb-3 ${task.priority?.toUpperCase() === 'HIGH' || task.priority?.toUpperCase() === 'URGENT' ? 'bg-rose-500' : task.priority?.toUpperCase() === 'MEDIUM' ? 'bg-amber-500' : 'bg-emerald-500'}`} />
                                            <p className="text-sm font-black text-text-main leading-tight mb-2">{task.title}</p>
                                            <p className="text-xs font-semibold text-text-muted leading-relaxed mb-4">{task.description}</p>
                                            
@@ -418,7 +427,7 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
                     <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Assignee *</label>
                     <select required value={taskFormData.assignedTo} onChange={e => setTaskFormData({...taskFormData, assignedTo: e.target.value})} className="w-full px-4 py-3 rounded-lg bg-bg-root border border-border-main text-sm font-bold text-text-main">
                       <option value="">Select Member</option>
-                      {TEAM_MEMBERS.filter(m => m.role !== 'Executive').map(m => <option key={m.uid} value={m.uid}>{m.name}</option>)}
+                      {TEAM_MEMBERS.map(m => <option key={m.uid} value={m.uid}>{m.name}</option>)}
                     </select>
                   </div>
                </div>
