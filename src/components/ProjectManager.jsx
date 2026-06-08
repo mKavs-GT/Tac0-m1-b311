@@ -417,10 +417,10 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Priority</label>
                     <select value={taskFormData.priority} onChange={e => setTaskFormData({...taskFormData, priority: e.target.value})} className="w-full px-4 py-3 rounded-lg bg-bg-root border border-border-main text-sm font-bold text-text-main">
-                      <option value="LOW">Low</option>
-                      <option value="MEDIUM">Medium</option>
-                      <option value="HIGH">High</option>
-                      <option value="URGENT">Urgent</option>
+                      <option value="LOW">Low Cortisol</option>
+                      <option value="MEDIUM">Medium Cortisol</option>
+                      <option value="HIGH">High Cortisol</option>
+                      <option value="URGENT">Urgent Cortisol</option>
                     </select>
                   </div>
                   <div className="space-y-2">

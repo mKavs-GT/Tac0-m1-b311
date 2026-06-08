@@ -65,6 +65,9 @@ router.post('/', verifyToken, async (req, res) => {
     
     if (!title || !assignedTo) return res.status(400).json({ error: 'Title and assignee are required' });
 
+    const finalSprintId = sprintId && sprintId.startsWith('SPRINT-') ? null : sprintId;
+    const finalDueDate = dueDate && dueDate.trim() !== '' ? new Date(dueDate) : null;
+
     const task = await prisma.task.create({
       data: {
         title,
@@ -72,10 +75,10 @@ router.post('/', verifyToken, async (req, res) => {
         priority: priority || 'MEDIUM',
         status: 'TASKS',
         projectId: projectId || null,
-        sprintId: sprintId || null,
+        sprintId: finalSprintId,
         assignedTo,
         assignedBy: req.user.uid,
-        dueDate: dueDate ? new Date(dueDate) : null,
+        dueDate: finalDueDate,
         estimatedHours: estimatedHours ? parseInt(estimatedHours) : null
       },
       include: {
