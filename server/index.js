@@ -14,7 +14,11 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Setup WebSockets
-setupSocket(server);
+const io = setupSocket(server);
+app.use((req, res, next) => {
+  req.io = io;
+  next();
+});
 
 // Routes
 const { router: authRouter } = require('./routes/auth');
@@ -25,7 +29,8 @@ app.use('/api/time-entries', attendanceRouter); // backward compat
 app.use('/api/admin-projects', require('./routes/projects'));
 app.use('/api/worklogs', require('./routes/worklogs'));
 app.use('/api/activity', require('./routes/activity'));
-// app.use('/api/tasks', require('./routes/tasks'));
+app.use('/api/tasks', require('./routes/tasks'));
+app.use('/api/notifications', require('./routes/notifications'));
 // app.use('/api/clients', require('./routes/clients'));
 // app.use('/api/vault', require('./routes/vault'));
 // app.use('/api/chat', require('./routes/chat'));

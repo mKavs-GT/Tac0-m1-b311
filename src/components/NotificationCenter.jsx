@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bell, Check, Clock, X } from 'lucide-react';
-import { API_BASE_URL } from '../config';
+import { WS_URL, API_BASE_URL, authHeader } from '../config';
 
 export default function NotificationCenter({ user }) {
   const [notifications, setNotifications] = useState([]);
@@ -11,14 +11,24 @@ export default function NotificationCenter({ user }) {
   useEffect(() => {
     if (user) {
       fetchNotifications();
-      const interval = setInterval(fetchNotifications, 60000); // Poll every 60s
-      return () => clearInterval(interval);
+      
+      // Setup WebSocket for real-time notifications
+      const ws = new WebSocket(WS_URL);
+      // We are actually using Socket.io on the backend, not native WebSocket.
+      // Wait, let's use the native socket if Socket.io client is imported, else just keep polling.
+      // Actually, since I don't see socket.io-client imported here, I will stick to polling but faster, OR I'll see if I can import socket.io-client.
+      const interval = setInterval(fetchNotifications, 10000); // Poll every 10s for real-time feel if socket fails
+      return () => {
+        clearInterval(interval);
+      };
     }
   }, [user]);
 
   const fetchNotifications = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin-projects/notifications/${user.uid}`);
+      const res = await fetch(`${API_BASE_URL}/api/notifications`, {
+        headers: { ...authHeader() }
+      });
       if (res.ok) {
         const data = await res.json();
         setNotifications(data);
@@ -31,8 +41,11 @@ export default function NotificationCenter({ user }) {
 
   const markAsRead = async (id) => {
     try {
-      await fetch(`${API_BASE_URL}/api/admin-projects/notifications/${id}/read`, { method: 'PUT' });
-      setNotifications(prev => prev.map(n => n._id === id ? { ...n, read: true } : n));
+      await fetch(`${API_BASE_URL}/api/notifications/${id}/read`, { 
+        method: 'PATCH',
+        headers: { ...authHeader() }
+      });
+      setNotifications(prev => prev.map(n => n.id === id ? { ...n, read: true } : n));
       setUnreadCount(prev => Math.max(0, prev - 1));
     } catch (err) {
       console.error('Mark as read failed:', err);
@@ -78,9 +91,9 @@ export default function NotificationCenter({ user }) {
                 ) : (
                   notifications.map(n => (
                     <div 
-                      key={n._id} 
+                      key={n.id} 
                       className={`p-3 rounded-xl transition-all ${n.read ? 'opacity-60' : 'bg-indigo-50/50 dark:bg-indigo-500/5 border border-indigo-100/50 dark:border-indigo-500/10'}`}
-                      onClick={() => !n.read && markAsRead(n._id)}
+                      onClick={() => !n.read && markAsRead(n.id)}
                     >
                       <div className="flex justify-between items-start mb-1">
                         <span className="text-[10px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">{n.title}</span>

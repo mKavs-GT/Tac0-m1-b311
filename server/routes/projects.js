@@ -47,6 +47,7 @@ router.get('/', verifyToken, async (req, res) => {
     });
     
     // Transform to expected frontend structure
+    const formattedProjects = projects.map(p => {
       // Transform tasks into columns format expected by ProjectManager.jsx
       const formatSprint = (sprintObj) => {
         const columns = {

@@ -22,7 +22,10 @@ model User {
   isManager      Boolean     @default(false)
   status         String      @default("offline")
   timeEntries    TimeEntry[]
-  tasks          Task[]
+  tasks          Task[]         @relation("AssignedTasks")
+  createdTasks   Task[]         @relation("CreatedTasks")
+  approvedTasks  Task[]         @relation("ApprovedTasks")
+  notifications  Notification[]
   attendances    Attendance[]
   attendanceLogs AttendanceLog[]
   workLogs       WorkLog[]
@@ -59,20 +62,40 @@ model Sprint {
 }
 
 model Task {
-  id          String      @id @default(uuid())
-  title       String
-  description String?
-  status      String      @default("Todo")
-  priority    String      @default("Medium")
-  assigneeId  String?
-  assignee    User?       @relation(fields: [assigneeId], references: [uid])
-  projectId   String?
-  project     Project?    @relation(fields: [projectId], references: [id], onDelete: Cascade)
-  sprintId    String?
-  sprint      Sprint?     @relation(fields: [sprintId], references: [id], onDelete: Cascade)
-  dueDate     DateTime?
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  id             String    @id @default(uuid())
+  title          String
+  description    String?
+  priority       String    @default("MEDIUM")
+  status         String    @default("TASKS")
+  projectId      String?
+  project        Project?  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  sprintId       String?
+  sprint         Sprint?   @relation(fields: [sprintId], references: [id], onDelete: Cascade)
+  assignedTo     String?
+  assigneeUser   User?     @relation("AssignedTasks", fields: [assignedTo], references: [uid])
+  assignedBy     String
+  assignerUser   User      @relation("CreatedTasks", fields: [assignedBy], references: [uid])
+  dueDate        DateTime?
+  estimatedHours Int?
+  testingNotes   String?
+  completedAt    DateTime?
+  approvedAt     DateTime?
+  approvedBy     String?
+  approverUser   User?     @relation("ApprovedTasks", fields: [approvedBy], references: [uid])
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [uid])
+  title     String
+  message   String
+  type      String
+  taskId    String?
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
 }
 
 model TimeEntry {
