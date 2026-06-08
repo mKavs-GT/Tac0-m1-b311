@@ -21,11 +21,10 @@ import { TEAM_MEMBERS } from '../constants/users';
 import { API_BASE_URL } from '../config';
 
 const COLUMN_TITLES = {
-  allTasks: 'Backlog',
-  ongoing: 'In Progress',
-  testing: 'Quality Assurance',
-  approval: 'Final Approval',
-  live: 'Production'
+  tasks: 'Tasks',
+  inProgress: 'In Progress',
+  testing: 'Testing',
+  production: 'Production'
 };
 
 const PRIORITY_ORDER = { high: 0, medium: 1, low: 2 };
@@ -445,8 +444,26 @@ const ProjectManager = ({ user, projects = [], onRefresh, setProjects, externalO
                                                  <button 
                                                    onClick={() => {
                                                      const keys = Object.keys(COLUMN_TITLES);
-                                                     const nextKey = keys[keys.indexOf(key) + 1];
-                                                     if (nextKey) moveTask(project._id, sprint._id, task.id, key, nextKey);
+                                                     const currentIndex = keys.indexOf(key);
+                                                     const nextKey = keys[currentIndex + 1];
+                                                     
+                                                     // --- WORKFLOW RULES ---
+                                                     if (key === 'testing') {
+                                                       // Only Mr.M (Developer) can complete testing.
+                                                       // Only Mr.K (Executive) can approve to Production.
+                                                       if (user?.uid === 'MGT-DEV-02') { // Mr.M
+                                                         alert(`Notification sent to Mr.K! Task "${task.content}" is ready for Production approval.`);
+                                                         return;
+                                                       } else if (user?.uid === 'MGT-EXE-01') { // Mr.K
+                                                         if (nextKey) moveTask(project._id, sprint._id, task.id, key, nextKey);
+                                                       } else {
+                                                         alert('Only Mr.M can complete testing, and only Mr.K can approve it for production.');
+                                                         return;
+                                                       }
+                                                     } else {
+                                                       // Normal move for tasks -> inProgress -> testing
+                                                       if (nextKey) moveTask(project._id, sprint._id, task.id, key, nextKey);
+                                                     }
                                                    }}
                                                    className="p-1.5 bg-bg-muted rounded border border-border-main text-text-main hover:bg-text-main hover:text-bg-surface transition-colors"
                                                  >
