@@ -817,7 +817,7 @@ export default function App() {
 
                 {activeView === 'logs' && (
                   <motion.div key="logs" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-                    <Logs />
+                    <Logs user={user} />
                   </motion.div>
                 )}
 

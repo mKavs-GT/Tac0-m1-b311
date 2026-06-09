@@ -9,10 +9,6 @@ export default function Tokens({ user }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
-  useEffect(() => {
-    fetchTokens();
-  }, [user]);
-
   const fetchTokens = async () => {
     try {
       const res = await fetch(`${API_BASE_URL}/api/tokens?userId=${user.uid}`);
@@ -26,6 +22,10 @@ export default function Tokens({ user }) {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchTokens();
+  }, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
