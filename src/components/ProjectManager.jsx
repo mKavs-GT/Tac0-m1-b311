@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { TEAM_MEMBERS } from '../constants/users';
 import { EmptyState } from './ui/EmptyState';
+import { io } from 'socket.io-client';
 import { API_BASE_URL, WS_URL, authHeader } from '../config';
 
 const COLUMN_TITLES = {
@@ -51,19 +52,6 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
     }
   }, [externalOpen]);
 
-  useEffect(() => {
-    fetchTasks();
-    const interval = setInterval(fetchTasks, 10000);
-    
-    const socket = io(`${WS_URL}/staff`);
-    socket.on('board_update', fetchTasks);
-    
-    return () => {
-      clearInterval(interval);
-      socket.disconnect();
-    };
-  }, []);
-
   const fetchTasks = async () => {
     try {
       const res = await fetch(`${API_BASE_URL}/api/tasks`, { headers: { ...authHeader() } });
@@ -72,9 +60,22 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
         setTasks(data);
       }
     } catch (err) {
-      console.error('Fetch tasks failed:', err);
+      console.error('Failed to fetch tasks', err);
     }
   };
+
+  useEffect(() => {
+    fetchTasks();
+    const interval = setInterval(fetchTasks, 10000);
+    
+    const socket = io(`${WS_URL}/staff`);
+    socket.on('taskUpdated', fetchTasks);
+    
+    return () => {
+      clearInterval(interval);
+      socket.disconnect();
+    };
+  }, []);
 
   const sortTasks = (tasksList) => {
     return [...tasksList].sort((a, b) => {
