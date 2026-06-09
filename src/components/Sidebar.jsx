@@ -25,10 +25,10 @@ const kaironIcon = '/kairon-icon.png';
 const NavItem = ({ icon, label, active, onClick, collapsed, badge }) => (
   <button 
     onClick={onClick}
-    className={`group relative flex items-center ${collapsed ? 'justify-center w-11 h-11' : 'gap-3 w-full px-3 py-2.5 h-11'} rounded-xl text-sm font-medium transition-all duration-200 ${
+    className={`group relative flex items-center ${collapsed ? 'justify-center w-11 h-11' : 'gap-3 w-full px-3 py-2.5 h-11'} rounded-lg text-sm font-medium transition-all duration-200 ${
       active 
-        ? 'bg-accent/10 text-accent' 
-        : 'text-text-secondary hover:bg-bg-muted hover:text-text-main border border-transparent'
+        ? 'bg-indigo-500/10 text-indigo-600 border-l-[3px] border-indigo-600' 
+        : 'text-text-secondary hover:bg-black/5 dark:hover:bg-white/5 border-l-[3px] border-transparent'
     }`}
   >
     <div className={`flex items-center justify-center flex-shrink-0 transition-colors`}>
@@ -234,10 +234,12 @@ export default function Sidebar({
         >
           {/* Workspace Switcher / Logo */}
           <div className="p-4 border-b border-border-main flex items-center justify-between min-h-[64px] relative group/header">
-            <div className={`flex items-center transition-all duration-300 ${visualCollapsed ? 'justify-center w-full' : 'gap-3 px-2'}`}>
-              <div className="text-accent font-bold text-[20px] leading-none tracking-tighter">mK</div>
+            <div className={`flex items-center transition-all duration-300 ${visualCollapsed ? 'justify-center w-full' : 'gap-3 px-1'}`}>
+                {/* Logo Mark */}
+                <div className="flex-shrink-0 flex items-center justify-center bg-white dark:bg-white/90 p-1.5 rounded-lg shadow-sm">
+                  <img src="/LOGOI.png" alt="Logo" className={`object-contain ${visualCollapsed ? 'w-10 h-10' : 'h-10'}`} />
+                </div>
             </div>
-            
             {/* Collapse Toggle */}
             <button 
               onClick={() => setIsCollapsed(!isCollapsed)}
@@ -251,12 +253,17 @@ export default function Sidebar({
             {navContent(visualCollapsed)}
           </nav>
 
-          {/* Sidebar Footer */}
-          <div className="p-3 border-t border-border-main space-y-2">
+          {/* Bottom user profile action and version */}
+          <div className="p-4 border-t border-border-main shrink-0 flex flex-col gap-3">
+            {!visualCollapsed && (
+              <div className="text-[10px] font-bold text-text-muted/50 uppercase tracking-widest text-center mb-1">
+                v1.0.1-stable &bull; 09 Jun 2026 11:30 AM
+              </div>
+            )}
             <div className={`flex items-center ${visualCollapsed ? 'justify-center' : 'gap-3 px-3 py-2'} mb-2`}>
               <div className="relative">
                 <img src={user?.avatar || '/default-avatar.png'} className="w-8 h-8 rounded-full object-cover border border-border-main" alt="" />
-                <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-bg-surface"></div>
+                <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-success rounded-full border-2 border-bg-surface"></div>
               </div>
               {!visualCollapsed && (
                 <div className="flex-1 min-w-0">
@@ -295,15 +302,11 @@ export default function Sidebar({
               className="fixed inset-y-0 left-0 w-[280px] bg-bg-surface z-[80] shadow-2xl flex flex-col border-r border-border-main"
             >
               {/* Mobile Header */}
-              <div className="p-4 border-b border-border-main flex items-center justify-between min-h-[64px]">
-                <div className="flex items-center gap-3">
-                  <img src="/LOGOI.png" className="w-8 h-8 object-contain" alt="" />
-                  <div className="flex flex-col">
-                    <img src="/MKAVS.png" className={`h-4 object-contain ${isDarkMode ? 'invert' : ''}`} alt="MKAVS" />
-                    <p className="text-[10px] text-text-muted font-medium uppercase tracking-tight">Enterprise</p>
-                  </div>
+              <div className={`p-4 border-b border-border-main flex items-center min-h-[64px] mb-4`}>
+                <div className="flex items-center gap-3 w-full bg-white dark:bg-white/90 p-1.5 rounded-lg shadow-sm max-w-fit">
+                  <img src="/LOGOI.png" alt="Logo" className="h-10 object-contain" />
                 </div>
-                <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-bg-muted rounded-lg text-text-muted">
+                <button onClick={() => setIsOpen(false)} className="ml-auto p-2 hover:bg-bg-muted rounded-lg text-text-muted">
                   <X size={20} />
                 </button>
               </div>
@@ -317,7 +320,7 @@ export default function Sidebar({
                 <div className="flex items-center gap-3 px-3 py-2 mb-2">
                   <div className="relative">
                     <img src={user?.avatar || '/default-avatar.png'} className="w-8 h-8 rounded-full object-cover border border-border-main" alt="" />
-                    <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-bg-surface"></div>
+                    <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-success rounded-full border-2 border-bg-surface"></div>
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-text-main truncate">{user?.name || 'User'}</p>

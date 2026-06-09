@@ -16,6 +16,7 @@ import {
   X
 } from 'lucide-react';
 import { API_BASE_URL } from '../config';
+import { EmptyState } from './ui/EmptyState';
 
 export default function TicketManager({ user, onReview }) {
   const [tickets, setTickets] = useState([]);
@@ -90,9 +91,9 @@ export default function TicketManager({ user, onReview }) {
 
   const getStatusStyle = (status) => {
     switch (status) {
-      case 'pending': return 'bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400 border-amber-200 dark:border-amber-500/20';
-      case 'approved': return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20';
-      case 'rejected': return 'bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400 border-rose-200 dark:border-rose-500/20';
+      case 'pending': return 'bg-warning-tint text-warning border-warning/20';
+      case 'approved': return 'bg-success-tint text-success border-success/20';
+      case 'rejected': return 'bg-danger-tint text-danger border-danger/20';
       default: return 'bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-400 border-zinc-200 dark:border-zinc-700';
     }
   };
@@ -113,7 +114,7 @@ export default function TicketManager({ user, onReview }) {
               placeholder="Search tickets..." 
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
             />
           </div>
           <div className="flex gap-1 bg-zinc-100 dark:bg-zinc-950 p-1 rounded-xl border border-zinc-200/50 dark:border-zinc-800/50">
@@ -153,7 +154,7 @@ export default function TicketManager({ user, onReview }) {
                 {filteredTickets.map(ticket => (
                   <tr 
                     key={ticket._id} 
-                    className={`group hover:bg-zinc-50/50 dark:hover:bg-zinc-800/20 transition-colors cursor-pointer ${selectedTicket?._id === ticket._id ? 'bg-indigo-50/30 dark:bg-indigo-500/5' : ''}`}
+                    className={`group hover:bg-zinc-50/50 dark:hover:bg-zinc-800/20 transition-colors cursor-pointer ${selectedTicket?._id === ticket._id ? 'bg-primary/5' : ''}`}
                     onClick={() => setSelectedTicket(ticket)}
                   >
                     <td className="px-6 py-4">
@@ -179,17 +180,18 @@ export default function TicketManager({ user, onReview }) {
                       </span>
                     </td>
                     <td className="px-6 py-4 text-right">
-                      <ChevronRight size={18} className={`text-zinc-300 transition-transform ${selectedTicket?._id === ticket._id ? 'translate-x-1 text-indigo-500' : ''}`} />
+                      <ChevronRight size={18} className={`text-zinc-300 transition-transform ${selectedTicket?._id === ticket._id ? 'translate-x-1 text-primary' : ''}`} />
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
             {filteredTickets.length === 0 && (
-              <div className="py-20 flex flex-col items-center justify-center text-zinc-400">
-                <Ticket size={48} className="mb-4 opacity-20" />
-                <p className="text-sm font-medium">No tickets found</p>
-              </div>
+              <EmptyState 
+                icon={Ticket}
+                title="No tickets found"
+                subtitle="Try adjusting your filters or search query"
+              />
             )}
           </div>
         </div>
@@ -230,7 +232,7 @@ export default function TicketManager({ user, onReview }) {
                     </div>
                     <div>
                       <p className="text-[10px] font-black text-zinc-400 uppercase tracking-widest mb-1">Requested Time</p>
-                      <p className="text-sm font-bold text-emerald-600">+{(selectedTicket.requestedMinutes / 60).toFixed(1)} hrs</p>
+                      <p className="text-sm font-bold text-success">+{(selectedTicket.requestedMinutes / 60).toFixed(1)} hrs</p>
                     </div>
                     <div>
                       <p className="text-[10px] font-black text-zinc-400 uppercase tracking-widest mb-1">Date of Work</p>
@@ -257,20 +259,20 @@ export default function TicketManager({ user, onReview }) {
                         value={decisionComment}
                         onChange={(e) => setDecisionComment(e.target.value)}
                         placeholder="Add a comment or reason for rejection..."
-                        className="w-full p-4 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/50 min-h-[100px] resize-none"
+                        className="w-full p-4 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/50 min-h-[100px] resize-none"
                       />
                       <div className="grid grid-cols-2 gap-3">
                         <button 
                           onClick={() => handleReview(selectedTicket._id, 'rejected')}
                           disabled={isProcessing}
-                          className="flex items-center justify-center gap-2 py-3 rounded-xl bg-rose-50 text-rose-600 hover:bg-rose-100 dark:bg-rose-500/10 dark:text-rose-400 border border-rose-200/50 dark:border-rose-500/20 text-xs font-bold transition-all"
+                          className="flex items-center justify-center gap-2 py-3 rounded-xl bg-danger-tint text-danger hover:bg-danger/10 border border-danger/20 text-xs font-bold transition-all"
                         >
                           <X size={16} /> Reject
                         </button>
                         <button 
                           onClick={() => handleReview(selectedTicket._id, 'approved')}
                           disabled={isProcessing}
-                          className="flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 text-white hover:bg-emerald-600 shadow-lg shadow-emerald-500/20 text-xs font-bold transition-all"
+                          className="flex items-center justify-center gap-2 py-3 rounded-xl bg-success text-white hover:bg-success/80 shadow-lg shadow-success/20 text-xs font-bold transition-all"
                         >
                           <Check size={16} /> Approve
                         </button>
@@ -290,12 +292,12 @@ export default function TicketManager({ user, onReview }) {
                 </div>
               </motion.div>
             ) : (
-              <div className="flex flex-col items-center justify-center h-full text-zinc-400 py-20">
-                <div className="w-16 h-16 rounded-3xl bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center mb-4">
-                  <Ticket size={32} className="opacity-20" />
-                </div>
-                <p className="text-sm font-bold uppercase tracking-widest opacity-50">Select a ticket</p>
-                <p className="text-xs font-medium mt-1">to view details and actions</p>
+              <div className="h-full flex items-center justify-center">
+                <EmptyState 
+                  icon={Ticket}
+                  title="Select a ticket"
+                  subtitle="Choose a ticket to view details and actions"
+                />
               </div>
             )}
           </AnimatePresence>

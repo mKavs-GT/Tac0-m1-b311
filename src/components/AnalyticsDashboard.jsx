@@ -5,9 +5,9 @@ import { LineChart, Line, ResponsiveContainer } from 'recharts';
 import { TEAM_MEMBERS } from '../constants/users';
 
 const STATUS_BADGE = {
-  'Active':      { label: 'Active',      cls: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400' },
-  'In Progress': { label: 'In Progress', cls: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' },
-  'On Hold':     { label: 'On Hold',     cls: 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' },
+  'Active':      { label: 'Active',      cls: 'bg-success-tint text-success' },
+  'In Progress': { label: 'In Progress', cls: 'bg-primary-tint text-primary' },
+  'On Hold':     { label: 'On Hold',     cls: 'bg-warning-tint text-warning' },
   'Completed':   { label: 'Completed',   cls: 'bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400' },
 };
 
@@ -95,23 +95,28 @@ export default function AnalyticsDashboard({ projects = [], user, onlineCount = 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.07 }}
-            className="p-6 rounded-2xl bg-bg-surface border border-border-main shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group"
+            className="p-5 rounded-2xl bg-bg-surface border border-border-main border-l-4 border-l-primary shadow-card hover:-translate-y-0.5 transition-all group relative flex flex-col"
           >
-            <div className="flex items-center justify-between mb-5">
-              <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10">
+            <div className="flex items-start justify-between mb-2">
+              <div className="flex-1">
+                {loading ? (
+                  <div className="h-10 w-16 bg-bg-muted rounded animate-pulse mb-1" />
+                ) : (
+                  <h2 className="text-4xl font-black text-text-main leading-none mb-1">{stat.value}</h2>
+                )}
+                <p className="text-xs font-medium uppercase tracking-wide text-text-muted">{stat.label}</p>
+              </div>
+              <div className="text-text-muted opacity-60">
+                {/* Icon is already 20px but let's just render stat.icon */}
                 {stat.icon}
               </div>
-              <div className="px-2 py-0.5 rounded-full bg-bg-muted text-[10px] font-bold text-text-muted border border-border-main/50 max-w-[120px] truncate text-right">
-                {stat.trend}
-              </div>
             </div>
-            {loading ? (
-              <div className="h-10 bg-bg-muted rounded animate-pulse mb-1" />
-            ) : (
-              <h2 className="text-[38px] font-black tracking-tighter text-text-main mb-1 leading-none">{stat.value}</h2>
-            )}
-            <p className="text-[11px] font-bold text-text-muted uppercase tracking-widest">{stat.label}</p>
-            <div className="h-10 w-full mt-5 opacity-60 group-hover:opacity-100 transition-opacity">
+            
+            <div className="text-xs text-text-muted mt-2">
+              {stat.trend}
+            </div>
+
+            <div className="h-10 w-full mt-4 opacity-60 group-hover:opacity-100 transition-opacity">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={stat.sparkline.map(v => ({ value: v }))}>
                   <Line type="monotone" dataKey="value" stroke="var(--theme-accent)" strokeWidth={2} dot={false} isAnimationActive />
@@ -125,8 +130,8 @@ export default function AnalyticsDashboard({ projects = [], user, onlineCount = 
       {/* Active Projects — real data */}
       <div>
         <div className="mb-5 flex items-center justify-between">
-          <h2 className="text-lg font-bold text-text-main tracking-tight">Active Projects</h2>
-          <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest">{projects.length} total</span>
+          <h2 className="text-2xl font-bold text-text-main tracking-tight">Active Projects</h2>
+          <span className="text-sm font-medium text-text-muted">{projects.length} total</span>
         </div>
 
         {projects.length === 0 ? (

@@ -5,8 +5,28 @@
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  --color-accent: var(--theme-accent);
-  --color-accent-soft: var(--theme-accent-soft);
+  --color-primary: #4F46E5;
+  --color-primary-hover: #4338CA;
+  --color-primary-tint: rgba(79, 70, 229, 0.06);
+
+  --color-secondary: #06B6D4;
+  --color-secondary-hover: #0891B2;
+  --color-secondary-tint: rgba(6, 182, 212, 0.06);
+
+  --color-success: #059669;
+  --color-success-tint: rgba(5, 150, 105, 0.08);
+
+  --color-warning: #F97316;
+  --color-warning-tint: rgba(249, 115, 22, 0.08);
+
+  --color-danger: #F43F5E;
+  --color-danger-tint: rgba(244, 63, 94, 0.08);
+
+  --color-testing: #8B5CF6;
+  --color-testing-tint: rgba(139, 92, 246, 0.08);
+
+  --color-accent: var(--color-primary);
+  --color-accent-soft: var(--color-primary-tint);
 
   --color-bg-root: var(--theme-bg-root);
   --color-bg-surface: var(--theme-bg-surface);
@@ -19,32 +39,33 @@
 
 @layer base {
   :root {
-    --theme-bg-root: #FAFAEB;
+    --theme-bg-root: #F8F9FB;
     --theme-bg-surface: #FFFFFF;
-    --theme-bg-muted: #F2F2E4;
-    --theme-text-main: #252C37;
-    --theme-text-secondary: #475569;
-    --theme-text-muted: #64748B;
-    --theme-border-main: #E5E5D5;
-    
-    --theme-accent: #F8C61E;
-    --theme-accent-soft: #AAD7CD;
+    --theme-bg-muted: #F3F4F6;
+    --theme-text-main: #111827;
+    --theme-text-secondary: #4B5563;
+    --theme-text-muted: #6B7280;
+    --theme-border-main: #E5E7EB;
+
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06);
   }
   .dark {
-    --theme-bg-root: #252C37;
-    --theme-bg-surface: #303845;
-    --theme-bg-muted: #3B4453;
-    --theme-text-main: #FAFAEB;
-    --theme-text-secondary: #CBD5E1;
-    --theme-text-muted: #94A3B8;
-    --theme-border-main: #3B4453;
-    
-    --theme-accent: #F8C61E;
-    --theme-accent-soft: #729B91;
+    --theme-bg-root: #0D0E15;
+    --theme-bg-surface: #13141C;
+    --theme-bg-muted: #1E2030;
+    --theme-text-main: #F9FAFB;
+    --theme-text-secondary: #D1D5DB;
+    --theme-text-muted: #9CA3AF;
+    --theme-border-main: #1E2030;
+
+    --card-shadow: none;
   }
 }
 
 @layer utilities {
+  .shadow-card {
+    box-shadow: var(--card-shadow);
+  }
   .ease-product {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }

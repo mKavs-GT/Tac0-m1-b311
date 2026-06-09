@@ -65,6 +65,7 @@ const NotificationCenter = lazyWithRetry(() => import('./components/Notification
 const TicketManager = lazyWithRetry(() => import('./components/TicketManager'));
 const ProjectManagement = lazyWithRetry(() => import('./components/ProjectManagement'));
 const AnalyticsDashboard = lazyWithRetry(() => import('./components/AnalyticsDashboard'));
+const Overview = lazyWithRetry(() => import('./components/Overview'));
 const Logs = lazyWithRetry(() => import('./components/Logs'));
 const CommandPalette = lazyWithRetry(() => import('./components/CommandPalette'));
 const Attendance = lazyWithRetry(() => import('./components/Attendance'));
@@ -117,14 +118,20 @@ export default function App() {
     return saved ? JSON.parse(saved) : null;
   });
 
+  const [hasInitializedStatus, setHasInitializedStatus] = useState(false);
+
   const handleLogin = (userData) => {
     setUser(userData);
     localStorage.setItem('mkavs_admin_user', JSON.stringify(userData));
+    localStorage.setItem('mkavs_staff_status', 'online');
+    setHasInitializedStatus(false);
   };
 
   const handleLogout = () => {
     setUser(null);
     localStorage.removeItem('mkavs_admin_user');
+    localStorage.removeItem('mkavs_staff_status');
+    setHasInitializedStatus(false);
   };
 
   // Global 401 handler to clear session immediately when token is invalid
@@ -225,6 +232,20 @@ export default function App() {
     if (!user) return 'offline';
     return getMemberPresence(user.email).status;
   }, [user, getMemberPresence]);
+
+  // hasInitializedStatus is now managed at the top level
+
+  useEffect(() => {
+    if (user && !hasInitializedStatus) {
+      const savedStatus = localStorage.getItem('mkavs_staff_status');
+      if (!savedStatus || savedStatus === 'offline') {
+        handleStatusChange('online');
+      } else {
+        handleStatusChange(savedStatus);
+      }
+      setHasInitializedStatus(true);
+    }
+  }, [user, handleStatusChange, hasInitializedStatus]);
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(() => {
@@ -634,8 +655,8 @@ export default function App() {
             <div className="space-y-2 flex items-center gap-5">
               <img src={user?.avatar || '/default-avatar.png'} className="w-16 h-16 rounded-full border border-border-main shadow-sm" alt="" />
               <div>
-                <h1 className="text-[32px] font-black text-text-main tracking-tight leading-none mb-1">Good morning, {user?.firstName || 'Shawn'} 👋</h1>
-                <p className="text-xs font-bold text-text-muted uppercase tracking-widest">
+                <h1 className="text-2xl font-bold text-text-main tracking-tight leading-none mb-1">Good morning, {user?.firstName || 'Shawn'} 👋</h1>
+                <p className="text-sm text-text-muted">
                   {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })} • {user?.isExecutive ? 'Executive Workspace' : user?.isManager ? 'Manager Workspace' : 'Team Workspace'}
                 </p>
               </div>
@@ -685,12 +706,8 @@ export default function App() {
                         />
                       </div>
                     ) : (
-                      <div className="lg:col-span-2 space-y-6">
-                        <div className="p-8 bg-bg-surface border border-border-main rounded-2xl flex flex-col items-center justify-center text-center h-full min-h-[400px] shadow-sm">
-                          <Kanban size={48} className="text-text-muted mb-4 opacity-50" />
-                          <h2 className="text-xl font-bold text-text-main mb-2">My Workspace</h2>
-                          <p className="text-sm text-text-muted max-w-md">You are logged in as a Team Member. Select 'Active Sprints' from the sidebar to view your assigned tasks.</p>
-                        </div>
+                      <div className="lg:col-span-2">
+                        <Overview user={user} />
                       </div>
                     )}
                     <div className="lg:col-span-1 space-y-6">
@@ -908,35 +925,40 @@ function ProfileSummaryCard({ user, currentStatus }) {
 
 function YourStatus({ currentStatus, handleStatusChange, setIsZenMode }) {
   const statuses = [
-    { id: 'available',  label: 'Available',  icon: '✅' },
-    { id: 'deep_work',  label: 'Deep Work',  icon: '🔬' },
-    { id: 'in_meeting', label: 'In Meeting', icon: '🎙' },
-    { id: 'break',      label: 'Break',      icon: '☕' },
-    { id: 'away',       label: 'Away',       icon: '🌿' },
-    { id: 'offline',    label: 'Offline',    icon: '🔴' },
+    { id: 'zen',   label: 'Zen Mode',       icon: '🧘' },
+    { id: 'dnd',   label: 'Do not Disturb', icon: '⛔' },
+    { id: 'break', label: 'Break',          icon: '☕' },
   ];
 
   return (
-    <div className="bg-bg-surface border border-border-main rounded-xl shadow-sm p-5">
-      <h3 className="text-xs font-bold text-text-muted uppercase tracking-widest mb-4">Your Status</h3>
-      <div className="grid grid-cols-2 gap-3">
+    <div className="bg-bg-surface border border-border-main rounded-xl shadow-card p-5">
+      <h3 className="text-base font-semibold text-text-main mb-4">Your Status</h3>
+      <div className="grid grid-cols-3 gap-3">
         {statuses.map(stat => {
           const isActive = currentStatus === stat.id;
           return (
             <button
               key={stat.id}
               onClick={() => {
-                handleStatusChange(stat.id);
-                if (stat.id === 'zen') setIsZenMode(true);
+                if (isActive) {
+                  // If clicking the active status again, revert to online
+                  handleStatusChange('online');
+                  if (stat.id === 'zen') setIsZenMode(false);
+                } else {
+                  // Activate the new status
+                  handleStatusChange(stat.id);
+                  if (stat.id === 'zen') setIsZenMode(true);
+                  if (currentStatus === 'zen') setIsZenMode(false);
+                }
               }}
-              className={`flex items-center gap-2 p-3 rounded-lg text-sm font-semibold transition-all border ${
+              className={`flex flex-col items-center justify-center gap-1.5 p-3 rounded-lg text-[11px] font-bold transition-all border ${
                 isActive 
                   ? 'border-accent bg-accent/10 text-accent' 
                   : 'bg-bg-surface border-border-main text-text-secondary hover:bg-bg-muted'
               }`}
             >
-              <span>{stat.icon}</span>
-              <span className="truncate">{stat.label}</span>
+              <span className="text-lg">{stat.icon}</span>
+              <span className="truncate text-center w-full">{stat.label}</span>
             </button>
           );
         })}
@@ -947,17 +969,18 @@ function YourStatus({ currentStatus, handleStatusChange, setIsZenMode }) {
 
 function TeamMember({ name, role, status, isOnline, isSyncing, avatar, isMe }) {
   const STATUS_CONFIG = {
-    available:  { label: 'Available',  color: 'text-emerald-500', dot: 'bg-emerald-500' },
-    deep_work:  { label: 'Deep Work',  color: 'text-purple-500',  dot: 'bg-purple-500' },
-    in_meeting: { label: 'In Meeting', color: 'text-amber-500',   dot: 'bg-amber-500' },
-    break:      { label: 'Break',      color: 'text-amber-500',   dot: 'bg-amber-500' },
-    away:       { label: 'Away',       color: 'text-text-muted',  dot: 'bg-text-muted' },
-    offline:    { label: 'Offline',    color: 'text-text-muted',  dot: 'bg-text-muted' },
-    // legacy aliases
-    focus:    { label: 'Focus',    color: 'text-emerald-500', dot: 'bg-emerald-500' },
-    deepwork: { label: 'Deep Work', color: 'text-purple-500', dot: 'bg-purple-500' },
-    zen:      { label: 'Zen',       color: 'text-purple-500', dot: 'bg-purple-500' },
-    standup:  { label: 'Standup',   color: 'text-emerald-500', dot: 'bg-emerald-500' },
+    online:     { label: 'Online',         color: 'text-success', dot: 'bg-success' },
+    zen:        { label: 'Zen Mode',       color: 'text-secondary',  dot: 'bg-secondary' },
+    dnd:        { label: 'Do not Disturb', color: 'text-danger',    dot: 'bg-danger' },
+    break:      { label: 'Break',          color: 'text-warning',   dot: 'bg-warning' },
+    offline:    { label: 'Offline',        color: 'text-text-muted',  dot: 'bg-text-muted' },
+    available:  { label: 'Available',      color: 'text-success', dot: 'bg-success' },
+    deep_work:  { label: 'Deep Work',      color: 'text-secondary',  dot: 'bg-secondary' },
+    in_meeting: { label: 'In Meeting',     color: 'text-warning',   dot: 'bg-warning' },
+    away:       { label: 'Away',           color: 'text-text-muted',  dot: 'bg-text-muted' },
+    focus:      { label: 'Focus',          color: 'text-success', dot: 'bg-success' },
+    deepwork:   { label: 'Deep Work',      color: 'text-secondary',  dot: 'bg-secondary' },
+    standup:    { label: 'Standup',        color: 'text-success', dot: 'bg-success' },
   };
 
   const config = isSyncing 
@@ -1009,9 +1032,9 @@ function TeamStatus({ user, getMemberPresence }) {
   const onlineCount = members.filter(m => m.isOnline).length;
 
   return (
-    <div className="bg-bg-surface border border-border-main rounded-2xl shadow-sm hover:shadow-md transition-shadow p-7">
-      <div className="flex items-center justify-between mb-5">
-        <h3 className="text-[11px] font-black text-text-muted uppercase tracking-widest">Team Hub</h3>
+    <div className="bg-bg-surface border border-border-main rounded-xl shadow-card p-5">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-base font-semibold text-text-main">Team Hub</h3>
         <span className="text-[10px] font-bold bg-accent/10 text-accent px-2.5 py-1 rounded-md border border-accent/20">
           {onlineCount}/{members.length} Online
         </span>
@@ -1065,7 +1088,7 @@ function RecentActivityFeed({ user }) {
 
   const getConfig = (type) => {
     switch (type) {
-      case 'CLOCK_IN':  return { color: 'bg-emerald-500', label: 'clocked in' };
+      case 'CLOCK_IN':  return { color: 'bg-success', label: 'clocked in' };
       case 'CLOCK_OUT': return { color: 'bg-zinc-500',    label: 'clocked out' };
       case 'WORK_LOG':  return { color: 'bg-accent',      label: 'logged work' };
       default:          return { color: 'bg-zinc-400',    label: type.toLowerCase().replace('_', ' ') };
@@ -1073,8 +1096,8 @@ function RecentActivityFeed({ user }) {
   };
 
   return (
-    <div className="bg-bg-surface border border-border-main rounded-2xl shadow-sm hover:shadow-md transition-shadow p-7">
-      <h3 className="text-[11px] font-black text-text-muted uppercase tracking-widest mb-5">Recent Activity</h3>
+    <div className="bg-bg-surface border border-border-main rounded-xl shadow-card p-5">
+      <h3 className="text-base font-semibold text-text-main mb-5">Recent Activity</h3>
 
       {loading ? (
         <div className="space-y-4">
@@ -1166,8 +1189,8 @@ function QuickLogModal({ user, projects, onClose }) {
         </div>
         {done ? (
           <div className="text-center py-8">
-            <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle size={28} className="text-emerald-600 dark:text-emerald-400" />
+            <div className="w-14 h-14 bg-success-tint rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle size={28} className="text-success" />
             </div>
             <p className="font-black text-text-main text-lg">Logged!</p>
             <p className="text-xs text-text-muted mt-1">Your work has been saved.</p>
@@ -1234,7 +1257,7 @@ function LogsView() {
         {logs.map(log => (
           <div key={log.id} className="flex items-center justify-between p-4 bg-bg-root border border-border-main rounded-xl group hover:border-[#1a1a1b] transition-all">
             <div className="flex items-center gap-4">
-              <div className={`w-2 h-2 rounded-full ${log.type === 'error' ? 'bg-rose-500' : log.type === 'auth' ? 'bg-[#4a154b]' : 'bg-emerald-500'}`}></div>
+              <div className={`w-2 h-2 rounded-full ${log.type === 'error' ? 'bg-danger' : log.type === 'auth' ? 'bg-secondary' : 'bg-success'}`}></div>
               <div>
                 <p className="text-sm font-bold">{log.msg}</p>
                 <p className="text-[10px] font-bold text-text-muted uppercase tracking-tight">{log.type}</p>

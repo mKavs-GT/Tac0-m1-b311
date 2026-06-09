@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Plus, Calendar, X, ChevronRight, ChevronDown, Clock, Activity, Trash2, Edit3, MoreVertical 
+  Plus, Calendar, X, ChevronRight, ChevronDown, Clock, Activity, Trash2, Edit3, MoreVertical, Layers 
 } from 'lucide-react';
 import { TEAM_MEMBERS } from '../constants/users';
+import { EmptyState } from './ui/EmptyState';
 import { API_BASE_URL, WS_URL, authHeader } from '../config';
-import { io } from 'socket.io-client';
 
 const COLUMN_TITLES = {
   TASKS: 'Tasks',
@@ -211,13 +211,13 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
     <div className="space-y-10 pb-20 transition-colors">
       <div className="flex items-end justify-between">
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-text-main">Sprint Plan</h2>
-          <p className="text-xs font-bold text-text-muted uppercase tracking-widest mt-1">Manage active sprints and team roadmap</p>
+            <h2 className="text-2xl font-bold tracking-tight text-text-main">Sprint Plan</h2>
+          <p className="text-sm text-text-muted mt-1">Manage active sprints and team roadmap</p>
         </div>
         {user?.isExecutive && (
-          <button onClick={() => setIsProjectModalOpen(true)} className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-text-main text-bg-surface font-bold text-sm hover:bg-black dark:hover:bg-white dark:hover:text-black transition-all shadow-sm active:scale-95">
+          <button onClick={() => setIsTaskModalOpen(true)} className="flex items-center justify-center gap-2 h-10 px-4 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 font-medium text-sm transition-all shadow-sm active:scale-95">
             <Plus size={18} />
-            <span>New Project</span>
+            <span>Add Task</span>
           </button>
         )}
       </div>
@@ -245,7 +245,7 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
               </div>
               <div className="flex items-center gap-3">
                 {user?.isExecutive && (
-                  <button onClick={() => { setSelectedProjectId(pId); setIsSprintModalOpen(true); }} className="px-4 py-2 text-xs font-bold bg-bg-muted text-text-main border border-border-main rounded-lg hover:bg-bg-surface transition-all shadow-sm">
+                  <button onClick={() => { setSelectedProjectId(pId); setIsSprintModalOpen(true); }} className="flex items-center justify-center h-10 px-4 rounded-lg border border-current bg-transparent text-text-main hover:bg-bg-muted font-medium text-sm transition-all shadow-sm">
                     Add Sprint
                   </button>
                 )}
@@ -304,53 +304,61 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
                                 return (
                                 <div key={key} className="space-y-4">
                                    <div className="flex items-center justify-between px-2">
-                                      <h5 className="text-[10px] font-bold text-text-muted uppercase tracking-widest">{title}</h5>
-                                      <span className="text-[10px] font-bold bg-bg-muted text-text-main px-1.5 py-0.5 rounded border border-border-main">
+                                      <h5 className="text-sm font-semibold text-text-main">{title}</h5>
+                                      <span className="text-xs font-semibold bg-bg-muted text-text-muted px-2 py-0.5 rounded-full border border-border-main">
                                         {colTasks.length}
                                       </span>
                                    </div>
 
-                                   <div className="space-y-3 min-h-[200px] p-2 bg-bg-root rounded-xl border border-dashed border-border-main">
-                                      {sortTasks(colTasks).map(task => (
-                                        <div key={task.id} className="bg-bg-surface p-4 rounded-lg border border-border-main shadow-sm hover:shadow-md transition-all group">
-                                           <div className={`w-8 h-1 rounded-full mb-3 ${task.priority?.toUpperCase() === 'HIGH' || task.priority?.toUpperCase() === 'URGENT' ? 'bg-rose-500' : task.priority?.toUpperCase() === 'MEDIUM' ? 'bg-amber-500' : 'bg-emerald-500'}`} />
-                                           <p className="text-sm font-black text-text-main leading-tight mb-2">{task.title}</p>
-                                           <p className="text-xs font-semibold text-text-muted leading-relaxed mb-4">{task.description}</p>
-                                           
-                                           <div className="flex items-center justify-between mt-4 border-t border-border-main pt-3">
-                                              <div className="flex items-center gap-2">
-                                                {task.assigneeUser?.avatar && (
-                                                  <img src={task.assigneeUser.avatar} alt="" className="w-6 h-6 rounded-full border-2 border-bg-surface" title={task.assigneeUser.name} />
-                                                )}
-                                              </div>
-                                              <div>
-                                                {key === 'TASKS' && task.assignedTo === user?.uid && (
-                                                  <button onClick={() => handleTaskAction(task.id, 'accept')} className="px-3 py-1.5 bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400 text-[10px] font-black uppercase tracking-widest rounded hover:bg-indigo-100 transition-colors border border-indigo-100 dark:border-indigo-500/20">
-                                                    Accept
-                                                  </button>
-                                                )}
-                                                {key === 'IN_PROGRESS' && task.assignedTo === user?.uid && (
-                                                  <button onClick={() => handleTaskAction(task.id, 'complete')} className="px-3 py-1.5 bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400 text-[10px] font-black uppercase tracking-widest rounded hover:bg-emerald-100 transition-colors border border-emerald-100 dark:border-emerald-500/20">
-                                                    Mark Complete
-                                                  </button>
-                                                )}
-                                                {key === 'TESTING' && user?.uid === 'MGT-DEV-02' && (
-                                                  <button onClick={() => handleTaskAction(task.id, 'pass-testing')} className="px-3 py-1.5 bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400 text-[10px] font-black uppercase tracking-widest rounded hover:bg-blue-100 transition-colors border border-blue-100 dark:border-blue-500/20">
-                                                    Pass Testing
-                                                  </button>
-                                                )}
-                                                {key === 'TESTING' && user?.isExecutive && (
-                                                  <button onClick={() => handleTaskAction(task.id, 'approve')} className="px-3 py-1.5 bg-rose-50 text-rose-600 dark:bg-rose-500/10 dark:text-rose-400 text-[10px] font-black uppercase tracking-widest rounded hover:bg-rose-100 transition-colors border border-rose-100 dark:border-rose-500/20">
-                                                    Approve
-                                                  </button>
-                                                )}
-                                                {key === 'PRODUCTION' && (
-                                                  <span className="text-[10px] font-bold text-emerald-500 uppercase flex items-center gap-1"><Clock size={10} /> Done</span>
-                                                )}
-                                              </div>
-                                           </div>
-                                        </div>
-                                      ))}
+                                   <div className="space-y-3 min-h-[200px] p-3 bg-gray-100 dark:bg-[#1A1C20] rounded-xl border border-dashed border-border-main">
+                                      {colTasks.length === 0 ? (
+                                        <EmptyState 
+                                          icon={Layers}
+                                          title="No tasks yet"
+                                          subtitle={`No tasks in ${title} at the moment.`}
+                                        />
+                                      ) : (
+                                        sortTasks(colTasks).map(task => (
+                                          <div key={task.id} className="bg-bg-surface p-4 rounded-lg border border-border-main shadow-sm hover:shadow-md transition-all group">
+                                             <div className={`w-8 h-1 rounded-full mb-3 ${task.priority?.toUpperCase() === 'HIGH' || task.priority?.toUpperCase() === 'URGENT' ? 'bg-danger' : task.priority?.toUpperCase() === 'MEDIUM' ? 'bg-warning' : 'bg-success'}`} />
+                                             <p className="text-sm font-black text-text-main leading-tight mb-2">{task.title}</p>
+                                             <p className="text-xs font-semibold text-text-muted leading-relaxed mb-4">{task.description}</p>
+                                             
+                                             <div className="flex items-center justify-between mt-4 border-t border-border-main pt-3">
+                                                <div className="flex items-center gap-2">
+                                                  {task.assigneeUser?.avatar && (
+                                                    <img src={task.assigneeUser.avatar} alt="" className="w-6 h-6 rounded-full border-2 border-bg-surface" title={task.assigneeUser.name} />
+                                                  )}
+                                                </div>
+                                                <div>
+                                                  {key === 'TASKS' && task.assignedTo === user?.uid && (
+                                                    <button onClick={() => handleTaskAction(task.id, 'accept')} className="px-3 py-1.5 bg-primary-tint text-primary text-[10px] font-black uppercase tracking-widest rounded hover:bg-primary/10 transition-colors border border-primary/20">
+                                                      Accept
+                                                    </button>
+                                                  )}
+                                                  {key === 'IN_PROGRESS' && task.assignedTo === user?.uid && (
+                                                    <button onClick={() => handleTaskAction(task.id, 'complete')} className="px-3 py-1.5 bg-success-tint text-success text-[10px] font-black uppercase tracking-widest rounded hover:bg-success/10 transition-colors border border-success/20">
+                                                      Mark Complete
+                                                    </button>
+                                                  )}
+                                                  {key === 'TESTING' && user?.uid === 'MGT-DEV-02' && (
+                                                    <button onClick={() => handleTaskAction(task.id, 'pass-testing')} className="px-3 py-1.5 bg-testing-tint text-testing text-[10px] font-black uppercase tracking-widest rounded hover:bg-testing/10 transition-colors border border-testing/20">
+                                                      Pass Testing
+                                                    </button>
+                                                  )}
+                                                  {key === 'TESTING' && user?.isExecutive && (
+                                                    <button onClick={() => handleTaskAction(task.id, 'approve')} className="px-3 py-1.5 bg-danger-tint text-danger text-[10px] font-black uppercase tracking-widest rounded hover:bg-danger/10 transition-colors border border-danger/20">
+                                                      Approve
+                                                    </button>
+                                                  )}
+                                                  {key === 'PRODUCTION' && (
+                                                    <span className="text-[10px] font-bold text-success uppercase flex items-center gap-1"><Clock size={10} /> Done</span>
+                                                  )}
+                                                </div>
+                                             </div>
+                                          </div>
+                                        ))
+                                      )}
                                       {user?.isExecutive && key === 'TASKS' && (
                                         <button 
                                           onClick={() => {
@@ -358,7 +366,7 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
                                             setSelectedSprintId(sId);
                                             setIsTaskModalOpen(true);
                                           }}
-                                          className="w-full py-3 border border-dashed border-border-main rounded-lg text-[10px] font-bold text-text-muted uppercase tracking-widest hover:bg-bg-surface hover:border-text-main hover:text-text-main transition-all"
+                                          className="w-full flex items-center justify-center h-10 px-4 border border-current bg-transparent text-text-muted rounded-lg text-sm font-medium hover:bg-bg-muted transition-all"
                                         >
                                           + Add Task
                                         </button>

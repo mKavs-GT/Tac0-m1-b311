@@ -5,6 +5,7 @@ import {
   LogIn, LogOut, ArrowRight, Activity, Globe, Wifi, WifiOff 
 } from 'lucide-react';
 import { API_BASE_URL, authHeader } from '../config';
+import { EmptyState } from './ui/EmptyState';
 
 const ACTION_CONFIG = {
   LOGIN: { label: 'logged in', icon: <LogIn size={14} className="text-emerald-500" />, bgColor: 'bg-emerald-50' },
@@ -72,7 +73,13 @@ export default function RecentActivityPanel() {
         {loading && logs.length === 0 ? (
           <div className="p-8 text-center text-sm text-[#6a737d]">Loading activities...</div>
         ) : logs.length === 0 ? (
-          <div className="p-8 text-center text-sm text-[#6a737d]">No activities recorded yet.</div>
+          <div className="p-8">
+            <EmptyState 
+              icon={Activity}
+              title="No activities found"
+              subtitle="System and user activities will appear here"
+            />
+          </div>
         ) : (
           <AnimatePresence mode='popLayout'>
             {logs.map((log, i) => {

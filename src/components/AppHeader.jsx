@@ -12,7 +12,7 @@ export default function AppHeader({
   setIsCommandPaletteOpen
 }) {
   return (
-    <header className="h-16 bg-bg-surface border-b border-border-main flex items-center justify-between px-6 sticky top-0 z-40 transition-colors">
+    <header className="h-[60px] bg-bg-surface border-b border-border-main flex items-center justify-between px-6 sticky top-0 z-40 transition-colors">
       <div className="flex-1 flex items-center gap-4">
         {/* Mobile Menu Toggle */}
         <button 
@@ -22,11 +22,6 @@ export default function AppHeader({
         >
           <Menu size={20} />
         </button>
-
-        {/* Page Title */}
-        <div className="hidden sm:block">
-          <span className="text-text-main font-bold text-[22px] tracking-tight">{getViewTitle(activeView)}</span>
-        </div>
       </div>
 
       <div className="flex-1 flex justify-center">
@@ -54,18 +49,21 @@ export default function AppHeader({
          </button>
 
          {/* Bell Icon */}
-         <div className="relative">
+         <div className="relative flex items-center justify-center">
            <NotificationCenter user={user} />
-           <div className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-accent rounded-full border-2 border-bg-surface"></div>
+           <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-indigo-500 rounded-full border border-bg-surface"></div>
          </div>
 
          {/* User Profile */}
-         <div className="w-10 h-10 rounded-full overflow-hidden bg-bg-muted cursor-pointer hover:opacity-90 transition-opacity ml-1">
-           <img 
-            src={user.avatar || `https://ui-avatars.com/api/?name=${user.name}&background=random`} 
-            alt={user.name} 
-            className="w-full h-full object-cover" 
-          />
+         <div className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity ml-1 p-1 rounded-lg hover:bg-bg-muted">
+           <div className="w-8 h-8 rounded-full overflow-hidden bg-bg-muted">
+             <img 
+              src={user.avatar || `https://ui-avatars.com/api/?name=${user.name}&background=random`} 
+              alt={user.name} 
+              className="w-full h-full object-cover" 
+            />
+           </div>
+           <span className="text-sm font-medium text-text-main hidden md:block pr-1">{user?.firstName || user?.name || 'User'}</span>
          </div>
       </div>
     </header>

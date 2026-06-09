@@ -1,73 +1,39 @@
-// Frontend/frontend/admin/src/services/SocketService.js
 import { WS_URL } from '../config';
+import { io } from 'socket.io-client';
 
 class SocketService {
     constructor() {
-        this.ws = null;
+        this.socket = null;
         this.subscribers = new Set();
-        this.reconnectAttempts = 0;
-        this.maxReconnectAttempts = 5;
-        this.reconnectDelay = 2000;
-        this.isConnecting = false;
         this.messageQueue = [];
     }
 
     connect() {
-        if (this.ws && (this.ws.readyState === WebSocket.OPEN || this.ws.readyState === WebSocket.CONNECTING)) {
-            return;
-        }
-
-        if (this.isConnecting) return;
-        this.isConnecting = true;
-
-        console.log(`[Socket] Connecting to ${WS_URL}...`);
+        if (this.socket) return;
         
-        try {
-            this.ws = new WebSocket(WS_URL);
+        console.log(`[Socket] Connecting to ${WS_URL}/staff...`);
+        this.socket = io(`${WS_URL}/staff`);
 
-            this.ws.onopen = () => {
-                console.log('[Socket] Connected');
-                this.isConnecting = false;
-                this.reconnectAttempts = 0;
-                this.flushQueue();
-                this.notifySubscribers({ type: 'socket:connected' });
-            };
-
-            this.ws.onmessage = (event) => {
-                try {
-                    const data = JSON.parse(event.data);
-                    this.notifySubscribers(data);
-                } catch (e) {
-                    console.error('[Socket] Message parse error:', e);
+        this.socket.on('connect', () => {
+            console.log('[Socket] Connected');
+            this.notifySubscribers({ type: 'socket:connected' });
+            
+            while(this.messageQueue.length > 0) {
+                const msg = this.messageQueue.shift();
+                if (msg.type === 'STATUS_CHANGE') {
+                    this.socket.emit('status_update', msg.payload);
                 }
-            };
+            }
+        });
 
-            this.ws.onclose = () => {
-                console.log('[Socket] Disconnected');
-                this.isConnecting = false;
-                this.notifySubscribers({ type: 'socket:disconnected' });
-                this.attemptReconnect();
-            };
+        this.socket.on('team_status_update', (data) => {
+            this.notifySubscribers({ type: 'presence:member:updated', payload: data });
+        });
 
-            this.ws.onerror = (error) => {
-                console.error('[Socket] Error:', error);
-                this.isConnecting = false;
-            };
-        } catch (e) {
-            console.error('[Socket] Connection failed:', e);
-            this.isConnecting = false;
-            this.attemptReconnect();
-        }
-    }
-
-    attemptReconnect() {
-        if (this.reconnectAttempts < this.maxReconnectAttempts) {
-            this.reconnectAttempts++;
-            console.log(`[Socket] Reconnecting attempt ${this.reconnectAttempts} in ${this.reconnectDelay}ms...`);
-            setTimeout(() => this.connect(), this.reconnectDelay);
-        } else {
-            console.error('[Socket] Max reconnect attempts reached');
-        }
+        this.socket.on('disconnect', () => {
+            console.log('[Socket] Disconnected');
+            this.notifySubscribers({ type: 'socket:disconnected' });
+        });
     }
 
     subscribe(callback) {
@@ -80,27 +46,20 @@ class SocketService {
     }
 
     send(data) {
-        const message = JSON.stringify(data);
-        if (this.ws && this.ws.readyState === WebSocket.OPEN) {
-            this.ws.send(message);
+        if (!this.socket || !this.socket.connected) {
+            this.messageQueue.push(data);
+            if (!this.socket) this.connect();
         } else {
-            console.warn('[Socket] Not connected, queuing message:', data.type);
-            this.messageQueue.push(message);
-            this.connect(); // Ensure we try to connect
-        }
-    }
-
-    flushQueue() {
-        while (this.messageQueue.length > 0 && this.ws && this.ws.readyState === WebSocket.OPEN) {
-            this.ws.send(this.messageQueue.shift());
+            if (data.type === 'STATUS_CHANGE') {
+                this.socket.emit('status_update', data.payload);
+            }
         }
     }
 
     disconnect() {
-        if (this.ws) {
-            this.ws.onclose = null; // Prevent reconnect
-            this.ws.close();
-            this.ws = null;
+        if (this.socket) {
+            this.socket.disconnect();
+            this.socket = null;
         }
     }
 }

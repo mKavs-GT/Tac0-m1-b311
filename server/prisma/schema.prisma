@@ -29,7 +29,17 @@ model User {
   attendances    Attendance[]
   attendanceLogs AttendanceLog[]
   workLogs       WorkLog[]
-  createdAt      DateTime    @default(now())
+  standups        Standup[]
+  sentBroadcasts  Broadcast[]    @relation("BroadcastSender")
+  readBroadcasts  BroadcastRead[]
+  sentMessages    Message[]      @relation("MessageSender")
+  receivedMessages Message[]     @relation("MessageReceiver")
+  tokens          Token[]        @relation("TokenOwner")
+  reviewedTokens  Token[]        @relation("TokenReviewer")
+  bookmarks       Bookmark[]
+  codeSnippets    CodeSnippet[]
+  activityLogs    ActivityLog[]
+  createdAt       DateTime    @default(now())
   updatedAt      DateTime    @updatedAt
 }
 
@@ -159,5 +169,99 @@ model WorkLog {
   description String
   minutes     Int
   loggedAt    DateTime @default(now())
+  createdAt   DateTime @default(now())
+}
+
+model Standup {
+  id          String   @id @default(uuid())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  date        DateTime
+  yesterday   String
+  today       String
+  blockers    String?
+  createdAt   DateTime @default(now())
+  
+  @@unique([userId, date])
+}
+
+model Broadcast {
+  id          String   @id @default(uuid())
+  title       String
+  message     String
+  sender      User     @relation("BroadcastSender", fields: [sentBy], references: [id])
+  sentBy      String
+  targetRole  String?  // null = all users
+  createdAt   DateTime @default(now())
+  reads       BroadcastRead[]
+}
+
+model BroadcastRead {
+  id          String    @id @default(uuid())
+  broadcast   Broadcast @relation(fields: [broadcastId], references: [id], onDelete: Cascade)
+  broadcastId String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  readAt      DateTime  @default(now())
+
+  @@unique([broadcastId, userId])
+}
+
+model Message {
+  id          String   @id @default(uuid())
+  fromUser    User     @relation("MessageSender", fields: [fromUserId], references: [id])
+  fromUserId  String
+  toUser      User     @relation("MessageReceiver", fields: [toUserId], references: [id])
+  toUserId    String
+  content     String
+  read        Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+model Token {
+  id          String   @id @default(uuid())
+  user        User     @relation("TokenOwner", fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  type        String   // LEAVE, LATE_ARRIVAL, EARLY_DEPARTURE, WFH, ABSENT
+  date        DateTime
+  reason      String
+  note        String?
+  status      String   @default("PENDING")
+  reviewer    User?    @relation("TokenReviewer", fields: [reviewedBy], references: [id])
+  reviewedBy  String?
+  reviewNote  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Bookmark {
+  id          String   @id @default(uuid())
+  title       String
+  url         String
+  category    String
+  description String?
+  user        User     @relation(fields: [addedBy], references: [id])
+  addedBy     String
+  createdAt   DateTime @default(now())
+}
+
+model CodeSnippet {
+  id          String   @id @default(uuid())
+  title       String
+  language    String
+  code        String
+  tags        String[]
+  user        User     @relation(fields: [addedBy], references: [id])
+  addedBy     String
+  createdAt   DateTime @default(now())
+}
+
+model ActivityLog {
+  id          String   @id @default(uuid())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  eventType   String
+  description String
+  metadata    Json?
   createdAt   DateTime @default(now())
 }

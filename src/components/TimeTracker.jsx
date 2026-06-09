@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Clock, Plus, AlertCircle, Check } from 'lucide-react';
 import { API_BASE_URL } from '../config';
+import Tokens from './Tokens';
 
 // Real weekly data will be calculated from the history state
 
@@ -238,7 +239,7 @@ export default function TimeTracker({ user, onTicketSubmit, completedTodaySecond
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Working Hours</h2>
             <div className="flex gap-1.5 bg-zinc-100 dark:bg-zinc-950 p-1.5 rounded-xl border border-zinc-200/50 dark:border-zinc-800/50">
-              {['weekly', 'monthly', 'yearly'].map(v => (
+              {['weekly', 'monthly', 'yearly', 'tokens'].map(v => (
                 <button 
                   key={v}
                   onClick={() => setView(v)}
@@ -254,25 +255,31 @@ export default function TimeTracker({ user, onTicketSubmit, completedTodaySecond
             </div>
           </div>
           <div className="flex-1 w-full min-h-0 relative -ml-4">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={displayChartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#52525b" opacity={0.2} />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#71717a', fontSize: 13, fontWeight: 500 }} dy={15} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#71717a', fontSize: 13, fontWeight: 500 }} dx={-10} />
-                <Tooltip 
-                  cursor={{ fill: 'rgba(99, 102, 241, 0.05)', radius: 8 }}
-                  contentStyle={{ backgroundColor: '#18181b', borderRadius: '1rem', border: '1px solid #27272a', color: '#fff', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.3)' }} 
-                  itemStyle={{ color: '#fff', fontWeight: 'bold' }}
-                />
-                <Bar dataKey="hours" radius={[8, 8, 8, 8]} fill="url(#colorUv)" barSize={48} />
-                <defs>
-                  <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity={1}/>
-                    <stop offset="100%" stopColor="#059669" stopOpacity={1}/>
-                  </linearGradient>
-                </defs>
-              </BarChart>
-            </ResponsiveContainer>
+            {view === 'tokens' ? (
+              <div className="pl-4">
+                <Tokens user={user} />
+              </div>
+            ) : (
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={displayChartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#52525b" opacity={0.2} />
+                  <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#71717a', fontSize: 13, fontWeight: 500 }} dy={15} />
+                  <YAxis axisLine={false} tickLine={false} tick={{ fill: '#71717a', fontSize: 13, fontWeight: 500 }} dx={-10} />
+                  <Tooltip 
+                    cursor={{ fill: 'rgba(99, 102, 241, 0.05)', radius: 8 }}
+                    contentStyle={{ backgroundColor: '#18181b', borderRadius: '1rem', border: '1px solid #27272a', color: '#fff', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.3)' }} 
+                    itemStyle={{ color: '#fff', fontWeight: 'bold' }}
+                  />
+                  <Bar dataKey="hours" radius={[8, 8, 8, 8]} fill="url(#colorUv)" barSize={48} />
+                  <defs>
+                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#10b981" stopOpacity={1}/>
+                      <stop offset="100%" stopColor="#059669" stopOpacity={1}/>
+                    </linearGradient>
+                  </defs>
+                </BarChart>
+              </ResponsiveContainer>
+            )}
           </div>
         </div>
       </div>

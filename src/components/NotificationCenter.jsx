@@ -70,72 +70,85 @@ export default function NotificationCenter({ user }) {
   };
 
   return (
-    <div className="relative">
+    <>
       <button 
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen(true)} 
+        className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-bg-muted transition-colors text-text-muted hover:text-text-main relative"
         aria-label="Toggle Notifications"
-        className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all relative"
       >
         <Bell size={20} />
         {unreadCount > 0 && (
-          <span className="absolute -top-1 -right-1 w-5 h-5 bg-rose-500 text-white text-[10px] font-black flex items-center justify-center rounded-full border-2 border-white dark:border-zinc-900 animate-pulse">
-            {unreadCount}
-          </span>
+          <span className="absolute top-2 right-2 w-2 h-2 bg-danger rounded-full shadow-[0_0_10px_var(--color-danger)]"></span>
         )}
       </button>
 
       <AnimatePresence>
         {isOpen && (
           <>
-            <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
-            <motion.div
-              initial={{ opacity: 0, y: 10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 10, scale: 0.95 }}
-              className="absolute right-0 mt-3 w-80 bg-white dark:bg-zinc-900 rounded-[1.5rem] border border-zinc-200 dark:border-zinc-800 shadow-2xl z-50 overflow-hidden"
+            <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              exit={{ opacity: 0 }} 
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
+            />
+            <motion.div 
+              initial={{ x: '100%' }} 
+              animate={{ x: 0 }} 
+              exit={{ x: '100%' }} 
+              transition={{ type: 'spring', bounce: 0, duration: 0.4 }}
+              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-bg-surface border-l border-border-main shadow-2xl z-50 flex flex-col"
             >
-              <div className="p-4 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
-                <h4 className="font-black text-zinc-900 dark:text-white uppercase tracking-tighter text-xs">Notifications</h4>
-                <button onClick={() => setIsOpen(false)} aria-label="Close Notifications" className="text-zinc-400 hover:text-zinc-900 dark:hover:text-white"><X size={14}/></button>
+              <div className="p-6 border-b border-border-main flex items-center justify-between">
+                <h4 className="text-xl font-bold text-text-main">Notifications</h4>
+                <div className="flex items-center gap-2">
+                  {unreadCount > 0 && (
+                    <button 
+                      onClick={() => {
+                        notifications.forEach(n => { if (!n.read) markAsRead(n.id); });
+                      }}
+                      className="text-xs font-semibold text-primary hover:text-primary-hover transition-colors"
+                    >
+                      Mark all read
+                    </button>
+                  )}
+                  <button onClick={() => setIsOpen(false)} aria-label="Close Notifications" className="p-2 rounded-lg hover:bg-bg-muted text-text-muted transition-colors"><X size={20}/></button>
+                </div>
               </div>
 
-              <div className="max-h-80 overflow-y-auto p-2 flex flex-col gap-1">
+              <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3 custom-scrollbar">
                 {notifications.length === 0 ? (
-                  <div className="p-8 text-center">
-                    <Check size={32} className="mx-auto text-zinc-200 dark:text-zinc-800 mb-2" />
-                    <p className="text-xs font-bold text-zinc-400">All caught up!</p>
-                  </div>
+                  <EmptyState 
+                    icon={Check}
+                    title="All caught up!"
+                    subtitle="You have no new notifications."
+                  />
                 ) : (
                   notifications.map(n => (
                     <div 
                       key={n.id} 
-                      className={`p-3 rounded-xl transition-all ${n.read ? 'opacity-60' : 'bg-indigo-50/50 dark:bg-indigo-500/5 border border-indigo-100/50 dark:border-indigo-500/10'}`}
+                      className={`p-4 rounded-xl transition-all cursor-pointer ${n.read ? 'bg-bg-root opacity-70' : 'bg-primary-tint border border-primary/20 shadow-sm'}`}
                       onClick={() => !n.read && markAsRead(n.id)}
                     >
-                      <div className="flex justify-between items-start mb-1">
-                        <span className="text-[10px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">{n.title}</span>
-                        {!n.read && <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.5)]"></div>}
+                      <div className="flex justify-between items-start mb-2">
+                        <span className="text-xs font-semibold text-primary">{n.title}</span>
+                        <div className="flex flex-col items-end gap-1">
+                          {!n.read && <div className="w-2 h-2 rounded-full bg-primary shadow-sm"></div>}
+                          <span className="text-[10px] text-text-muted">{new Date(n.createdAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+                        </div>
                       </div>
-                      <p className="text-xs font-bold text-zinc-900 dark:text-white leading-tight mb-2">{n.message}</p>
+                      <p className="text-sm font-medium text-text-main leading-snug mb-3">{n.message}</p>
                       
-                      {n.type === 'APPROVAL_NEEDED' && n.taskId && !n.read && (
-                        <div className="mb-2">
+                      {n.type === 'APPROVAL_REQUIRED' && !n.read && (
+                        <div className="flex items-center gap-2 mt-3">
                           <button 
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleApprove(n.taskId, n.id);
-                            }}
-                            className="px-3 py-1.5 bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400 text-[10px] font-black uppercase tracking-widest rounded hover:bg-emerald-100 transition-colors border border-emerald-100 dark:border-emerald-500/20"
+                            onClick={(e) => { e.stopPropagation(); handleApprove(n.taskId, n.id); }}
+                            className="flex-1 py-2 bg-primary hover:bg-primary-hover text-white text-xs font-medium rounded-lg transition-colors shadow-sm"
                           >
                             Approve Now
                           </button>
                         </div>
                       )}
-
-                      <div className="flex items-center gap-1 text-[8px] font-black text-zinc-400 uppercase">
-                        <Clock size={10} />
-                        {new Date(n.createdAt).toLocaleDateString()} at {new Date(n.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                      </div>
                     </div>
                   ))
                 )}
@@ -144,6 +157,6 @@ export default function NotificationCenter({ user }) {
           </>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 }

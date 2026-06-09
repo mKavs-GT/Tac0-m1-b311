@@ -12,10 +12,10 @@ const STATUS_CONFIG = {
   zen: { color: 'purple' }
 };
 
-const statusColors = {
-  green: 'bg-emerald-500',
-  purple: 'bg-purple-500',
-  amber: 'bg-amber-500',
+const STATUS_COLORS = {
+  green: 'bg-success',
+  purple: 'bg-secondary',
+  amber: 'bg-warning',
   gray: 'bg-zinc-400'
 };
 
@@ -58,9 +58,9 @@ export default function TeamTracker({ user }) {
           
           {/* Workload Heatmap */}
           <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-[2rem] p-6 border border-zinc-200/50 dark:border-zinc-800/50 shadow-sm flex flex-col relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+             <div className="absolute top-0 right-0 w-64 h-64 bg-warning-tint rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
              <h3 className="text-sm font-bold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
-                <Activity size={16} className="text-amber-500" /> Workload Heatmap
+                <Activity size={16} className="text-warning" /> Workload Heatmap
              </h3>
              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 relative z-10">
                 {TEAM_MEMBERS.map(member => {
@@ -131,7 +131,7 @@ export default function TeamTracker({ user }) {
                     <div className="flex items-center gap-8">
                       <div className="text-right">
                         <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1">{status.toUpperCase()}</p>
-                        <p className="text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                        <p className="text-xs font-bold text-primary">
                           {presence?.updatedAt ? new Date(presence.updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '---'}
                         </p>
                       </div>
@@ -148,9 +148,9 @@ export default function TeamTracker({ user }) {
           
           {/* Performance Metrics */}
           <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-[2rem] p-6 border border-zinc-200/50 dark:border-zinc-800/50 shadow-sm flex flex-col relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+             <div className="absolute top-0 right-0 w-64 h-64 bg-success-tint rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
              <h3 className="text-sm font-bold text-zinc-900 dark:text-white mb-4 flex items-center gap-2 relative z-10">
-                <Zap size={16} className="text-emerald-500" /> Velocity Metrics
+                <Zap size={16} className="text-success" /> Velocity Metrics
              </h3>
              <div className="relative z-10">
                <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-1">Avg. Time: Backlog → Live</p>
@@ -158,9 +158,9 @@ export default function TeamTracker({ user }) {
                  4.2 <span className="text-sm font-bold text-zinc-500 mb-1">Days</span>
                </p>
                <div className="h-1.5 w-full bg-zinc-100 dark:bg-zinc-800 rounded-full mt-3 overflow-hidden">
-                 <div className="h-full bg-emerald-500 w-[70%] rounded-full"></div>
+                 <div className="h-full bg-success w-[70%] rounded-full"></div>
                </div>
-               <p className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 mt-2 uppercase tracking-widest">+12% faster than last sprint</p>
+               <p className="text-[10px] font-bold text-success mt-2 uppercase tracking-widest">+12% faster than last sprint</p>
              </div>
           </div>
 
@@ -168,12 +168,12 @@ export default function TeamTracker({ user }) {
           <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-[2rem] p-6 border border-zinc-200/50 dark:border-zinc-800/50 shadow-sm flex flex-col relative overflow-hidden flex-1">
              <div className="flex items-center justify-between mb-6">
                 <h3 className="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-                  <Activity size={16} className="text-indigo-500" /> Active Performance
+                  <Activity size={16} className="text-primary" /> Active Performance
                 </h3>
              </div>
              <div className="flex-1 flex flex-col items-center justify-center text-center p-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center mb-4">
-                   <TrendingUp size={32} className="text-emerald-500" />
+                <div className="w-16 h-16 rounded-full bg-success-tint flex items-center justify-center mb-4">
+                   <TrendingUp size={32} className="text-success" />
                 </div>
                 <p className="text-sm font-bold text-zinc-900 dark:text-white">System Optimized</p>
                 <p className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1">All agents performing within target velocity</p>
