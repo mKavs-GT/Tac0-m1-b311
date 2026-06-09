@@ -39,21 +39,6 @@ export default function NotificationCenter({ user }) {
     }
   }, [user]);
 
-  const fetchNotifications = async () => {
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/notifications`, {
-        headers: { ...authHeader() }
-      });
-      if (res.ok) {
-        const data = await res.json();
-        setNotifications(data);
-        setUnreadCount(data.filter(n => !n.read).length);
-      }
-    } catch (err) {
-      console.error('Fetch notifications failed:', err);
-    }
-  };
-
   const markAsRead = async (id) => {
     try {
       await fetch(`${API_BASE_URL}/api/notifications/${id}/read`, { 
