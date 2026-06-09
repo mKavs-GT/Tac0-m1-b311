@@ -686,7 +686,6 @@ export default function App() {
           <div className="max-w-6xl mx-auto">
             <Suspense fallback={<div className="flex items-center justify-center h-64"><div className="w-8 h-8 rounded-full border-2 border-indigo-200 border-t-indigo-600 animate-spin"></div></div>}>
               <AnimatePresence mode="wait">
-                <ErrorBoundary key={activeView}>
                 {activeView === 'analytics' && (
                   <motion.div 
                     key="analytics" 
@@ -846,7 +845,6 @@ export default function App() {
                   </motion.div>
                 )}
 
-                </ErrorBoundary>
               </AnimatePresence>
             </Suspense>
           </div>
