@@ -23,12 +23,6 @@ export default function RecentActivityPanel() {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchLogs();
-    const interval = setInterval(fetchLogs, 10000); // Polling every 10s
-    return () => clearInterval(interval);
-  }, []);
-
   const fetchLogs = async () => {
     try {
       const res = await fetch(`${API_BASE_URL}/api/admin/audit-logs`, {
@@ -44,6 +38,12 @@ export default function RecentActivityPanel() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchLogs();
+    const interval = setInterval(fetchLogs, 10000); // Polling every 10s
+    return () => clearInterval(interval);
+  }, []);
 
   const formatTime = (dateStr) => {
     const date = new Date(dateStr);

@@ -68,7 +68,7 @@ export default function TeamTracker({ user }) {
                   const status = presence.status || 'offline';
                   const isOnline = presence.isOnline || false;
                   
-                  const statusColorClass = statusColors[STATUS_CONFIG[status]?.color || 'gray'];
+                  const statusColorClass = STATUS_COLORS[STATUS_CONFIG[status]?.color || 'gray'];
                   
                   return (
                     <div key={`heat-${member.email}`} className="p-4 rounded-2xl border bg-zinc-50 dark:bg-zinc-950 border-zinc-200/50 dark:border-zinc-800/50 flex flex-col items-center text-center transition-all">
@@ -113,7 +113,7 @@ export default function TeamTracker({ user }) {
                 const status = presence.status || 'offline';
                 const isOnline = presence.isOnline || false;
                 
-                const statusColorClass = statusColors[STATUS_CONFIG[status]?.color || 'gray'];
+                const statusColorClass = STATUS_COLORS[STATUS_CONFIG[status]?.color || 'gray'];
                 
                 return (
                   <div key={member.email} className="flex items-center justify-between p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-indigo-500/30 transition-colors group">

@@ -8,6 +8,21 @@ export default function NotificationCenter({ user }) {
   const [isOpen, setIsOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
 
+  const fetchNotifications = async () => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/notifications`, {
+        headers: { ...authHeader() }
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setNotifications(data);
+        setUnreadCount(data.filter(n => !n.read).length);
+      }
+    } catch (err) {
+      console.error('Fetch notifications failed:', err);
+    }
+  };
+
   useEffect(() => {
     if (user) {
       fetchNotifications();

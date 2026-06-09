@@ -7,10 +7,6 @@ export default function ActivityLogPage({ user }) {
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({ userId: '', eventType: '', date: '' });
 
-  useEffect(() => {
-    fetchLogs();
-  }, [filters]);
-
   const fetchLogs = async () => {
     try {
       const queryParams = new URLSearchParams();
@@ -29,6 +25,10 @@ export default function ActivityLogPage({ user }) {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchLogs();
+  }, [filters]);
 
   return (
     <div className="space-y-6">
