@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Activity, Search, Filter } from 'lucide-react';
 import { API_BASE_URL } from '../config';
+import { apiFetch } from '../utils/api';
 
 export default function ActivityLogPage({ user }) {
   const [logs, setLogs] = useState([]);
@@ -14,8 +15,8 @@ export default function ActivityLogPage({ user }) {
       if (filters.eventType) queryParams.append('action', filters.eventType);
       if (filters.date) queryParams.append('date', filters.date);
 
-      const res = await fetch(`${API_BASE_URL}/api/activity-logs?${queryParams.toString()}`, {
-        headers: { 'Authorization': `Bearer ${user.token}` }
+      const res = await apiFetch(`${API_BASE_URL}/api/activity-logs?${queryParams.toString()}`, {
+        
       });
       if (res.ok) {
         const data = await res.json();

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bell, Check, Clock, X } from 'lucide-react';
-import { WS_URL, API_BASE_URL, authHeader } from '../config';
+import { WS_URL, API_BASE_URL } from '../config';
+import { apiFetch } from '../utils/api';
 
 export default function NotificationCenter({ user }) {
   const [notifications, setNotifications] = useState([]);
@@ -10,8 +11,8 @@ export default function NotificationCenter({ user }) {
 
   const fetchNotifications = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/notifications`, {
-        headers: { ...authHeader() }
+      const res = await apiFetch(`${API_BASE_URL}/api/notifications`, {
+        
       });
       if (res.ok) {
         const data = await res.json();
@@ -41,9 +42,9 @@ export default function NotificationCenter({ user }) {
 
   const markAsRead = async (id) => {
     try {
-      await fetch(`${API_BASE_URL}/api/notifications/${id}/read`, { 
+      await apiFetch(`${API_BASE_URL}/api/notifications/${id}/read`, { 
         method: 'PATCH',
-        headers: { ...authHeader() }
+        
       });
       setNotifications(prev => prev.map(n => n.id === id ? { ...n, read: true } : n));
       setUnreadCount(prev => Math.max(0, prev - 1));
@@ -54,9 +55,9 @@ export default function NotificationCenter({ user }) {
 
   const handleApprove = async (taskId, notifId) => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/tasks/${taskId}/approve`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/tasks/${taskId}/approve`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json', ...authHeader() }
+        headers: { 'Content-Type': 'application/json', }
       });
       if (res.ok) {
         markAsRead(notifId);

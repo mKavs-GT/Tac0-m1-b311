@@ -10,6 +10,7 @@ import { API_BASE_URL } from '../config';
 import palettesData from '../data/palettes.js';
 import fontsData from '../data/fonts.js';
 import ReactorKnob from './ui/control-knob.jsx';
+import { apiFetch } from '../utils/api';
 
 
 const STATUS_COLORS = {
@@ -77,8 +78,8 @@ export default function ProjectManagement({ user }) {
     setLoading(true); setError(null);
     try {
       const [uRes, pRes] = await Promise.all([
-        fetch(`${API_BASE_URL}/api/admin/users`, { credentials: 'include', headers: authHeader }),
-        fetch(`${API_BASE_URL}/api/projects`, { credentials: 'include', headers: authHeader }),
+        apiFetch(`${API_BASE_URL}/api/admin/users`, { credentials: 'include', headers: authHeader }),
+        apiFetch(`${API_BASE_URL}/api/projects`, { credentials: 'include', headers: authHeader }),
       ]);
       const usersData = await uRes.json();
       const projectsData = await pRes.json();
@@ -419,7 +420,7 @@ function Section({ title, icon: Icon, children }) {
   );
 }
 
-function TimelineDisplay({ startDate, endDate, client, authHeader, onUpdate, editable = false }) {
+function TimelineDisplay({ startDate, endDate, client, onUpdate, editable = false }) {
   const [date, setDate] = useState({
     from: startDate ? new Date(startDate) : undefined,
     to: endDate ? new Date(endDate) : undefined
@@ -450,9 +451,9 @@ function TimelineDisplay({ startDate, endDate, client, authHeader, onUpdate, edi
     };
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: patch })
       });
@@ -521,7 +522,7 @@ function TimelineDisplay({ startDate, endDate, client, authHeader, onUpdate, edi
   );
 }
 
-function OverviewTab({ client, project, authHeader, onUpdate }) {
+function OverviewTab({ client, project, onUpdate }) {
   const ad = { ...(project?.adminData || {}), ...(client?.adminData || {}) };
   return (
     <TabPanel>
@@ -628,7 +629,7 @@ function OverviewTab({ client, project, authHeader, onUpdate }) {
   );
 }
 
-function ProjectTab({ client, project, authHeader, onUpdate }) {
+function ProjectTab({ client, project, onUpdate }) {
   // Merge project and client adminData — client.adminData is always up-to-date
   // because onUpdate patches it directly, while project may be stale from initial fetch.
   const ad = { ...(project?.adminData || {}), ...(client?.adminData || {}) };
@@ -646,9 +647,9 @@ function ProjectTab({ client, project, authHeader, onUpdate }) {
         patch.projectStatus = 'Completed';
       }
 
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: patch })
       });
@@ -733,7 +734,7 @@ function ProjectTab({ client, project, authHeader, onUpdate }) {
   );
 }
 
-function ScheduleTab({ client, authHeader, onUpdate }) {
+function ScheduleTab({ client, onUpdate }) {
   const meetings = client.adminData?.meetings || [];
   const upcoming = meetings.filter(m => m.status === 'Upcoming');
   const past = meetings.filter(m => m.status !== 'Upcoming');
@@ -745,9 +746,9 @@ function ScheduleTab({ client, authHeader, onUpdate }) {
   const saveMeetings = async (newMeetings) => {
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: { meetings: newMeetings } })
       });
@@ -816,9 +817,9 @@ function ScheduleTab({ client, authHeader, onUpdate }) {
     fd.append('meetingDate', meetings[editingResources].date);
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/meeting-upload`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/meeting-upload`, {
         method: 'POST',
-        headers: authHeader,
+        headers: 
         credentials: 'include',
         body: fd,
       });
@@ -853,9 +854,9 @@ function ScheduleTab({ client, authHeader, onUpdate }) {
 
   const removeMeetingDoc = async (docPath) => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/meeting-attachment`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/meeting-attachment`, {
         method: 'DELETE',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ filePath: docPath }),
       });
@@ -914,9 +915,9 @@ function ScheduleTab({ client, authHeader, onUpdate }) {
     };
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: { meetingAssets: newAssets } })
       });
@@ -1276,7 +1277,7 @@ function DatePickerField({ value, onChange, label, placeholder = "Select date" }
   );
 }
 
-function BillingTab({ client, authHeader, onUpdate }) {
+function BillingTab({ client, onUpdate }) {
   const ad = client.adminData || {};
   const sub = ad.subscription || {};
   const invoices = ad.invoices || [];
@@ -1318,9 +1319,9 @@ function BillingTab({ client, authHeader, onUpdate }) {
     };
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: { subscription: updatedSub } })
       });
@@ -1345,8 +1346,8 @@ function BillingTab({ client, authHeader, onUpdate }) {
       const fd = new FormData();
       fd.append('file', invoiceFile);
       try {
-        const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/upload`, {
-          method: 'POST', headers: authHeader, credentials: 'include', body: fd,
+        const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/upload`, {
+          method: 'POST', headers:  credentials: 'include', body: fd,
         });
         const data = await res.json();
         if (res.ok && data.attachment) {
@@ -1372,9 +1373,9 @@ function BillingTab({ client, authHeader, onUpdate }) {
     const updatedInvoices = [newInvoice, ...invoices];
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: { invoices: updatedInvoices } })
       });
@@ -1397,9 +1398,9 @@ function BillingTab({ client, authHeader, onUpdate }) {
     const updatedInvoices = invoices.filter((_, i) => i !== index);
     
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: { invoices: updatedInvoices } })
       });
@@ -1671,7 +1672,7 @@ function BillingTab({ client, authHeader, onUpdate }) {
   );
 }
 
-function MessagesTab({ client, authHeader, onUpdate }) {
+function MessagesTab({ client, onUpdate }) {
   const [newMessage, setNewMessage] = useState('');
   const [subject, setSubject] = useState('General Update');
   const [isSubjectOpen, setIsSubjectOpen] = useState(false);
@@ -1693,9 +1694,9 @@ function MessagesTab({ client, authHeader, onUpdate }) {
     const updatedMessages = [...(client.adminData?.messages || []), msg];
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: { messages: updatedMessages } })
       });
@@ -1722,9 +1723,9 @@ function MessagesTab({ client, authHeader, onUpdate }) {
   const handleArchiveAll = async () => {
     const updatedMessages = allMessages.map(m => ({ ...m, isArchived: true }));
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: { messages: updatedMessages } })
       });
@@ -1742,9 +1743,9 @@ function MessagesTab({ client, authHeader, onUpdate }) {
   const markAllAsRead = async () => {
     const updatedMessages = allMessages.map(m => ({ ...m, isRead: true }));
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: { messages: updatedMessages } })
       });
@@ -1983,7 +1984,7 @@ function MessagesTab({ client, authHeader, onUpdate }) {
   );
 }
 
-function AssetsTab({ client, authHeader, onUpdate }) {
+function AssetsTab({ client, onUpdate }) {
   const [uploading, setUploading] = useState(false);
   const [dragOver, setDragOver] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
@@ -2010,8 +2011,8 @@ function AssetsTab({ client, authHeader, onUpdate }) {
       const fd = new FormData();
       fd.append('file', deliverableFile);
       try {
-        const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/upload`, {
-          method: 'POST', headers: authHeader, credentials: 'include', body: fd,
+        const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/upload`, {
+          method: 'POST', headers:  credentials: 'include', body: fd,
         });
         const data = await res.json();
         if (res.ok && data.attachment) {
@@ -2031,9 +2032,9 @@ function AssetsTab({ client, authHeader, onUpdate }) {
     const newDeliverables = [{ title: deliverableForm.title, link: finalLink, uploadDate: new Date() }, ...deliverables];
     
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: { deliverables: newDeliverables } })
       });
@@ -2055,9 +2056,9 @@ function AssetsTab({ client, authHeader, onUpdate }) {
     updated.splice(index, 1);
     
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}`, {
         method: 'PUT',
-        headers: { ...authHeader, 'Content-Type': 'application/json' },
+        headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({ adminData: { deliverables: updated } })
       });
@@ -2077,8 +2078,8 @@ function AssetsTab({ client, authHeader, onUpdate }) {
       const fd = new FormData();
       fd.append('file', file);
       try {
-        const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/upload`, {
-          method: 'POST', headers: authHeader, credentials: 'include', body: fd,
+        const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/upload`, {
+          method: 'POST', headers:  credentials: 'include', body: fd,
         });
         const data = await res.json();
         if (res.ok && data.attachment) results.push(data.attachment);
@@ -2096,8 +2097,8 @@ function AssetsTab({ client, authHeader, onUpdate }) {
   const doDelete = async (att) => {
     setDeleteId(att.path);
     try {
-      await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/attachment`, {
-        method: 'DELETE', headers: { ...authHeader, 'Content-Type': 'application/json' },
+      await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(client.email)}/attachment`, {
+        method: 'DELETE', headers: { ... 'Content-Type': 'application/json' },
         credentials: 'include', body: JSON.stringify({ filePath: att.path }),
       });
       onUpdate(client.email, c => ({

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Users, Phone, Mail, Calendar, Building, Briefcase, DollarSign, MessageSquare, ExternalLink, TrendingUp, Loader2, AlertCircle } from 'lucide-react';
 import { API_BASE_URL } from '../config';
+import { apiFetch } from '../utils/api';
 
 
 const getImageUrl = (imagePath) => {
@@ -60,7 +61,7 @@ export default function CRM({ user }) {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`${API_BASE_URL}/api/admin/users`, { 
+        const res = await apiFetch(`${API_BASE_URL}/api/admin/users`, { 
           credentials: 'include',
           headers: {
             'Authorization': user?.token ? `Bearer ${user.token}` : ''
@@ -83,7 +84,7 @@ export default function CRM({ user }) {
       const targetUser = dbUsers.find(u => u._id === userId);
       if (!targetUser || !targetUser.email) throw new Error("User email not found");
 
-      const res = await fetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(targetUser.email)}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/user/${encodeURIComponent(targetUser.email)}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

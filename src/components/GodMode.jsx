@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Send, Users, Key, AlertCircle, CheckCircle, Save, Loader2 } from 'lucide-react';
-import { API_BASE_URL, authHeader } from '../config';
+import { API_BASE_URL } from '../config';
+import { apiFetch } from '../utils/api';
 
 const DEFAULT_PERMISSIONS = {
   Developer: {
@@ -62,7 +63,7 @@ export default function GodMode({ user }) {
 
   // Load maintenance config
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/system-status`)
+    apiFetch(`${API_BASE_URL}/api/system-status`)
       .then(res => res.json())
       .then(data => {
         if (data) {
@@ -81,8 +82,8 @@ export default function GodMode({ user }) {
     if (!user?.token) return;
     const load = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/api/admin/rbac`, {
-          headers: { 'Authorization': `Bearer ${user.token}` }
+        const res = await apiFetch(`${API_BASE_URL}/api/admin/rbac`, {
+          
         });
         if (res.ok) {
           const data = await res.json();
@@ -102,9 +103,9 @@ export default function GodMode({ user }) {
   const handleSaveMaintenance = async () => {
     setIsSaving(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/system-status`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/system-status`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json', ...authHeader() },
+        headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify({
           enabled: maintenanceConfig.enabled,
           scheduledFor: maintenanceConfig.scheduledFor ? new Date(maintenanceConfig.scheduledFor).toISOString() : null,
@@ -138,9 +139,9 @@ export default function GodMode({ user }) {
     // Also POST to backend notification endpoint if it exists
     if (user?.token) {
       try {
-        await fetch(`${API_BASE_URL}/api/notifications/broadcast`, {
+        await apiFetch(`${API_BASE_URL}/api/notifications/broadcast`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}` },
+          headers: { 'Content-Type': 'application/json', },
           body: JSON.stringify({ title: 'Global Announcement', message: announcement })
         });
       } catch (e) {
@@ -167,9 +168,9 @@ export default function GodMode({ user }) {
     setRbacSaving(true);
     setRbacError('');
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/rbac`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/rbac`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}` },
+        headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(permissions)
       });
       if (res.ok) {

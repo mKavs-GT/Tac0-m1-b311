@@ -74,6 +74,7 @@ import { TEAM_MEMBERS } from './constants/users';
 import { calculateDailyGoal } from './utils/taskMetrics';
 import Sidebar from './components/Sidebar';
 import AppHeader from './components/AppHeader';
+import { apiFetch } from './utils/api';
 const kaironIcon = '/kairon-icon.png';
 
 const STATUS_CONFIG = {
@@ -318,8 +319,8 @@ export default function App() {
       
       setIsValidating(true);
       try {
-        const res = await fetch(`${API_BASE_URL}/api/admin/verify`, {
-          headers: { 'Authorization': `Bearer ${user.token.trim()}` }
+        const res = await apiFetch(`${API_BASE_URL}/api/admin/verify`, {
+          
         });
         
         if (!res.ok) {
@@ -355,9 +356,9 @@ export default function App() {
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin-projects?t=${Date.now()}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin-projects?t=${Date.now()}`, {
         headers: {
-          ...(user?.token ? { 'Authorization': `Bearer ${user.token}` } : {}),
+          ...(user?.token ? { } : {}),
           'Cache-Control': 'no-cache',
           'Pragma': 'no-cache'
         },
@@ -450,8 +451,8 @@ export default function App() {
   const fetchCurrentStats = useCallback(async () => {
     if (!user?.token) return;
     try {
-      const res = await fetch(`${API_BASE_URL}/api/attendance/stats`, {
-        headers: { 'Authorization': `Bearer ${user.token}` }
+      const res = await apiFetch(`${API_BASE_URL}/api/attendance/stats`, {
+        
       });
       if (res.ok) {
         const data = await res.json();
@@ -520,10 +521,10 @@ export default function App() {
       // Always get a fresh token before clocking in/out to avoid "expired token" errors
       const freshToken = await refreshToken() || user.token;
       const endpoint = timerRunning ? 'clock-out' : 'clock-in';
-      const res = await fetch(`${API_BASE_URL}/api/attendance/${endpoint}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/attendance/${endpoint}`, {
         method: 'POST',
         headers: { 
-          'Authorization': `Bearer ${freshToken}`,
+          
           'Content-Type': 'application/json'
         }
       });
@@ -590,10 +591,8 @@ export default function App() {
       if (user?.token) {
         console.log(`[DEBUG] Fetching ticket stats with token starting with: ${user.token.substring(0, 10)}...`);
       }
-      const res = await fetch(`${API_BASE_URL}/api/tickets/stats`, {
-        headers: {
-          'Authorization': `Bearer ${user.token.trim()}`
-        }
+      const res = await apiFetch(`${API_BASE_URL}/api/tickets/stats`, {
+        
       });
       if (res.ok) {
         const data = await res.json();
@@ -1102,8 +1101,8 @@ function RecentActivityFeed({ user }) {
   const fetchActivity = useCallback(async () => {
     if (!user?.token) return;
     try {
-      const res = await fetch(`${API_BASE_URL}/api/activity`, {
-        headers: { 'Authorization': `Bearer ${user.token}` }
+      const res = await apiFetch(`${API_BASE_URL}/api/activity`, {
+        
       });
       if (res.ok) setActivities(await res.json());
     } catch (e) { console.error('Activity feed fetch failed', e); }
@@ -1204,9 +1203,9 @@ function QuickLogModal({ user, projects, onClose }) {
     setError('');
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/api/worklogs`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/worklogs`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}` },
+        headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify({ description: form.description, projectId: form.projectId || null, minutes: parseInt(form.minutes, 10) })
       });
       if (res.ok) {

@@ -4,8 +4,9 @@ import {
   CheckCircle, Clock, Plus, User, MessageSquare, Zap, 
   LogIn, LogOut, ArrowRight, Activity, Globe, Wifi, WifiOff 
 } from 'lucide-react';
-import { API_BASE_URL, authHeader } from '../config';
+import { API_BASE_URL } from '../config';
 import { EmptyState } from './ui/EmptyState';
+import { apiFetch } from '../utils/api';
 
 const ACTION_CONFIG = {
   LOGIN: { label: 'logged in', icon: <LogIn size={14} className="text-emerald-500" />, bgColor: 'bg-emerald-50' },
@@ -25,7 +26,7 @@ export default function RecentActivityPanel() {
 
   const fetchLogs = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin/audit-logs`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin/audit-logs`, {
         headers: authHeader()
       });
       if (res.ok) {

@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { API_BASE_URL } from '../config';
 import { EmptyState } from './ui/EmptyState';
+import { apiFetch } from '../utils/api';
 
 export default function TicketManager({ user, onReview }) {
   const [tickets, setTickets] = useState([]);
@@ -28,8 +29,8 @@ export default function TicketManager({ user, onReview }) {
 
   const fetchTickets = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/tickets`, {
-        headers: { 'Authorization': `Bearer ${user.token}` }
+      const res = await apiFetch(`${API_BASE_URL}/api/tickets`, {
+        
       });
       const data = await res.json();
       if (Array.isArray(data)) {
@@ -55,12 +56,11 @@ export default function TicketManager({ user, onReview }) {
 
     setIsProcessing(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/api/tickets/${id}/review`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/tickets/${id}/review`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${user.token}`
-        },
+          },
         body: JSON.stringify({ status, decisionComment })
       });
 

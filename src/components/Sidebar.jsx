@@ -257,7 +257,7 @@ export default function Sidebar({
           <div className="p-4 border-t border-border-main shrink-0 flex flex-col gap-3">
             {!visualCollapsed && (
               <div className="text-[10px] font-bold text-text-muted/50 uppercase tracking-widest text-center mb-1">
-                v1.0.1-stable &bull; 09 Jun 2026 11:30 AM
+                v1.1.0-stable &bull; 10 Jun 2026 06:41 PM
               </div>
             )}
             <div className={`flex items-center ${visualCollapsed ? 'justify-center' : 'gap-3 px-3 py-2'} mb-2`}>

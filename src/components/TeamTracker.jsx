@@ -4,6 +4,7 @@ import { Clock, Activity, Zap, TrendingUp, RefreshCw, User } from 'lucide-react'
 import { TEAM_MEMBERS } from '../constants/users';
 import { useTeamPresence } from '../hooks/useTeamPresence';
 import { API_BASE_URL } from '../config';
+import { apiFetch } from '../utils/api';
 
 const STATUS_CONFIG = {
   available:  { color: 'green' },
@@ -46,8 +47,8 @@ export default function TeamTracker({ user }) {
     if (!user?.token) return;
     if (!silent) setRefreshing(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/api/attendance/today`, {
-        headers: { 'Authorization': `Bearer ${user.token}` }
+      const res = await apiFetch(`${API_BASE_URL}/api/attendance/today`, {
+        
       });
       if (res.ok) {
         const data = await res.json();

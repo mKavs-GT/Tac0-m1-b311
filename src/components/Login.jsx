@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../firebase';
 import { API_BASE_URL } from '../config';
+import { apiFetch } from '../utils/api';
 
 export default function Login({ onLogin }) {
   const [email, setEmail] = useState('');
@@ -25,10 +26,10 @@ export default function Login({ onLogin }) {
       const idToken = await userCredential.user.getIdToken();
 
       // 2. Verify with backend — fetch PostgreSQL user profile
-      const res = await fetch(`${API_BASE_URL}/api/auth/verify`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/auth/verify`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${idToken}`,
+          
           'Content-Type': 'application/json'
         }
       });

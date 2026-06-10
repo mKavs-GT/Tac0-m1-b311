@@ -4,6 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Clock, Plus, AlertCircle, Check } from 'lucide-react';
 import { API_BASE_URL } from '../config';
 import Tokens from './Tokens';
+import { apiFetch } from '../utils/api';
 
 // Real weekly data will be calculated from the history state
 
@@ -30,8 +31,8 @@ export default function TimeTracker({ user, onTicketSubmit, completedTodaySecond
 
   const fetchStats = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/time-entries/stats`, {
-        headers: { 'Authorization': `Bearer ${user.token}` }
+      const res = await apiFetch(`${API_BASE_URL}/api/time-entries/stats`, {
+        
       });
       const data = await res.json();
       if (data && typeof data === 'object') {
@@ -42,8 +43,8 @@ export default function TimeTracker({ user, onTicketSubmit, completedTodaySecond
 
   const fetchHistory = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/time-entries/history`, {
-        headers: { 'Authorization': `Bearer ${user.token}` }
+      const res = await apiFetch(`${API_BASE_URL}/api/time-entries/history`, {
+        
       });
       const data = await res.json();
       if (data && typeof data === 'object') {
@@ -109,12 +110,11 @@ export default function TimeTracker({ user, onTicketSubmit, completedTodaySecond
     try {
       const entryDate = new Date(selectedDate);
 
-      const res = await fetch(`${API_BASE_URL}/api/tickets`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/tickets`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${user.token}`
-        },
+          },
         body: JSON.stringify({
           projectId: manualEntry.projectName, // Using name as ID for simplicity
           projectName: manualEntry.projectName,

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, MessageSquare, AlertCircle, Clock } from 'lucide-react';
 import { API_BASE_URL } from '../config';
+import { apiFetch } from '../utils/api';
 
 export default function Overview({ user }) {
   const [standup, setStandup] = useState({ yesterday: '', today: '', blockers: '' });
@@ -17,8 +18,8 @@ export default function Overview({ user }) {
     if (!user?.token) return;
     const check = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/api/standups/today`, {
-          headers: { 'Authorization': `Bearer ${user.token}` }
+        const res = await apiFetch(`${API_BASE_URL}/api/standups/today`, {
+          
         });
         if (res.ok) {
           const data = await res.json();
@@ -55,12 +56,11 @@ export default function Overview({ user }) {
     setStandupError('');
     setStandupLoading(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/api/standups`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/standups`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${user.token}`
-        },
+          },
         body: JSON.stringify({
           yesterday: standup.yesterday,
           today: standup.today,

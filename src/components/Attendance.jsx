@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, XCircle, Clock, User, AlertCircle, UserCheck, RefreshCw, CalendarDays } from 'lucide-react';
 import { API_BASE_URL } from '../config';
+import { apiFetch } from '../utils/api';
 
 function formatTime(dt) {
   if (!dt) return '—';
@@ -55,8 +56,8 @@ export default function Attendance({ user }) {
   const fetchToday = useCallback(async (silent = false) => {
     if (!silent) setRefreshing(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/api/attendance/today`, {
-        headers: { 'Authorization': `Bearer ${user.token}` }
+      const res = await apiFetch(`${API_BASE_URL}/api/attendance/today`, {
+        
       });
       if (res.ok) setTodayRecords(await res.json());
     } catch (e) { console.error('Attendance fetch failed', e); }
@@ -65,8 +66,8 @@ export default function Attendance({ user }) {
 
   const fetchMyStats = useCallback(async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/attendance/stats`, {
-        headers: { 'Authorization': `Bearer ${user.token}` }
+      const res = await apiFetch(`${API_BASE_URL}/api/attendance/stats`, {
+        
       });
       if (res.ok) setMyStats(await res.json());
     } catch (e) { console.error('Stats fetch failed', e); }
@@ -101,9 +102,9 @@ export default function Attendance({ user }) {
   const handleApprove = async (userId) => {
     setActionLoading(userId + '_approve');
     try {
-      const res = await fetch(`${API_BASE_URL}/api/attendance/approve/${userId}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/attendance/approve/${userId}`, {
         method: 'POST',
-        headers: { 'Authorization': `Bearer ${user.token}` }
+        
       });
       if (res.ok) await fetchToday(true);
     } catch (e) { console.error('Approve failed', e); }
@@ -113,9 +114,9 @@ export default function Attendance({ user }) {
   const handleRevoke = async (userId) => {
     setActionLoading(userId + '_revoke');
     try {
-      const res = await fetch(`${API_BASE_URL}/api/attendance/revoke/${userId}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/attendance/revoke/${userId}`, {
         method: 'POST',
-        headers: { 'Authorization': `Bearer ${user.token}` }
+        
       });
       if (res.ok) await fetchToday(true);
     } catch (e) { console.error('Revoke failed', e); }

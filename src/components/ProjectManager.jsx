@@ -6,7 +6,8 @@ import {
 import { TEAM_MEMBERS } from '../constants/users';
 import { EmptyState } from './ui/EmptyState';
 import { io } from 'socket.io-client';
-import { API_BASE_URL, WS_URL, authHeader } from '../config';
+import { API_BASE_URL, WS_URL } from '../config';
+import { apiFetch } from '../utils/api';
 
 const COLUMN_TITLES = {
   TASKS: 'Tasks',
@@ -54,7 +55,7 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
 
   const fetchTasks = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/tasks`, { headers: { ...authHeader() } });
+      const res = await apiFetch(`${API_BASE_URL}/api/tasks`, {  });
       if (res.ok) {
         const data = await res.json();
         setTasks(data);
@@ -89,9 +90,9 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
   const handleCreateProject = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin-projects`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin-projects`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', ...authHeader() },
+        headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(projectFormData)
       });
       if (res.ok) {
@@ -115,9 +116,9 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
     e.preventDefault();
     if (!selectedProjectId) return;
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin-projects/${selectedProjectId}/sprints`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin-projects/${selectedProjectId}/sprints`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', ...authHeader() },
+        headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(sprintFormData) 
       });
       if (res.ok) {
@@ -133,9 +134,9 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
   const handleDeleteProject = async (projectId) => {
     if (!window.confirm('Are you sure you want to delete this project?')) return;
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin-projects/${projectId}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin-projects/${projectId}`, {
         method: 'DELETE',
-        headers: { ...authHeader() }
+        
       });
       if (res.ok) {
         await onRefresh();
@@ -150,9 +151,9 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
     e.preventDefault();
     if (!selectedProjectId) return;
     try {
-      const res = await fetch(`${API_BASE_URL}/api/admin-projects/${selectedProjectId}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/admin-projects/${selectedProjectId}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json', ...authHeader() },
+        headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(renameFormData)
       });
       if (res.ok) {
@@ -167,9 +168,9 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
   const handleAddTask = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${API_BASE_URL}/api/tasks`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/tasks`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', ...authHeader() },
+        headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify({ 
           ...taskFormData,
           projectId: selectedProjectId,
@@ -191,9 +192,9 @@ const ProjectManager = ({ user, projects = [], onRefresh, externalOpen, onExtern
 
   const handleTaskAction = async (taskId, action) => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/tasks/${taskId}/${action}`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/tasks/${taskId}/${action}`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json', ...authHeader() },
+        headers: { 'Content-Type': 'application/json', },
         body: action === 'pass-testing' ? JSON.stringify({ testingNotes: 'Looks good' }) : null
       });
       if (res.ok) {

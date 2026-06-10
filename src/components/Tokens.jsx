@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { API_BASE_URL } from '../config';
 import { Plus, Check, X, Clock } from 'lucide-react';
+import { apiFetch } from '../utils/api';
 
 export default function Tokens({ user }) {
   const [tokens, setTokens] = useState([]);
@@ -11,7 +12,7 @@ export default function Tokens({ user }) {
 
   const fetchTokens = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/tokens?userId=${user.uid}`);
+      const res = await apiFetch(`${API_BASE_URL}/api/tokens?userId=${user.uid}`);
       if (res.ok) {
         const data = await res.json();
         setTokens(data);
@@ -31,7 +32,7 @@ export default function Tokens({ user }) {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/api/tokens`, {
+      const res = await apiFetch(`${API_BASE_URL}/api/tokens`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, userId: user.uid })
