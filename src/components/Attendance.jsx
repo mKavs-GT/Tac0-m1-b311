@@ -79,8 +79,23 @@ export default function Attendance({ user }) {
       setLoading(false);
     };
     init();
+
+    // Poll every 30s as baseline
     const interval = setInterval(() => { fetchToday(true); fetchMyStats(); }, 30000);
-    return () => clearInterval(interval);
+
+    // Bug #3: Also refresh immediately when a clock event fires from anywhere in the app
+    const handleClockEvent = () => {
+      fetchToday(true);
+      fetchMyStats();
+    };
+    window.addEventListener('mkavs-timer-stopped', handleClockEvent);
+    window.addEventListener('mkavs-clock-updated', handleClockEvent);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('mkavs-timer-stopped', handleClockEvent);
+      window.removeEventListener('mkavs-clock-updated', handleClockEvent);
+    };
   }, [fetchToday, fetchMyStats]);
 
   const handleApprove = async (userId) => {

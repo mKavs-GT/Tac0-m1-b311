@@ -14,7 +14,9 @@ export default function ActivityLogPage({ user }) {
       if (filters.eventType) queryParams.append('action', filters.eventType);
       if (filters.date) queryParams.append('date', filters.date);
 
-      const res = await fetch(`${API_BASE_URL}/api/activity-logs?${queryParams.toString()}`);
+      const res = await fetch(`${API_BASE_URL}/api/activity-logs?${queryParams.toString()}`, {
+        headers: { 'Authorization': `Bearer ${user.token}` }
+      });
       if (res.ok) {
         const data = await res.json();
         setLogs(data);

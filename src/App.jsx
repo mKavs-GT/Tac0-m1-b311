@@ -33,6 +33,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { API_BASE_URL, WS_URL } from './config';
+import { auth } from './firebase';
 import { useTeamPresence } from './hooks/useTeamPresence';
 import socketService from './services/SocketService';
 // Helper to handle lazy loading errors (e.g. when a new version is deployed and old chunks are gone)
@@ -133,6 +134,35 @@ export default function App() {
     localStorage.removeItem('mkavs_staff_status');
     setHasInitializedStatus(false);
   };
+
+  // Refresh the Firebase ID token and persist it so API calls never hit "expired token".
+  // Returns the fresh token string, or null if refresh failed.
+  const refreshToken = useCallback(async () => {
+    try {
+      const firebaseUser = auth.currentUser;
+      if (!firebaseUser) return null;
+      const freshToken = await firebaseUser.getIdToken(true); // force refresh
+      setUser(prev => {
+        if (!prev) return prev;
+        const updated = { ...prev, token: freshToken };
+        localStorage.setItem('mkavs_admin_user', JSON.stringify(updated));
+        return updated;
+      });
+      return freshToken;
+    } catch (err) {
+      console.warn('[AUTH] Token refresh failed:', err);
+      return null;
+    }
+  }, []);
+
+  // Auto-refresh token every 50 minutes (Firebase tokens expire after 60 min)
+  useEffect(() => {
+    if (!user?.token) return;
+    const interval = setInterval(() => {
+      refreshToken();
+    }, 50 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, [user?.token, refreshToken]);
 
   // Global 401 handler to clear session immediately when token is invalid
   useEffect(() => {
@@ -298,10 +328,17 @@ export default function App() {
           // localStorage.removeItem('mkavs_admin_user');
         } else {
           const data = await res.json();
-          // Keep current user but potentially update from server, preserving token
+          // Keep current user but potentially update from server, preserving token.
+          // Critically: preserve isExecutive/isManager from login-time data if the
+          // session verify endpoint doesn't return them (avoids disabling Mr.K's controls).
           setUser(prev => {
             if (!prev) return null;
-            const updated = { ...prev, ...data.agent };
+            const updated = {
+              ...prev,
+              ...data.agent,
+              isExecutive: data.agent?.isExecutive ?? prev.isExecutive,
+              isManager: data.agent?.isManager ?? prev.isManager,
+            };
             localStorage.setItem('mkavs_admin_user', JSON.stringify(updated));
             return updated;
           });
@@ -409,57 +446,57 @@ export default function App() {
     return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':');
   };
 
-  // Sync attendance stats on mount
-  useEffect(() => {
+  // Sync attendance stats — extracted to useCallback so handleTimerToggle can re-sync immediately after clock events
+  const fetchCurrentStats = useCallback(async () => {
     if (!user?.token) return;
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/attendance/stats`, {
+        headers: { 'Authorization': `Bearer ${user.token}` }
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setCompletedTodaySeconds(data.totalDurationToday || 0);
+        setCompletedMonthSeconds(data.totalDurationMonth || 0);
 
-    const fetchCurrentStats = async () => {
-      try {
-        const res = await fetch(`${API_BASE_URL}/api/attendance/stats`, {
-          headers: { 'Authorization': `Bearer ${user.token}` }
-        });
-        if (res.ok) {
-          const data = await res.json();
-          setCompletedTodaySeconds(data.totalDurationToday || 0);
-          setCompletedMonthSeconds(data.totalDurationMonth || 0);
+        // Compute attendance rate from real monthly data
+        if (typeof data.daysPresent === 'number' && data.workingDays > 0) {
+          setAttendanceRate(Math.round((data.daysPresent / data.workingDays) * 100));
+        } else {
+          setAttendanceRate(null);
+        }
 
-          // Compute attendance rate from real monthly data
-          if (typeof data.daysPresent === 'number' && data.workingDays > 0) {
-            setAttendanceRate(Math.round((data.daysPresent / data.workingDays) * 100));
-          } else {
-            setAttendanceRate(null);
-          }
-          
-          setIsApprovedToday(data.isPresent || false);
+        setIsApprovedToday(data.isPresent || false);
 
-          if (data.clockInTime) {
-            setFirstLoginTime(new Date(data.clockInTime));
-          } else {
-            setFirstLoginTime(null);
-          }
+        if (data.clockInTime) {
+          setFirstLoginTime(new Date(data.clockInTime));
+        } else {
+          setFirstLoginTime(null);
+        }
 
-          // Active session = currently clocked in
-          if (data.presenceStatus === 'clocked-in' && data.sessionStartTime) {
-            setTimerRunning(true);
-            const start = new Date(data.sessionStartTime);
-            if (!isNaN(start.getTime())) {
-              setActiveSessionStartTime(start);
-              setCurrentSessionSeconds(Math.floor((new Date() - start) / 1000));
-            } else {
-              setTimerRunning(false);
-              setActiveSessionStartTime(null);
-            }
+        // Active session = currently clocked in
+        if (data.presenceStatus === 'clocked-in' && data.sessionStartTime) {
+          setTimerRunning(true);
+          const start = new Date(data.sessionStartTime);
+          if (!isNaN(start.getTime())) {
+            setActiveSessionStartTime(start);
+            setCurrentSessionSeconds(Math.floor((new Date() - start) / 1000));
           } else {
             setTimerRunning(false);
             setActiveSessionStartTime(null);
-            setCurrentSessionSeconds(0);
           }
+        } else {
+          setTimerRunning(false);
+          setActiveSessionStartTime(null);
+          setCurrentSessionSeconds(0);
         }
-      } catch (e) { console.error("Stats sync failed", e); }
-    };
+      }
+    } catch (e) { console.error('Stats sync failed', e); }
+  }, [user?.token]);
 
+  // Sync on mount and whenever user changes
+  useEffect(() => {
     fetchCurrentStats();
-  }, [user]);
+  }, [user, fetchCurrentStats]);
 
   // Ticker Logic (Derive from timestamps to prevent drift)
   useEffect(() => {
@@ -480,11 +517,13 @@ export default function App() {
     if (!user?.token) return;
     
     try {
+      // Always get a fresh token before clocking in/out to avoid "expired token" errors
+      const freshToken = await refreshToken() || user.token;
       const endpoint = timerRunning ? 'clock-out' : 'clock-in';
       const res = await fetch(`${API_BASE_URL}/api/attendance/${endpoint}`, {
         method: 'POST',
         headers: { 
-          'Authorization': `Bearer ${user.token}`,
+          'Authorization': `Bearer ${freshToken}`,
           'Content-Type': 'application/json'
         }
       });
@@ -494,11 +533,7 @@ export default function App() {
         if (!timerRunning) {
           // Clock In successful
           setTimerRunning(true);
-          
-          if (data.clockInTime) {
-            setFirstLoginTime(new Date(data.clockInTime));
-          }
-          
+          if (data.clockInTime) setFirstLoginTime(new Date(data.clockInTime));
           const start = new Date(data.sessionStartTime || data.clockInTime);
           if (!isNaN(start.getTime())) {
             setActiveSessionStartTime(start);
@@ -509,13 +544,14 @@ export default function App() {
           }
         } else {
           // Clock Out successful
-          setCompletedTodaySeconds(data.totalDuration || 0);
-          setCompletedMonthSeconds(prev => prev + (data.sessionSeconds || 0));
           setTimerRunning(false);
           setActiveSessionStartTime(null);
           setCurrentSessionSeconds(0);
           window.dispatchEvent(new CustomEvent('mkavs-timer-stopped'));
+          window.dispatchEvent(new CustomEvent('mkavs-clock-updated'));
         }
+        // Bug #1/#4: Re-sync totals and isApprovedToday immediately after any clock event
+        await fetchCurrentStats();
       } else {
         const errMsg = data.error || data.message || 'Clock operation failed';
         alert(`\u26a0\ufe0f ${errMsg}`);
@@ -829,7 +865,7 @@ export default function App() {
 
                 {activeView === 'godmode' && user.isExecutive && (
                   <motion.div key="godmode" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-                    <GodMode />
+                    <GodMode user={user} />
                   </motion.div>
                 )}
 
@@ -925,9 +961,12 @@ function ProfileSummaryCard({ user, currentStatus }) {
 
 function YourStatus({ currentStatus, handleStatusChange, setIsZenMode }) {
   const statuses = [
-    { id: 'zen',   label: 'Zen Mode',       icon: '🧘' },
-    { id: 'dnd',   label: 'Do not Disturb', icon: '⛔' },
-    { id: 'break', label: 'Break',          icon: '☕' },
+    { id: 'available',  label: 'Available',      icon: '🟢' },
+    { id: 'deep_work',  label: 'Deep Work',      icon: '🎯' },
+    { id: 'in_meeting', label: 'In Meeting',     icon: '📞' },
+    { id: 'break',      label: 'Break',          icon: '☕' },
+    { id: 'zen',        label: 'Zen Mode',       icon: '🧘' },
+    { id: 'dnd',        label: 'Do Not Disturb', icon: '⛔' },
   ];
 
   return (
@@ -1074,7 +1113,13 @@ function RecentActivityFeed({ user }) {
   useEffect(() => {
     fetchActivity();
     const interval = setInterval(fetchActivity, 30000);
-    return () => clearInterval(interval);
+    // Bug #6: Re-fetch immediately when a Quick Log is submitted anywhere
+    const handleActivityUpdate = () => fetchActivity();
+    window.addEventListener('mkavs-activity-updated', handleActivityUpdate);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('mkavs-activity-updated', handleActivityUpdate);
+    };
   }, [fetchActivity]);
 
   const formatTime = (ts) => {
@@ -1166,6 +1211,8 @@ function QuickLogModal({ user, projects, onClose }) {
       });
       if (res.ok) {
         setDone(true);
+        // Bug #6: Notify RecentActivityFeed to re-fetch immediately
+        window.dispatchEvent(new CustomEvent('mkavs-activity-updated'));
         setTimeout(onClose, 1600);
       } else {
         const data = await res.json();

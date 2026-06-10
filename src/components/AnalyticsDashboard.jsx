@@ -1,8 +1,27 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { FolderOpen, Zap, Users, CalendarCheck } from 'lucide-react';
-import { LineChart, Line, ResponsiveContainer } from 'recharts';
 import { TEAM_MEMBERS } from '../constants/users';
+
+// Pure SVG sparkline — no library dependency, guaranteed to render
+function Sparkline({ data = [], color = 'var(--theme-accent)' }) {
+  if (!data || data.length < 2) return null;
+  const min = Math.min(...data);
+  const max = Math.max(...data);
+  const range = max - min || 1;
+  const w = 100;
+  const h = 32;
+  const pts = data.map((v, i) => {
+    const x = (i / (data.length - 1)) * w;
+    const y = h - ((v - min) / range) * h;
+    return `${x},${y}`;
+  }).join(' ');
+  return (
+    <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-full" preserveAspectRatio="none">
+      <polyline points={pts} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 const STATUS_BADGE = {
   'Active':      { label: 'Active',      cls: 'bg-success-tint text-success' },
@@ -117,11 +136,7 @@ export default function AnalyticsDashboard({ projects = [], user, onlineCount = 
             </div>
 
             <div className="h-10 w-full mt-4 opacity-60 group-hover:opacity-100 transition-opacity">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={stat.sparkline.map(v => ({ value: v }))}>
-                  <Line type="monotone" dataKey="value" stroke="var(--theme-accent)" strokeWidth={2} dot={false} isAnimationActive />
-                </LineChart>
-              </ResponsiveContainer>
+              <Sparkline data={stat.sparkline} />
             </div>
           </motion.div>
         ))}
